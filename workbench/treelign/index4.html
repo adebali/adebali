@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>
+  <head>
+    <meta content='text/html;charset=UTF-8' http-equiv='content-type'>
+    <title>Right-angle phylograms and dendrograms with d3</title>
+    <script src="http://d3js.org/d3.v3.min.js" type="text/javascript"></script>
+    <script src="newick.js" type="text/javascript"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="d3.phylogram2.js" type="text/javascript"></script>
+    <script>
+      function load() {
+        var newick = Newick.parse("('Caenorhabditis_briggsae_AF16|30|473542|CBG18375__GR__Group3':0.02406173,'Caenorhabditis_elegans|30|6239|F43D9.1__GR__Group3':0.06458793,((('Caenorhabditis_briggsae_AF16|1|473542|CBG14473__GR__Group3':0.03292521,'Caenorhabditis_elegans|1|6239|F02E8.6__GR__Group3':0.10363231):0.95706698,('Caenorhabditis_elegans|2|6239|F09G8.4__GR__Group3':0.28146377,'Caenorhabditis_briggsae_AF16|2|473542|CBG16653__GR__Group3':0.28673047):1.1030971):1.05852735,(((('Sporisorium_reilianum_SRZ2|1|999809|CBQ71799__GR__Group3':0.7242681,'Cryptococcus_neoformans_var._neoformans_JEC21|1|214684|AAW43643__GR__Group3':0.43880163):0.35717484,(('Aspergillus_fumigatus_Af293|1|330879|CADAFUAP00002315__GR__Group3':0.34909793,('Zymoseptoria_tritici_IPO323|1|336722|Mycgr3P109186__GR__Group3':0.39517553,('Magnaporthe_oryzae_70-15|1|242507|MGG_00819T0__GR__Group3':0.22951991,('Fusarium_verticillioides_7600|1|334819|FVEG_03855T0__GR__Group3':0.0060887,'Fusarium_oxysporum_f._sp._lycopersici_4287|1|426428|FOXG_05987P0__GR__Group3':0.03300206):0.35545123):0.20019044):0.06542759):0.29437531,('Yarrowia_lipolytica_CLIB122|1|284591|CAG82381__GR__Group3':0.6428787,('Komagataella_pastoris_GS115|1|644223|CAY67533__GR__Group3':0.51710422,('Ashbya_gossypii_ATCC_10895|1|284811|AAS54482__GR__Group3':0.59698928,'Saccharomyces_cerevisiae_S288c|1|559292|YPL006W__GR__Group3':0.52681053):0.39292942):0.22759167):0.25847753):0.18181271):0.69689096,((((('Vitis_vinifera|2|29760|VIT_18s0122g01280.t01__GR__Group3':0.08803751,('Solanum_lycopersicum|1|4081|Solyc04g082490.2.1__GR__Group3':0.17773135,(('Glycine_max|1|3847|GLYMA06G02020.1__GR__Group3':0.01811721,('Glycine_max|2|3847|GLYMA04G01901.1__GR__Group3':0.00541671,'Glycine_max|5|3847|GLYMA18G36020.1__GR__Group3':0.09410358):0.01671221):0.18128305,(('Populus_trichocarpa|1|3694|POPTR_0005s27320.1__GR__Group3':0.04277682,'Populus_trichocarpa|2|3694|POPTR_0002s01050.1__GR__Group3':0.04185597):0.0866961,('Arabidopsis_thaliana|2|3702|AT1G42470.1__GR__Group3':0.09502384,('Brassica_rapa|2|3711|Bra034382.1-P__GR__Group3':0.0530935,'Brassica_rapa|1|3711|Bra011986.1-P__GR__Group3':0.07734726):0.02439152):0.2483054):0.01819681):0.01973173):0.01738207):0.06231599,'Vitis_vinifera|1|29760|VIT_03s0038g03730.t01__GR__Group3':0.13968347):0.02250641,(('Medicago_truncatula|1|3880|AET01068__GR__Group3':0.13404638,('Glycine_max|3|3847|GLYMA14G00431.2__GR__Group3':0.01835618,'Glycine_max|4|3847|GLYMA02G48066.1__GR__Group3':0.02792761):0.05042054):0.17480495,('Populus_trichocarpa|3|3694|POPTR_0009s16840.1__GR__Group3':0.13175536,('Arabidopsis_thaliana|1|3702|AT4G38350.1__GR__Group3':0.06145116,'Brassica_rapa|3|3711|Bra010746.1-P__GR__Group3':0.08712155):0.20903181):0.02847826):0.05250089):0.06725113,(('Musa_acuminata_subsp._malaccensis|3|214687|GSMUA_Achr11P16820_001__GR__Group3':0.14272317,('Musa_acuminata_subsp._malaccensis|2|214687|GSMUA_Achr11P16810_001__GR__Group3':0.1266164,'Musa_acuminata_subsp._malaccensis|1|214687|GSMUA_Achr11P22390_001__GR__Group3':0.09989982):0.06521317):0.07217951,('Brachypodium_distachyon|1|15368|BRADI5G18407.1__GR__Group3':0.08834136,(('Oryza_brachyantha|1|4533|OB04G28770.1__GR__Group3':0.03520806,('Oryza_sativa_Japonica_Group|1|39947|OS04T0563801-00__GR__Group3':0.01928328,('Oryza_punctata|1|4537|OPUNC04G19500.1__GR__Group3':0.02162567,('Oryza_meridionalis|1|40149|OMERI04G17580.1__GR__Group3':0.01027891,('Oryza_nivara|1|4536|ONIVA04G20300.1__GR__Group3':0.01114967,('Oryza_glumipatula|1|40148|OGLUM04G21780.1__GR__Group3':9.0818E-4,'Oryza_barthii|1|65489|OBART04G21760.1__GR__Group3':9.8503E-4):9.0895E-4):0.0011366):0.02562883):0.05362017):0.01402855):0.04834428,('Zea_mays|1|4577|GRMZM2G084491_P01__GR__Group3':0.03532209,'Sorghum_bicolor|1|4558|Sb06g025390.1__GR__Group3':0.05730353):0.097719):0.02401091):0.25688359):0.10567532):0.79308346,('Naegleria_gruberi_strain_NEG-M|1|744533|290977501__GR__Group3':1.44996629,('Dictyostelium_discoideum|1|44689|DDB0191127__GR__Group3':0.35327432,'Dictyostelium_discoideum|2|44689|DDB0202935__GR__Group3':0.48136512):0.67784447):0.35978829):0.15501092):0.24074439,(((('Apis_mellifera|1|7460|GB17461-PA__GR__Group1':0.30810269,'Tribolium_castaneum|1|7070|TCOGS2_TC005088-PA__GR__Group1':0.28804026):0.10621603,('Anopheles_gambiae_str._PEST|1|180454|AGAP008137-PA__GR__Group1':0.34577025,('Drosophila_pseudoobscura_pseudoobscura|2|46245|FBpp0279686__GR__Group1':0.17584268,('Drosophila_yakuba|1|7245|FBpp0271338__GR__Group1':0.02601799,('Drosophila_melanogaster|1|7227|FBpp0292910__GR__Group1':0.00693561,'Drosophila_simulans|1|7240|FBpp0220696__GR__Group1':0.00822632):0.01626591):0.12502451):0.34833419):0.11387819):0.23031286,(('Anopheles_gambiae_str._PEST|2|180454|AGAP000579-PA__GR__Group1':0.53117927,('Drosophila_pseudoobscura_pseudoobscura|1|46245|FBpp0273948__GR__Group1':0.1208694,('Drosophila_yakuba|2|7245|FBpp0262908__GR__Group1':0.04536806,('Drosophila_melanogaster|2|7227|FBpp0076932__GR__Group1':0.02108201,('Drosophila_simulans|3|7240|FBpp0215906__GR__Group1':0.0,'Drosophila_simulans|2|7240|FBpp0215905__GR__Group1':5.947E-5):0.01863708):0.02213263):0.12064243):0.5891907):0.41964618,('Apis_mellifera|2|7460|GB14749-PA__GR__Group1':0.44015643,'Nasonia_vitripennis|1|7425|NV16160-PA__GR__Group1':0.56470068):0.28209891):0.28264158):0.36641139,('Schistosoma_mansoni|1|6183|Smp_039130.1_pep__GR__Group1':1.1344013,(('Ciona_intestinalis|1|7719|ENSCINP00000008700__GR__Group1':0.02186134,'Ciona_intestinalis|3|7719|ENSCINP00000008695__GR__Group1':0.25944298):0.58436643,('Danio_rerio|1|7955|ENSDARP00000094372__GR__Group1':0.20929176,(('Oreochromis_niloticus|1|8128|ENSONIP00000011798__GR__Group1':0.14985152,('Takifugu_rubripes|1|31033|ENSTRUP00000031021__GR__Group1':0.12795392,'Oryzias_latipes|1|8090|ENSORLP00000022133__GR__Group1':0.15473421):0.03473933):0.08904891,('Lepisosteus_oculatus|1|7918|ENSLOCP00000001838__GR__Group1':0.14045246,(('Anolis_carolinensis|1|28377|ENSACAP00000000255__GR__Group1':0.12848224,(('Taeniopygia_guttata|1|59729|ENSTGUP00000010802__GR__Group1':0.01313033,'Ficedula_albicollis|1|59894|ENSFALP00000006400__GR__Group1':0.00986381):0.033736,('Gallus_gallus|1|9031|ENSGALP00000024194__GR__Group1':0.0181382,'Meleagris_gallopavo|1|9103|ENSMGAP00000010503__GR__Group1':0.02712332):0.04154139):0.095833):0.04190753,('Ornithorhynchus_anatinus|1|9258|ENSOANP00000019306__GR__Group1':0.15263412,('Monodelphis_domestica|1|13616|ENSMODP00000026857__GR__Group1':0.13082319,(('Mus_musculus|1|10090|ENSMUSP00000025279__GR__Group1':0.03087897,'Rattus_norvegicus|1|10116|ENSRNOP00000016167__GR__Group1':0.03248591):0.11028432,(('Oryctolagus_cuniculus|1|9986|ENSOCUP00000008488__GR__Group1':0.07924958,('Nomascus_leucogenys|3|61853|ENSNLEP00000023438__GR__Group1':0.00624789,(('Papio_anubis|1|9555|ENSPANP00000002787__GR__Group1':6.8944E-4,('Callithrix_jacchus|1|9483|ENSCJAP00000038261__GR__Group1':0.07062443,'Macaca_mulatta|1|9544|ENSMMUP00000028303__GR__Group1':0.00554582):0.01504859):0.01155847,('Pongo_abelii|1|9601|ENSPPYP00000010175__GR__Group1':0.00762642,('Nomascus_leucogenys|1|61853|ENSNLEP00000008199__GR__Group1':0.00927578,('Pan_troglodytes|1|9598|ENSPTRP00000016869__GR__Group1':0.00559836,('Gorilla_gorilla_gorilla|1|9595|ENSGGOP00000028237__GR__Group1':0.03259843,'Homo_sapiens|1|9606|ENSP00000269228__GR__Group1':0.005649):8.6198E-4):0.00185764):3.29E-6):0.00381415):5.571E-5):0.04166624):0.01056587,(('Felis_catus|1|9685|ENSFCAP00000000483__GR__Group1':0.03785058,'Canis_lupus_familiaris|1|9615|ENSCAFP00000026870__GR__Group1':0.06744593):0.02518272,('Equus_caballus|1|9796|ENSECAP00000019517__GR__Group1':0.04932384,('Sus_scrofa|1|9823|ENSSSCP00000004014__GR__Group1':0.05170437,('Ovis_aries|1|9940|ENSOARP00000008490__GR__Group1':0.07762304,('Bos_taurus|1|9913|ENSBTAP00000020219__GR__Group1':8.022E-5,'Ovis_aries|3|9940|ENSOARP00000000816__GR__Group1':0.1183195):0.00905203):0.06516968):0.02941722):0.00854474):0.01392197):0.01371967):0.04111311):0.02859952):0.0666459):0.16828345):0.07653806):0.05027924):0.32681692):0.20256242):0.07979793):0.31183683):0.22343775):4.64437118);")
+        var newickNodes = []
+        function buildNewickNodes(node, callback) {
+          newickNodes.push(node)
+          if (node.branchset) {
+            for (var i=0; i < node.branchset.length; i++) {
+              buildNewickNodes(node.branchset[i])
+            }
+          }
+        }
+        buildNewickNodes(newick)
+       
+
+
+
+	alignment = "npc1_GRs_1and3.json";
+ 	d3.json(alignment,function(error, alignmentData) { 
+        console.log(alignmentData);
+	d3.phylogram.buildRadial(alignmentData,'#radialtree', newick, {width: 40, skipLabels: true});
+        
+        d3.phylogram.build(alignmentData,'#phylogram', newick, {
+          width: 300,
+          height: 2200
+        });
+});
+      }
+
+
+
+    </script>
+    <style type="text/css" media="screen">
+      body { font-family: "Helvetica Neue", Helvetica, sans-serif; }
+      td { vertical-align: top; }
+    </style>
+  </head>
+  <body onload="load()">
+    <table>
+      <tr>
+        <td id="unseen">
+          <h2></h2>
+          <div id='radialtree'></div>
+        </td>
+        <td>
+          <h2>Phylogram</h2>
+          <div id='phylogram'></div>
+        </td>
+      </tr>
+    </table>
+  </body>
+
+  <script>
+	document.getElementById("unseen").style.visibility="hidden";
+  </script>
+</html>
+

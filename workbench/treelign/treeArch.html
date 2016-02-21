@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>
+  <head>
+    <meta content='text/html;charset=UTF-8' http-equiv='content-type'>
+    <title>Right-angle phylograms and dendrograms with d3</title>
+    <script src="http://d3js.org/d3.v3.min.js" type="text/javascript"></script>
+    <script src="newick.js" type="text/javascript"></script>
+    <script src="jquery.md5.js" type="text/javascript"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
+    <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/components/enc-base64-min.js"></script>
+    <script src="treeArch.js" type="text/javascript"></script>
+    <script>
+function saveSvgAsFile()
+{
+
+        var mySvgObject = document.getElementById("tree");
+        var mySvg = $(mySvgObject).html();
+        mySvg = '<svg  xmlns="http://www.w3.org/2000/svg" id="tree" width="2200px" height="9000px">' + mySvg.replace(/<\/body>/g,"</img></body>") + '</svg>'
+        //var textToWrite = htmlString;
+        var textFileAsBlob = new Blob([mySvg], {type:'svg'});
+        var fileNameToSaveAs = "tree.svg";
+
+        var downloadLink = document.createElement("a");
+        downloadLink.download = fileNameToSaveAs;
+        downloadLink.innerHTML = "Download File";
+        if (window.webkitURL != null)
+        {
+                // Chrome allows the link to be clicked
+                // without actually adding it to the DOM.
+                downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+        }
+        else
+        {
+                // Firefox requires the link to be added to the DOM
+                // before it can be clicked.
+                downloadLink.href = window.URL.createObjectURL();
+                downloadLink.onclick = destroyClickedElement;
+                downloadLink.style.display = "none";
+                document.body.appendChild(downloadLink);
+        }
+
+        downloadLink.click();
+}
+
+	function getUrlVars() {
+		var vars = {};
+		var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,
+		function(m,key,value) {
+			vars[key] = value;
+			});
+		return vars;
+		}
+
+	var vars = getUrlVars();
+
+	var nwkFile = 'newick' in vars ? vars['newick'] : "npc1_rm2ce.fa..phy_phyml_trec.nwk";
+	var jsonFile = 'json' in vars ? vars['json'] : "npc1_rm2ce.json";
+	var fastaFile = 'fasta' in vars ? vars['fasta'] : "NA";
+	var firstSeqWord = 'first' in vars ? vars['first'] : "sapiens";
+	var range = 'r' in vars ? parseInt(vars['r']) : 40;
+	var height = 'h' in vars ? parseInt(vars['h']) : 8200;
+
+	//console.log(vars);
+		
+	var nwk = '';
+	$.ajax({
+	  url: nwkFile,
+	  type: "GET",
+	  data: {},
+	  async: false,
+	  success: function(data){nwk = data;},
+	  dataType: "text"
+	});
+
+       var ALN = '';
+        $.ajax({
+          url: jsonFile,
+          type: "GET",
+          data: {},
+          async: false,
+          success: function(data){ALN = data;},
+          dataType: "json"
+        });
+
+
+	function parseGi(header){
+		console.log("Header is " + header)
+		if (header.indexOf('gi|') > -1) {
+			return header.split("gi|")[1].split("|")[0];
+			}
+		else{
+			if (header.indexOf('|') > -1) {
+				return header.split("|")[1]
+				}
+			else{
+				return header.split("_")[0];
+				}
+			}
+		}
+	
+
+	giAln = {};
+	for (var key in ALN){
+		giAln[parseGi(key)] = ALN[key];
+		}
+
+	
+	function load() {
+		var newick = Newick.parse(nwk);
+		
+	       //console.log(newick);
+		var newickNodes = [];
+		function buildNewickNodes(node, callback) {
+		if ((! node.branchset) && node.name){
+			console.log(node.name);
+			console.log(parseGi(node.name));
+			console.log(giAln[parseGi(node.name)]);
+			node.s = giAln[parseGi(node.name)].s
+		}
+		else{node.s = "";}
+
+		  newickNodes.push(node)
+		  if (node.branchset) {
+		    for (var i=0; i < node.branchset.length; i++) {
+		      buildNewickNodes(node.branchset[i])
+		    }
+		  }
+		}
+		buildNewickNodes(newick)
+
+
+	
+
+			//console.log(alignmentData);
+			//console.log('--------------------alignmentData');
+			//d3.phylogram.buildRadial(alignmentData,'#radialtree', newick, {width: 40, skipLabels: true});
+		
+			d3.phylogram.build(giAln,'#phylogram', newick, {
+			  width: 300,
+			  height: height
+			});
+	    }
+
+
+//load();
+
+    </script>
+    <style type="text/css" media="screen">
+      body { font-family: "Helvetica Neue", Helvetica, sans-serif; }
+      td { vertical-align: top; }
+    </style>
+  </head>
+  <body onload="load()">
+<button onclick="saveSvgAsFile()" style="margin-left:20px">Save SVG</button>   
+ <div id=info></div>
+    <div id=input></div>
+    <table>
+      <tr>
+        <td id="unseen">
+          <h2></h2>
+          <div id='radialtree'></div>
+        </td>
+        <td>
+          <h2>Phylogram</h2>
+          <div id='phylogram'></div>
+        </td>
+      </tr>
+    </table>
+  </body>
+
+  <script>
+	document.getElementById("unseen").style.visibility="hidden";
+	mutationInput();
+  </script>
+</html>
+
