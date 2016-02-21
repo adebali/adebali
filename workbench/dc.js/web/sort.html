@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI Sortable - Default functionality</title>
+  
+  <script src="js/jquery-1.10.2.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  
+  <style>
+  #sortable { list-style-type: none; margin: 0; padding: 0; width: 100%; }
+  #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; }
+  #sortable li span { position: absolute; margin-left: -1.3em; }
+  </style>
+  <script>
+  $(function() {
+    $( "#sortable" ).sortable({
+    
+	  distance: 5
+    });
+    $( "#sortable" ).disableSelection();
+  });
+  </script>
+</head>
+<body>
+ 
+<ul id="sortable">
+  <li class="ui-state-default">Item 1
+  <div class"aclass">
+  <p>asfasfasgdsaf</p>
+  <p>asfasfafa</p>
+  </div>
+  </li>
+  <li class="ui-state-default">tem 2</li>
+  <li class="ui-state-default">tem 3</li>
+  <li class="ui-state-default">tem 4</li>
+  <li class="ui-state-default">tem 5</li>
+  <li class="ui-state-default">tem 6</li>
+  <li class="ui-state-default">tem 7</li>
+</ul>
+ 
+ 
+</body>
+</html>

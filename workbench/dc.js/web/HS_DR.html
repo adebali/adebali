@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>dc.js - Dimensional Charting Javascript Library</title>
+
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/dc.css"/>
+ <!--   <link rel="stylesheet" type="text/css" href="css/jquery-ui.css"/>
+  -->
+
+
+<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/jquery.csv-0.71.js"></script>
+<script type="text/javascript" src="js/d3.js"></script>
+<script>
+   $(function() {
+       $( "#sortable1, #sortable2" ).sortable().disableSelection();
+        
+	    var $tabs = $( "#tabs" ).tabs();
+	     
+	         var $tab_items = $( "ul:first li", $tabs ).droppable({
+		       accept: ".connectedSortable li",
+		             hoverClass: "ui-state-hover",
+			           drop: function( event, ui ) {
+				           var $item = $( this );
+					           var $list = $( $item.find( "a" ).attr( "href" ) )
+						             .find( ".connectedSortable" );
+							      
+							              ui.draggable.hide( "slow", function() {
+								                $tabs.tabs( "option", "active", $tab_items.index( $item ) );
+										          $( this ).appendTo( $list ).show( "slow" );
+											          });
+												        }
+													    });
+													   
+													      });
+													        </script>
+
+
+    <style>
+        #monthly-volume-chart g.y {
+            display: none;
+        }
+	ul
+	{
+	    list-style-type: none;
+	 }
+	 #sortable1 li, #sortable2 li { margin: 0 0 0 0; padding: 5px; font-size: 1em; width:100%; }
+    </style>
+    <script>
+if (window.File && window.FileReader && window.FileList && window.Blob) {
+  // Great success! All the File APIs are supported.
+} else {
+  alert('The File APIs are not fully supported in this browser.');
+}
+
+
+
+
+
+
+var myCSVfileName = "HS-DR.csv";
+var template = "";
+
+var xmlhttp;
+xmlhttp=new XMLHttpRequest();
+xmlhttp.open('GET', myCSVfileName, false);
+xmlhttp.send();
+
+var header = xmlhttp.responseText.split('\n')[0];
+headerArray = header.split(',');
+headerArray.splice(0,2);
+var totalCat = headerArray.length - 2;
+totalCat = 17;
+myCatArray = headerArray.splice(0,totalCat);
+
+/*
+var myCatArray = [];
+myCatArray.push("signal")
+myCatArray.push("chemotaxis")
+myCatArray.push("GPCR")
+myCatArray.push("receptor")
+myCatArray.push("kinase")
+myCatArray.push("enzyme")
+myCatArray.push("replication")
+myCatArray.push("transcription")
+myCatArray.push("translation")
+myCatArray.push("ribosom")
+myCatArray.push("biosynthesis")
+myCatArray.push("morpho")
+myCatArray.push("channel")
+myCatArray.push("membrane")
+*/
+html_catChart=[];
+
+function writeDiv(category){
+	var text = "<div id=" + category + ">";
+	text += "<strong>" + category + "</strong>";
+//	text += "<a class=\"reset\" href=\"javascript:" + category + ".filterAll();dc.redrawAll();\" style=\"display: none;\">reset</a>";
+	text += "<div class=\"clearfix\"></div>";
+	text += "</div>";
+	document.write(text);
+	}
+
+function writeRow(CatArray){
+	var text = "<li class=\"ui-state-default\"><div id=\"row\">";
+	document.write(text);
+	CatArray.forEach(writeDiv);
+	var text = "</div></li>";
+	document.write(text);
+	}
+
+
+
+
+
+
+
+
+
+
+
+     </script>
+</head>
+<body>
+
+
+<div class="container">
+
+<h2>Genome vs Genome through 1 to 1 Orthologous Proteins </h2>
+
+
+
+<div class = "row">
+
+
+    <div id="histo-chart">
+        <strong>Identity Histogram of Orthologous Proteins between <i>H.sapiens</i> and <i>D.reiro</i></strong>
+        <span class="reset" style="display: none;">range: <span class="filter"></span></span>
+        <a class="reset" href="javascript:histoChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+        
+    <div class="clearfix"></div>
+	<div class="dc-data-count">
+            <span class="filter-count"></span> selected out of <span class="total-count"></span> records | <a
+                href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
+        </div>
+
+
+
+        <div class="clearfix"></div>
+    </div>
+
+    <div class="clearfix"></div>
+
+
+
+   <!-- <div class="right"; id="fraction-chart">
+        <strong>Fraction</strong>
+        <a class="reset" href="javascript:fractionChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+
+        <div class="clearfix"></div>
+    </div>-->
+</div>
+
+
+
+
+
+<div class="row">
+    <div class="clearfix"></div>
+
+<div class="row"><strong><u>Gene Ontology Keywords:</u></strong></div>
+
+
+
+<ul id="sortable">
+<script>
+var P = 6;
+//for (i=0;i<myCatArray.length();i+=6){
+for (i=0;i<totalCat;i+=P){
+var last = i + P;
+writeRow(myCatArray.slice(i,last));
+}
+document.write(totalCat);
+
+</script>
+
+<li class="ui-state-default">
+<!--<div class="row">
+    <div id="ribosome-bars-chart">
+        <a class="reset" href="javascript:ribosomeBarsChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+
+        <div class="clearfix"></div>
+    </div>
+-->
+    <script>//writeDiv("quarter-chart");</script>
+</li>
+
+
+</ul>
+</div>
+
+
+</div>
+<!--
+    <div id="fluctuation-chart">
+        <strong>Days by Fluctuation(%)</strong>
+        <span class="reset" style="display: none;">range: <span class="filter"></span></span>
+        <a class="reset" href="javascript:fluctuationChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+<div class="row">
+    <div id="monthly-move-chart">
+        <strong>Monthly Index Abs Move & Volume/500,000 Chart</strong>
+        <span class="reset" style="display: none;">range: <span class="filter"></span></span>
+        <a class="reset" href="javascript:moveChart.filterAll();volumeChart.filterAll();dc.redrawAll();"
+           style="display: none;">reset</a>
+
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+<div class="row">
+    <div id="monthly-volume-chart">
+    </div>
+    <p class="muted pull-right" style="margin-right: 15px;">select a time range to zoom in</p>
+</div>
+
+<div class="row">
+    <div>
+        <div class="dc-data-count">
+            <span class="filter-count"></span> selected out of <span class="total-count"></span> records | <a
+                href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
+        </div>
+    </div>
+    <table class="table table-hover dc-data-table">
+        <thead>
+        <tr class="header">
+            <th>Date</th>
+            <th>Open</th>
+            <th>Close</th>
+            <th>Change</th>
+            <th>Volume</th>
+        </tr>
+        </thead>
+    </table>
+</div>
+
+<div class="clearfix"></div>
+-->
+
+
+</div>
+</div>
+
+
+
+<script type="text/javascript" src="js/crossfilter.js"></script>
+<script type="text/javascript" src="js/dc.js"></script>
+<script type="text/javascript" src="js/colorbrewer.js"></script>
+
+<script type="text/javascript" src="stock2.js">
+houston("morpho");
+</script>
+
+<script type="text/javascript">
+
+
+$(function() {
+     $( "#sortable" ).sortable({
+      //  distance: 75
+	placeholder: "ui-state-highlight"
+});
+     $( "#sortable" ).disableSelection();
+     });
+</script>
+</body>
+</html>

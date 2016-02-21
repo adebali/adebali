@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>dc.js - Pie Chart Example</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/dc.css"/>
+</head>
+<body>
+
+<div id="test"></div>
+<p></p>
+<div id="test2"></div>
+<div id="barChart"></div>
+
+
+
+<script type="text/javascript" src="../js/d3.js"></script>
+<script type="text/javascript" src="../js/crossfilter.js"></script>
+<script type="text/javascript" src="../js/dc.js"></script>
+<script type="text/javascript">
+
+var chart = dc.pieChart("#test");
+var chart2 = dc.pieChart("#test2");
+var chart3 = dc.barChart("#barChart");
+d3.csv("morley.csv", function(error, experiments) {
+
+  var ndx           = crossfilter(experiments),
+      runDimension  = ndx.dimension(function(d) {return +d.Run;})
+      speedSumGroup = runDimension.group().reduceSum(function(d) {return d.Speed;});
+      runDimension2  = ndx.dimension(function(d) {return "Expt-"+d.Expt;})
+      exptGroup = runDimension2.group().reduceSum(function(d) {return d.Expt;});
+
+  chart
+    .width(350)
+    .height(230)
+    .slicesCap(5)
+    .innerRadius(40)
+    .dimension(runDimension)
+    .group(speedSumGroup)
+    .legend(dc.legend());
+
+  chart.render();
+
+
+  chart2
+    .width(768)
+    .height(480)
+    .slicesCap(10)
+    .innerRadius(0)
+    .dimension(runDimension2)
+    .group(exptGroup)
+    .legend(dc.legend());
+
+  chart2.render();
+  
+  experiments.forEach(function(x) {
+    x.Speed = +x.Speed;
+      });
+
+  chart3
+     .height(500)
+     .width(500)
+     .x(d3.scale.linear().domain([6,20]))
+     .brushOn(true)
+     .yAxisLabel("Hi I am Y axis")
+     .dimension(runDimension)
+     .group(speedSumGroup);
+
+  chart3.render();
+
+
+
+});
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>D3 Test</title>
+        <script type="text/javascript" src="js/d3.js"></script>
+    <style type="text/css">
+		
+			div.bar {
+				display: inline-block;
+				width: 20px;
+				height: 75px;
+				background-color: teal;
+				margin-right: 2px;
+			}
+		
+		</style>
+	</head>
+    <body>
+        <script type="text/javascript">
+            // Your beautiful D3 code will go here
+			function simplefunction(d){return d*5;}
+			var dataset = [ 5, 10, 15, 20, 25 ];
+			d3.select("body").selectAll("p")
+				.data(dataset)
+				.enter()
+				.append("p")
+				.text("New paragraph!")
+				.text(function(d) { return d*5; })
+				.style("color", function(d) {
+					if (d > 15) {   //Threshold of 15
+						return "red";
+					} else {
+						return "black";
+						}
+					});
+			d3.select("body").selectAll("div")
+				.data(dataset)
+				.enter()
+				.append("div")
+				.attr("class", "bar")
+				.style("height", function(d) {
+					return d*5 + "px";
+				});
+			var w = 500;
+			var h = 50;
+			var svg = d3.select("body").append("svg");
+			svg.attr("width", w)
+				.attr("height", h);
+				
+			svg.selectAll("circle")
+				.data(dataset)
+				.enter()
+				.append("circle")
+				.attr("cx", function(d, i) {
+            return (i * 50) + 25;
+        })
+       .attr("cy", h/2)
+       .attr("r", function(d) {
+            return d;
+       });
+			
+					
+				//.text(simplefunction(function(d) { return d; }));
+			
+				
+				
+        </script>
+    </body>
+</html>
