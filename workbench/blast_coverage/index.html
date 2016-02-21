@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>
+  <head>
+    <meta content='text/html;charset=UTF-8' http-equiv='content-type'>
+    <title>Blast results coverage visualization</title>
+    <script src="http://d3js.org/d3.v3.min.js" type="text/javascript"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <style type="text/css" media="screen">
+      body { font-family: "Helvetica Neue", Helvetica, sans-serif; }
+      td { vertical-align: top; }
+    </style>
+  </head>
+<body>
+
+</body>
+  <script>
+
+
+function getUrlVars() {
+	var vars = {};
+	var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,
+	function(m,key,value) {
+		vars[key] = value;
+		});
+	return vars;
+	}
+
+var vars = getUrlVars();
+
+var fileName = 'f' in vars ? vars['f'] : "data.json";
+
+
+
+d3.json(fileName, function(data) {
+//myTable = d3.select("body").append("table").attr("border","2px");
+myTr = d3.select("body").append("table").attr("border","2px").selectAll("tr").data(data).enter().append("tr")
+
+myTr.append("td").text(function(d){return d.i;});
+myTr.append("td").text(function(d){return d.gi;});
+myTr.append("td").text(function(d){return d.sn;});
+myTr.append("td").text(function(d){return d.evalue;});
+mySvg = myTr.append("td").append("svg").attr("height",40).attr("width",1500);
+mySvg.append("rect")
+	.attr("x",0)
+	.attr("width",function(d){return d.qlen})
+	.attr("y",0)
+	.attr("height",18)
+	.attr("fill","gray")
+	.attr("opacity",.3);
+mySvg.append("rect")
+	.attr("x",function(d){return d.qbeg})
+	.attr("width",function(d){return d.qend-d.qbeg})
+	.attr("y",0)
+	.attr("height",18)
+	.attr("fill","red")
+	.attr("opacity",.7);
+mySvg.append("rect")
+	.attr("x",0)
+	.attr("width",function(d){return d.slen})
+	.attr("y",20)
+	.attr("height",18)
+	.attr("fill","gray")
+	.attr("opacity",.3);
+mySvg.append("rect")
+	.attr("x",function(d){return d.sbeg})
+	.attr("width",function(d){return d.send-d.sbeg})
+	.attr("y",20)
+	.attr("height",18)
+	.attr("fill","blue")
+	.attr("opacity",.7);
+mySvg.append("path")
+	.attr("stroke-dasharray", "4,4")
+	.attr("x1", 100)
+	.attr("x2", 100)
+	.attr("y1", 0)
+ 	.attr("y2", 40)
+	.attr("stroke","black")
+	.attr("stroke-width","2");
+
+
+});
+
+  </script>
+</html>
+
