@@ -1,0 +1,262 @@
+		
+			#profile_img {
+			filter: gray; /* IE6-9 */
+			filter: grayscale(1); /* Microsoft Edge and Firefox 35+ */
+			-webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+			opacity:1;
+			}
+		
+			ul#menu li {
+			font-size:1em;
+			display: inline;
+			list-style-type:none;
+			 position:relative;
+		#	     padding:0px;
+		#width: 125px;
+		#height: 25px;
+			}
+			ul#sub1 {
+				position:absolute;
+				left:0;
+				width:97.7%;
+				padding:0;
+				background-color:rgba(245, 240, 240, 0.6);
+				color:#333333;
+				visibility: hidden;
+				border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+				    -webkit-transition: height 0.5s ease-in;
+    -moz-transition: height 0.5s ease-in;
+    -o-transition: height 0.5s ease-in;
+    -ms-transition: height 0.5s ease-in;
+     transition: height 0.5s ease-in;
+				
+				
+			}
+			ul#menu li:hover #sub1 {
+				visibility:visible;
+
+			}
+			.submenu{
+			font-family: Montserrat;
+				z-index:999;
+				font-size:1em;
+				margin-left:0px;
+				margin-right:0px;
+				padding-right:0;
+				padding-left:0;
+			}
+			.toplayer{
+				font-family:'Open Sans';
+				#font-family: Montserrat;
+				font-size:1.3em;
+				margin-left:0px;
+				margin-right:0px;
+				margin-top:4px;
+				background-color: #fff;
+				#color:#d3d3d3;
+				color:#fff;
+				padding-right:30px;
+				padding-left:30px;
+				
+			}
+			a.toplayer:hover {
+				#color: #000;
+				font-weight: bold;
+				#background-color:#474747;
+				#background-color:red;
+				text-decoration: none;
+
+			}
+			.currentMenu{
+				#background-color:#474747;
+				font-weight: bold;
+				color: #333333;
+				border-style: solid hidden hidden;
+				border-color: #333333;
+				border-width: 4px;
+			}
+			.inactiveMenu{
+				#background-color:red;
+				color: #333333;
+			}
+			
+			.bottomlayer{
+				font-family:'Open Sans';
+				#font-family: Montserrat;
+				font-size:1.3em;
+				margin-left:0px;
+				margin-right:0px;
+				margin-top:4px;
+				background-color: #333333;
+				color:#d3d3d3;
+				#color:#fff;
+				padding-right:30px;
+				padding-left:30px;
+				
+			}
+			
+			ul {
+			margin-top:0em;
+			}
+			body {
+				font-size: 62.5%;
+				font-family: Montserrat;
+				color: #333333;
+			}
+			.picture {
+				border-radius: 50%;
+				margin: 0 auto;
+			}
+			a {
+				color: #333333;
+				text-decoration: none;
+			}
+			
+			a:hover {
+				color: #4e4e4e;
+				text-decoration: underline;
+			}
+			
+			.header {
+				text-align:center;
+				font-size: 2em;
+				margin-top:1em;
+				margin-left:5%;
+				margin-right:5%;
+			}
+			h1 {
+				font-size:3em;
+				margin-bottom:0;
+			}
+			.profile {
+				font-family: Montserrat;
+				font-size: 1em;
+				margin:0;
+			}
+
+			.contact-header {
+				font-weight:bold;
+			}
+			.label {
+				margin-top: 0;
+				margin-bottom: 1em;
+			}
+			.fa {
+				font-size:2em;
+			}
+			.left {
+				font-size: 1em;
+			}
+			.main {
+				margin 0 auto;
+				margin-left: 10%;
+				margin-right: 10%;
+				margin-bottom: 50px;
+			}
+			h3a {
+				font-size:2em;
+				margin-bottom:3em;
+
+			}
+			h2 {
+				font-size: 3.5em;
+				margin-top:1.5em;
+			}
+			h3 {
+				font-size:2em;
+				margin-bottom:0;
+			}
+			h4 {
+				color: #4e4e4e;
+				font-size:1.5em;
+				margin-top:0;
+				margin-bottom:0;
+			}
+			h5 {
+				margin-top:0;
+				font-size:1.5em;
+			}	
+			.skills {
+				margin-bottom: 10px;
+			}
+			p {
+				font-family: 'Open Sans';
+				font-size: 2em;
+			}
+			.tool {
+				margin-left:5%;
+				font-family: 'Montserrat';
+				font-size: 2em;
+			}
+			.pkeywords {
+				margin-left:5%;
+			}
+			li {
+				font-family: 'Open Sans';
+				font-size: 1.5em;
+			}
+			.keywords {
+				background-color: #333333;
+				color:#fff;
+				padding: 6px;
+				font-size: 1.2em;
+				margin-bottom: 5px;
+				display:inline-block;
+			}
+			blockquote {
+				margin: 0em 10px;
+				padding: 0.5em 10px;
+				border-left: 10px solid rgba(51,51,51,1);
+				font-family: 'Open Sans';
+				font-size: 1.8em;
+			}
+			blockquote .name {
+				font-weight:bold;
+				font-family: "Montserrat";
+			}
+			.responsive-show {
+				display:none;
+			}
+			@media (max-width: 1000px) {
+				.header {
+					font-size: 1.66em;
+				}
+				h2 {
+					font-size: 3em;
+				}
+			}
+			@media (max-width: 500px) {
+				p {
+					font-size:1.2em;
+				}
+				li {
+					font-size:1.2em;
+				}
+				blockquote {
+					font-size:1.2em;
+				}
+				h2 {
+					font-size:2.3em;
+				}
+				.responsive-hidden {
+					display:none;
+					visibility: hidden;
+				}
+				.responsive-show {
+					display:inline;
+					visibility: visible;
+				}
+
+			}
+		
+	iframe[id^='twitter-widget-0'] {
+height:50% !important;
+margin-bottom:0px !important;
+width:50% !important;
+
+}
+iframe[id^='twitter-widget-0'].head.timeline{
+	max-width:99%;
+	
+}
