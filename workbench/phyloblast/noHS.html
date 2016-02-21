@@ -1,0 +1,800 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>PHYLOBLAST</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+  <script src="scripts/jquery-1.10.2.js"></script>
+  <script src="scripts/jquery-ui.js"></script>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <style>
+	 table.fixed {table-layout:fixed; width:100px;}/*Setting the table width is important!*/
+         table.fixed td {overflow:hidden;}/*Hide text outside the cell.*/
+         table.fixed td:nth-of-type(1) {width:50%;}/*Setting the width of column 1.*/
+         table.fixed td:nth-of-type(2) {width:50%;}/*Setting the width of column 2.*/
+.ui-slider {
+
+    cursor: default;
+    height: 1em;
+    width: 100%;
+    z-index: 2;
+}
+
+.node circle {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.node {
+  font: 10px sans-serif;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1.5px;
+}
+
+
+  </style>
+<style type="text/css">
+#wrap {
+   width:600px;
+   margin:0 auto;
+}
+#left_col {
+   float:left;
+   width:250px;
+}
+#right_col {
+   float:right;
+   width:350px;
+}
+</style>
+
+  <script>
+function getUrlVars() {
+		var vars = {};
+		var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,    
+		function(m,key,value) {
+		vars[key] = value;
+		});
+		return vars;
+		}
+
+var vars = getUrlVars();
+if (vars["f"])
+	{
+	var theFile = vars["f"]
+	}
+else 
+	{ 
+	theFile = "Sb10g029290.1-19853_FINISHED.csv";
+	theFile = "ENSP00000339630.json";
+	}
+if (vars["h"])
+	{
+	var alternativeFirstHit = vars["h"];
+	}
+else
+	{
+	var alternativeFirstHit = "X";
+	}
+
+
+
+
+
+
+	</script>
+</head>
+<body>
+	<div id="wrap">
+	<div id="left_col"></div>
+	<div id="right_col">
+		<table border="0">
+			<tr class="boxrow">
+				<td colspan="2"><div id="slider-range-max"></div></td>
+			</tr>
+                        <tr class="boxrow">
+                                <td>Hit #: </td><td id = "hitnum"></td>
+                        </tr>
+                        <tr class="boxrow">
+				<td>Covered species #: </td><td id="covered_organism_number"></td>
+                        </tr>
+			<tr class="boxrow">
+                                <td>Query: </td><td id = "query"></td>
+                        </tr>
+                        <tr class="boxrow">
+                                <td>Subject: </td><td id = "subject"></td>
+                        </tr>
+			<tr class="boxrow">
+				<td id="EVALUE-A"></td><td><svg id="EVALUE-B" class="BAR1"></svg></td>
+			</tr>
+			<tr class="boxrow">
+				<td id="SCORE-A"></td><td><svg id="SCORE-B" class="BAR1"></svg></td>
+			</tr>
+			<tr class="boxrow">
+				<td id="BSCORE-A"></td><td><svg id="BSCORE-B" class="BAR1"></svg></td>
+			</tr>
+			<tr class="boxrow">
+				<td id="PIDENT-A"></td><td><svg id="PIDENT-B" class="BAR1"></svg></td>
+			</tr>
+			<tr class="boxrow">
+				<td id="QCOV-A"></td><td><svg id="QCOV-B" class="BAR2"></svg></td>
+			</tr>
+			<tr class="boxrow">
+				<td id="SCOV-A"></td><td><svg id="SCOV-B" class="BAR2"></svg></td>
+			</tr>
+			<tr class="boxrow">
+				<td id="ARC-A"></td><td id="ARC-B"></td>
+			</tr>
+			<tr class="boxrow">
+				<td id="GENE-A"></td><td id="GENE-B"></td>
+			</tr>
+			<tr class="boxrow">
+				<td id="all"></td><td><svg id="all-b" class="allclass"></svg></td>
+			</tr>
+		</table>
+	</div>
+	</div>	
+</body>
+
+<script>
+
+function drawBox(){
+
+function countListElement(toBePlotted,element){
+	var c = 0;
+	var indexList = []
+	for (var i=0;i<toBePlotted.length;i++){if (element == toBePlotted[i]){ c++; indexList.push(i);}}
+	//console.log(indexList);
+	return c;
+	}
+		
+function getLink(d){
+	return document.URL.split("?")[0] + "?" + d.sseqid;}
+
+function highlight(obj){
+   obj.style("fill","blue").style("stroke","purple");
+   obj.attr("r","3");
+   setTimeout(function(){
+   	obj.style("fill","white");
+   	obj.attr("r","2");
+   }, 1000);
+}
+
+var markWidth = 6;
+
+
+function addHit(theList,firstHitList,position){
+	//console.log(theList);
+	$(".hitbox").remove();
+	var toBePlotted = theList.slice(0,position);
+	//console.log(toBePlotted);
+	for (i=0;i<position;i++){
+		var taxid = theList[i];
+		//var indexList = countListElement(toBePlotted,taxid);
+		//console.log(indexList);
+		
+		//var posFactor = indexList.length();
+		var posFactor = countListElement(toBePlotted.slice(0,i+1),taxid);
+		//var j = 0;
+		//for(var j=posFactor-1;j<posFactor;j++){
+		var pos = (posFactor)*2;
+		//console.log(firstHitList[i]);
+		theNode = d3.select("#tax" + taxid)
+				.append("rect")
+				.attr("id","hitBox"+taxid+"-"+i)
+				.attr("class","hitbox")
+				.attr("x",1+pos*markWidth)
+				.attr("y",-2)
+				.attr("width",markWidth-0.5)
+				.attr("height",4)
+				.style("fill",firstHitList[i]==1?"red":"purple")
+				//.on("click", function(){addHit(theList,firstHitList,i)});
+				.on("click", function(){
+					$(".hits").hide();
+					$(".hit"+i).show();
+					});
+
+		//	}
+		}
+
+	var currentNode = d3.select("#node" + theList[position-1]);
+	//console.log("#node" + theList[position-1]);
+	//console.log(currentNode);
+	var currentData = currentNode[0][0]["__data__"]
+	
+	while (currentData.name != "root")
+	{
+
+	var theParent = currentData.parent.name;
+	//console.log(currentNode[0][0]["__data__"].parent.name);
+	var circle = currentNode.select("circle");
+	highlight(circle);
+	currentNode = d3.select("#" + theParent);
+	currentData = currentNode[0][0]["__data__"]
+	}
+}
+
+function removeHit(taxid,position){
+theHit = d3.select("#hitBox"+taxid+"-"+position);
+theHit.remove();
+}
+
+function domainArc(d){
+	return "http://seqdepot.net/api/v1/aseqs/" + d.aseq + ".png"; }
+
+var myspnum = d3.select("#covered_organism_number");
+
+// Permanent titles #############################
+
+d3.select("#EVALUE-A").text("E-value: ");
+d3.select("#SCORE-A").text("Score: ");
+d3.select("#BSCORE-A").text("Bit-score: ");
+d3.select("#PIDENT-A").text("Identity: ");
+d3.select("#QCOV-A").text("Query coverage: ");
+d3.select("#SCOV-A").text("Subject coverage: ");
+d3.select("#ARC-A").text("Domain Architecture: ");
+d3.select("#GENE-A").text("Subject Gene: ");
+// ##############################################
+
+
+// Parameters #################
+
+var directory = "ALLBLASTOUT_E80";
+
+var count = 1;
+var minE = 1;
+var maxScore = maxBitScore = 0;
+
+var full = 500;
+var height = 20;
+// ############################
+
+
+function drawBG(variable,factor){
+	variable.selectAll('svg')
+                .data([1])
+                .enter()
+                .append('rect')
+                .attr("x",0)
+                .attr("y",0)
+                .attr("width",full)
+                .attr("height",height*factor)
+                .style("fill","grey");
+	}
+
+
+
+
+
+
+//var url = "http://leonidas.bio.utk.edu/cgi-bin/enrichCSV.py?f=" + directory + "/" + theFile;
+var url = "http://god.phys.utk.edu/~ogun/cgi-bin/enrichCSV.py?f=" + theFile;
+
+
+var path = directory + "/" + theFile;
+
+var target = path;
+
+//console.log(target);
+d3.json(url,function(data){
+	console.log("data");
+	console.log(data);
+	var spnum = 0;
+	var splist = [];
+	var thelist = [];
+	//console.log(data);
+	var count = 0;
+	var genecount = 0;
+	var genelist = []
+	var taxidList = []
+	var firstHitList = []
+	data.forEach(function(d){
+		genecount++;
+		if (genelist.indexOf(d.gene)<0){
+			genelist.push(d.gene);
+			count += 1;
+			if (splist.indexOf(d.taxid)<0)	{
+				splist.push(d.taxid);
+				spnum += 1;
+				}
+			d.spnum = spnum;
+			d.i = count;
+			d.evalue = +d.evalue;
+			d.bitscore = +d.bitscore;
+			d.pident = +d.pident;
+			d.qend = +d.qend;
+			d.qlen = +d.qlen;
+			d.qstart = +d.qstart;
+			d.score = +d.score;
+			d.send = +d.send;
+			d.sstart = +d.sstart;
+			d.slen = +d.slen;
+			taxidList.push(d.taxid);
+		//	var isFirstHitQuery = d.firstHit[9606] == d.gid1||d.firstHit[9606] == alternativeFirstHit  ? 1:0;
+			//firstHitList.push(isFirstHitQuery);
+			if (d.evalue != 0) {minE = Math.min(minE,d.evalue)}
+			maxScore = Math.max(maxScore,d.score);
+			maxBitScore = Math.max(maxBitScore,d.bitscore);
+			}
+		});
+	var datalength = count;
+	//console.log(datalength);
+	//console.log(genecount);
+	//console.log(firstHitList);
+	// Complete the data ################################
+
+
+	var dat = {};	
+	minE =(-1) * Math.log(minE);
+	dat.maxscore = maxScore;
+	dat.maxbitscore = maxBitScore;
+	// ##################################################
+
+	// console.log(data)
+		
+
+
+	// Draw bars #####################################
+
+        var hitnum = d3.selectAll("#hitnum");
+        hitnum.attr("width",full).attr("height",height);
+        hitnum.selectAll("text")
+                .data(data)
+                .enter()
+                .append("text")
+                .attr("class",function(d){ return ("hit" + d.i + " hits");})
+                .text( function(d) { return d.i; });
+
+
+	var query = d3.selectAll("#query");
+	query.attr("width",full).attr("height",height);
+	query.selectAll("text")
+		.data(data)
+		.enter()
+		.append("text")
+		.attr("class",function(d){ return ("hit" + d.i + " hits");})
+		.text( function(d) { return d.qseqid; });
+	
+	var subject = d3.selectAll("#subject");
+	subject.attr("width",full).attr("height",height);
+	subject.selectAll("text")
+		.data(data)
+		.enter()
+		.append("text")
+		.attr("class",function(d){ return ("hit" + d.i + " hits");})
+		.append("a").attr("xlink:href", getLink)	
+		.text( function(d) { return d.sseqid + " - " + d.sn + "|" +  d.taxid; });
+
+	var eval = d3.selectAll("#EVALUE-A");
+	var sval = d3.select("#SCORE-A");
+	var bval = d3.select("#BSCORE-A");
+	var pival = d3.select("#PIDENT-A");
+	var qcovval = d3.select("#QCOV-A");
+	var scovval = d3.select("#SCOV-A");
+	var arc = d3.select("#ARC-B");
+	var geneB = d3.select("#GENE-B");
+	var all = d3.select("#all");
+	
+	eval.selectAll('text')
+		.data(data)
+		.enter()
+		.append('text')
+		.attr("class",function(d){ return ("hit" + d.i + " hits");})
+		.text(function(d){ return d.evalue; });
+
+	sval.selectAll('text')
+		.data(data)
+		.enter()
+		.append('text')
+		.attr("class",function(d){ return ("hit" + d.i + " hits");})
+		.text(function(d){ return d.score; });
+	
+	bval.selectAll('text')
+		.data(data)
+		.enter()
+		.append('text')
+		.attr("class",function(d){ return ("hit" + d.i + " hits");})
+		.text(function(d){ return d.bitscore; });
+	
+	pival.selectAll('text')
+		.data(data)
+		.enter()
+		.append('text')
+		.attr("class",function(d){ return ("hit" + d.i + " hits");})
+		.text(function(d){ return d.pident; });
+	
+	qcovval.selectAll('text')
+		.data(data)
+		.enter()
+		.append('text')
+		.attr("class",function(d){ return ("hit" + d.i + " hits");})
+		.text(function(d){ return ((d.qend-d.qstart+1)/d.qlen).toFixed(2); });
+	
+	scovval.selectAll('text')
+		.data(data)
+		.enter()
+		.append('text')
+		.attr("class",function(d){ return ("hit" + d.i + " hits");})
+		.text(function(d){ return ((d.send-d.sstart+1)/d.slen).toFixed(2); });
+	
+/*	arc.selectAll('p')
+		.data(data)
+		.enter()
+		.append("img")
+		.attr("class",function(d){ return ("hit" + d.i + " hits");})
+		.attr("src",domainArc);
+	geneB.selectAll('text')
+		.data(data)
+                .enter()
+		.append('text')
+                .attr("class",function(d){ return ("hit" + d.i + " hits");})
+		//.text(function(d){return d.firstHit[9606];});
+*/	
+/*	all.selectAll('text')
+		.data(data)
+		.enter()
+		.append('text')
+                .attr("class",function(d){ return ("hit" + d.i + " hits");})
+		.text(function(d){return d.firstHit[9606];});
+*/	
+	var ebar = d3.selectAll("#EVALUE-B");
+	ebar.attr("width",full).attr("height",height);
+	var sbar = d3.select("#SCORE-B");
+	sbar.attr("width",full).attr("height",height);
+	var bbar = d3.select("#BSCORE-B");
+	bbar.attr("width",full).attr("height",height);
+	var pibar = d3.select("#PIDENT-B");
+	pibar.attr("width",full).attr("height",height);
+	var qcov = d3.select("#QCOV-B");
+	qcov.attr("width",full).attr("height",height/2);
+	var scov = d3.select("#SCOV-B");
+	scov.attr("width",full).attr("height",height/2);
+	
+
+	drawBG(ebar,1);
+	drawBG(sbar,1);
+	drawBG(bbar,1);
+	drawBG(pibar,1);
+	drawBG(qcov,0.5);
+	drawBG(scov,0.5);
+
+	
+
+	ebar.selectAll('svg')
+		.data(data)
+		.enter()
+		.append('rect')
+		.attr("class",function(d){ return ("hit" + d.i + " hits");})
+		.attr("x",0)
+		.attr("y",0)
+		.attr("width",function(d){ 
+	//		console.log(minE); 
+				return (d.evalue == 0 ? full : Math.max(0,(((-1)*Math.log(d.evalue))/minE)*full)); })
+		.attr("height",height)
+		.style("fill",function(d){return (d.evalue == 0 ? "black" : "green");});
+
+	
+
+	sbar.selectAll('svg')
+		.data(data)
+		.enter()
+		.append('rect')
+		.attr("class",function(d){ return ("hit" + d.i + " hits");})
+		.attr("x",0)
+		.attr("y",0)
+		.attr("width",function(d){return (d.score/dat.maxscore)*full;})
+		.attr("height",height)
+		.style("fill","red");
+
+	bbar.selectAll('svg')
+		.data(data)
+		.enter()
+		.append('rect')
+		.attr("class",function(d){ return ("hit" + d.i + " hits");})
+		.attr("x",0)
+		.attr("y",0)
+		.attr("width",function(d){return (d.bitscore/dat.maxbitscore)*full;})
+		.attr("height",height)
+		.style("fill","red");
+	
+	pibar.selectAll('svg')
+		.data(data)
+		.enter()
+		.append('rect')
+		.attr("class",function(d){ return ("hit" + d.i + " hits");})
+		.attr("x",0)
+		.attr("y",0)
+		.attr("width",function(d){return (d.pident/100)*full;})
+		.attr("height",height)
+		.style("fill","red");
+	
+	qcov.selectAll('svg')
+		.data(data)
+		.enter()
+		.append('rect')
+		.attr("class",function(d){ return ("hit" + d.i + " hits");})
+		.attr("x",function(d){return ((d.qstart-1)/d.qlen)*full;})
+		.attr("y",0)
+		.attr("width",function(d){return ((d.qend-d.qstart+1)/d.qlen)*full;})
+		.attr("height",height/2)
+		.style("fill","purple");
+	
+	scov.selectAll('svg')
+		.data(data)
+		.enter()
+		.append('rect')
+		.attr("class",function(d){ return ("hit" + d.i + " hits");})
+		.attr("x",function(d){return ((d.sstart-1)/d.slen)*full;})
+		.attr("y",0)
+		.attr("width",function(d){return ((d.send-d.sstart+1)/d.slen)*full;})
+		.attr("height",height/2)
+		.style("fill","purple");
+	// #################################################
+        $(".hits").hide();
+	$(".hit" + defaultvalue).show();
+	
+	myspnum.selectAll('p')
+		.data(data)
+		.enter()
+		.append('text')
+		.attr("class",function(d){ return ("hit" + d.i + " hits");})
+		.text(function(d){ return d.spnum;});
+	
+var minvalue = 0;
+var maxvalue = datalength;
+//console.log(datalength);
+var defaultvalue = 0;
+var generalcount = defaultvalue;
+
+
+//$(function() {
+	var slider = $( "#slider-range-max" );
+	slider.data(data);
+	slider.slider({
+	      range: "max",
+	      //min: minvalue,
+	      min: minvalue,
+	      max: maxvalue,
+	      value: defaultvalue,
+	      slide: function( event, ui ) {
+		//console.log(ui);
+		//$( "#amount" ).val( ui.value );
+		//$(".text").hide();
+		$(".hits").hide();
+		$(".hit"+ui.value).show();
+		diff = ui.value-generalcount;
+		generalcount = ui.value;
+		addHit(taxidList,firstHitList,ui.value);
+		//removeHit(taxidList[ui.value-1-1],ui.value-1);
+		//removeHit(taxidList[ui.value-1+1],ui.value+1);
+		for(i=taxidList.length-1;i>ui.value-1;i--){
+			removeHit(taxidList[i],i+1);
+			//console.log(i);
+			}
+	//	diff<0 ? disappear(ui.value+1) : appear(ui.value);
+		//HERE GOES THE CRITICAL FUNCTION
+		}
+		});
+	//console.log(slider);	
+		$( "#amount" ).val( $( "#slider-range-max" ).slider( "value" ) );
+	  
+
+
+
+		$(document).keydown(function(e) {
+		    switch(e.which) {
+			case 37: // left
+			//generalcount = decrease(generalcount);
+			slider.slider( "value", generalcount);
+			$( "#amount" ).val( generalcount );
+			break;
+
+			//case 38: // up
+			//break;
+
+			case 39: // right
+			//generalcount = increase(generalcount);
+			slider.slider( "value", generalcount);
+			$( "#amount" ).val( generalcount );
+			break;
+
+			//case 40: // down
+			//break;
+
+			default: return; // exit this handler for other keys
+		    }
+		    e.preventDefault(); // prevent the default action (scroll / move caret)
+		});
+//	});
+
+
+	$(".text").hide();
+ 	$(".hits").hide();
+	$(".circle").hide();
+
+
+});
+
+}
+
+
+
+
+
+var width = 560,
+    height = 600;
+/*
+function getOrder(d):
+	if (d.order){
+		return d.order;}
+	else:
+		var theChildren = d.children;
+		while(!theChildren[0].order)
+			{
+		for (i=0; i<theChildren.length(); i++){
+			theChild 
+*/
+function separation(a, b) {
+  return a.parent == b.parent ? 1 : 1;
+}
+
+function comparator(a, b) {
+  if (a.order || b.order){
+          return d3.ascending(a.order, b.order);}
+  else{
+          return d3.ascending(a.name, b.name);}
+}
+//var cluster = d3.layout.tree()
+var cluster = d3.layout.cluster()
+    .size([height, width - 460])
+    .sort(comparator)
+    .separation(separation);
+
+var diagonal = d3.svg.diagonal()
+    .projection(function(d) { return [d.y, d.x]; });
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height)
+  .append("g")
+    .attr("transform", "translate(40,0)");
+
+
+
+//d3.json("d3test/d3/examples/data/flare.json", function(error, root) {
+//d3.json("E80list.csv.noded.json", function(error, root) {
+d3.json("dendrogram2.json", function(error, root) {
+  //console.log(root);
+  var nodes = cluster.nodes(root);
+  //console.log(nodes);
+  var count = 0;
+  nodes.forEach(function (d){
+	if(!d.name){
+		d.name = "NA" + count;
+		count++;
+		}
+	if(d.children){
+		d.orderList = [];
+		d.order = 999;
+		}
+
+	if(!d.children){
+		theParent = d.parent;
+		while(theParent.parent){
+			theParent['orderList'].push(d.order);
+			theParent.order = Math.min(theParent.order,d.order);
+			theParent = theParent.parent;
+			}
+		}
+		
+	});
+
+//console.log(nodes);
+
+  var nodes = cluster.nodes(root);
+
+/*
+  nodes.forEach(function (d) {
+                if(!d.children){
+                        theobject = {
+                                        name: "NA",
+                                        x:d.x,
+                                        y:d.y+5,
+                                        parent:d,
+                                        depth:d.depth+1
+                                }
+                        d.children = [theobject]
+        nodes.push(theobject);
+                }
+        });
+*/
+
+
+
+  var links = cluster.links(nodes);
+  var link = svg.selectAll(".link")
+      .data(links)
+    .enter().append("path")
+      .attr("class", "link")
+      .attr("d", diagonal);
+
+  var node = svg.selectAll(".node")
+      .data(nodes)
+    .enter().append("g")
+      .attr("class", "node")
+      .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; })
+
+  node.append("circle")
+      .attr("r", 2.0);
+
+  node.append("title")
+      //.text(function(d) { return "translate(" + d.i + "," +  d.y + "," + d.x + ")"; });
+      .text(function(d) { return d.name; });
+      //.text(function(d) { return d.order; });
+
+  node.attr("id",function(d) { return d.children ? d.name : "node" + d.name.split('|')[1]; })
+
+  node.append("g")
+      .attr("id",function(d) { return d.children ? "" : "tax" + d.name.split('|')[1]; })
+      .attr("x",4)
+      .attr("y", -2)
+      .attr("width",100)
+      .attr("height",4)
+      //.attr("transform",function(d){ return "translate(" + d.y + "," + d.x + ")"; })
+ //     .attr("title",function(d){ return d.x + "---" + d.y; })
+     // .attr("y",function(d){ return d.y; })
+     // .attr("x",function(d){ return d.x; })
+   //   .style("fill","red")
+      //.append("rect")
+        //.attr("x",2)
+        //.attr("y",2)
+        //.attr("width",20)
+        //.attr("height",10)
+        //.attr("fill","green")
+      ;
+/*
+  node.append("text")
+      .attr("dx", function(d) { return d.children ? -8 : 8; })
+      .attr("dy", 3)
+      .style("text-anchor", function(d) { return d.children ? "end" : "start"; })
+      .style("font-size","8px")
+      .text(function(d) { return d.children ? "" : d.name; });
+*/
+
+
+
+
+
+function decrease(a){ return Math.max( a-1,minvalue);}
+function increase(a){ return Math.min( a+1,maxvalue);}
+
+maxvalue = 50;
+
+function disappear(value){
+	for (i=value;i<=maxvalue;i++){
+		var id = "#circle" + String(i);
+		$(id).hide();
+		}
+	}
+
+function appear(value){
+	for (i=1;i<=value;i++){
+		var id = "#circle" + String(i);
+
+		$(id).show();
+		}}	;
+
+drawBox();
+
+});
+
+
+</script>
+
+
+</html>

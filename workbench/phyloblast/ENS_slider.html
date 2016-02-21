@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>PHYLOBLAST</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+  <link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
+  <style>
+	 table.fixed {table-layout:fixed; width:200px;}/*Setting the table width is important!*/
+         table.fixed td {overflow:hidden;}/*Hide text outside the cell.*/
+         table.fixed td:nth-of-type(1) {width:50%;}/*Setting the width of column 1.*/
+         table.fixed td:nth-of-type(2) {width:50%;}/*Setting the width of column 2.*/
+  </style>
+  <script>
+
+//var MongoClient = require('mongodb').MongoClient;
+function getUrlVars() {
+		var vars = {};
+		var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,    
+		function(m,key,value) {
+		vars[key] = value;
+		});
+		return vars;
+		}
+
+var vars = getUrlVars();
+if (vars["f"]){
+	var theFile = vars["f"]
+	}
+
+mylist = []
+
+function fetchData(callback){
+	id = '9598';
+	//getAjax();
+	var url = "http://leonidas.bio.utk.edu:27080/taxonomy/name/_find?criteria={\"_id\":" + id + "}"
+	var mydata;
+
+	$.ajax({
+		type: "POST",
+		url: url,
+		dataType: "jsonp",
+		//contentType: "application/json; charset=utf-8",
+		//jsonCallback: "getjson",
+		//ProcessData: true,
+		success: function(data) {
+			//mydata = data;
+		//	mylist.push(data.results[0].sn);
+		//	return mydata; 
+			//alert(JSON.stringify(data));
+			mydata = JSON.stringify(data);
+			//console.log(mydata);
+			if(typeof callback === "function") callback(mydata);
+		//console.log(mydata)
+			},
+		//async: false,
+		error: function(error, data){console.log(error)}
+	     	});
+	//alert(mydata);
+	//return mydata;
+}	
+
+function fetchMongoData(id){
+	//getAjax();
+	var url = "http://leonidas.bio.utk.edu:27080/taxonomy/name/_find?criteria={\"_id\":" + id + "}"
+	var mydata;
+
+	$.ajax({
+		type: "POST",
+		url: url,
+		dataType: "jsonp",
+		//contentType: "application/json; charset=utf-8",
+		//jsonCallback: "getjson",
+		//ProcessData: true,
+		success: function(data) {
+			//mydata = data;
+		//	mylist.push(data.results[0].sn);
+		//	return mydata; 
+			//alert(JSON.stringify(data));
+			mydata = JSON.stringify(data);
+		//console.log(mydata)
+			},
+		async: false,
+		error: function(error, data){console.log(error)}
+	     	});
+	//alert(mydata);
+	return mydata;
+}	
+
+var m;
+//fetchData(function(m){console.log(m);});
+//fetchMongoData('10116');
+
+//var myjson = fetchMongoData("http://leonidas.bio.utk.edu:27080/taxonomy/name/_find?criteria={\"_id\":9598}");
+//var myjson = fetchMongoData("http://leonidas.bio.utk.edu:28017/taxonomy/name/?filter__id=1440662&limit=1");
+//var myjson = fetchMongoData("http://developer.itsmarta.com/BRDRestService/BRDRestService.svc/GetAllBus");
+
+//var myjson;
+/*
+//$.getJSON('http://leonidas.bio.utk.edu:28017/taxonomy/name/?filter__id=9606&limit=1&callback=?', function(data) {
+$.getJSON('http://leonidas.bio.utk.edu:28017/taxonomy/name/?filter__id=9606&limit=1', function(data) {
+//$.getJSON('http://query.yahooapis.com/v1/public/yql?q=select%20%2a%20from%20yahoo.finance.quotes%20WHERE%20symbol%3D%27WRC%27&format=json&diagnostics=true&env=store://datatables.org/alltableswithkeys&callback', function(data) {
+    //data is the JSON string
+	myjson = JSON.stringify(data);
+    });
+*/
+
+
+function drawevalue(currentE,minE){
+        text = '';
+        full = 100;
+        height = 15;
+        y = 0;
+        confidentcolor = "black";
+	color = 'green';
+        backgroundcolor = 'grey';
+	minEscore = (-1) * Math.log(minE);	
+
+        text += '<svg width="'+full+'" height="' + height + '">';
+	if (currentE==0)
+		{
+	        text += '<rect x=0 y='+y+' width='+ full +' height="'+ height +'" style="fill:'+ confidentcolor +';stroke-width:0;stroke:rgb(255,255,255)" />';
+		}
+	else
+		{	
+		representedScore = Math.max(0,((-1)*Math.log(currentE))/minEscore);
+	        text += '<rect x=0 y='+y+' width='+ full +' height="'+ height +'" style="fill:'+ backgroundcolor +';stroke-width:0;stroke:rgb(255,255,255)" />';
+	        text += '<rect x=0 y='+y+' width='+ representedScore*full +' height="'+ height +'" style="fill:'+ color +';stroke-width:0;stroke:rgb(255,255,255)" />';
+		}
+        text += '</svg>';
+
+        return text;
+        }
+
+function drawscore(currentscore,maxscore){
+        text = '';
+        full = 100;
+        height = 15;
+        y = 0;
+        width = (currentscore/maxscore)*full;
+        color = 'red';
+	backgroundcolor = 'grey';
+        text += '<svg width="'+full+'" height="' + height + '">';
+        text += '<rect x=0 y='+y+' width='+ full +' height="'+ height +'" style="fill:'+ backgroundcolor +';stroke-width:0;stroke:rgb(255,255,255)" />';
+        text += '<rect x=0 y='+y+' width='+ width +' height="'+ height +'" style="fill:'+ color +';stroke-width:0;stroke:rgb(255,255,255)" />';
+        text += '</svg>';
+
+        return text;
+        }
+
+
+function drawcoverage(start,end,leng){
+	text = '';
+	full = 100;
+	height = 10;
+	y = 0;
+	width = ((end-start+1)/leng)*full;
+	color = 'purple';
+	backgroundcolor = 'grey';
+	text += '<svg width="'+full+'" height="' + height + '">';
+        text += '<rect x=0 y='+y+' width='+ full +' height="'+ height +'" style="fill:'+ backgroundcolor +';stroke-width:0;stroke:rgb(255,255,255)" />';
+	text += '<rect x="' + (start/leng)*full + '" y="'+y+'" width='+ width +' height="'+ height +'" style="fill:'+ color +';stroke-width:0;stroke:rgb(255,255,255)" />';
+	text += '</svg>';
+
+	return text;
+	}
+
+
+function processData(allText) {
+    var record_num = 12;  // or however many elements there are in each row
+    var allTextLines = allText.split(/\r\n|\n/);
+//    var query = allTextLines[0].split(',')[0]
+    //var entries = allTextLines[0].split(',');
+    var lines = [];
+    var subjectList = [];
+
+    var headings = ['query','subject','E-value', 'bitscore', 'score', 'pident', 'qstart', 'qend', 'qlen', 'sstart', 'send', 'slen'];
+    var mylist = [];
+    mylist[0] = "UNDEFINED";
+    for (i=0;i<allTextLines.length-1;i++) {
+	var values = allTextLines[i].split(',');
+    	var mydict = {};
+        for (var j=0; j<record_num; j++) {
+	    if (headings[j]!="subject" && headings[j]!="query")
+		{
+            	mydict[headings[j]] = parseFloat(values[j]);
+		}
+	    else
+		{
+		thesubject =  values[j]
+		mydict[headings[j]] = thesubject;
+
+		}
+        }
+
+	mydict["qcov"] = ((parseInt(mydict['qend']) - parseInt(mydict['qstart'])) / mydict['qlen']);
+	mydict["scov"] = ((parseInt(mydict['send']) - parseInt(mydict['sstart'])) / mydict['slen']);
+	//mylist.push(mydict);
+	if (subjectList.indexOf(mydict['subject']) < 0){
+		subjectList.push(thesubject);
+		mylist.push(mydict);
+		}
+    }
+     //alert(lines[1]);
+	return mylist;
+}
+
+var thelist;
+var directory = "blast_results";
+//var gi = "32402542";
+
+//$(document).ready(function() {
+    $.ajax({
+        type: "GET",
+        url: directory + "/" + theFile,
+        dataType: "text",
+        success: function(data) {thelist = processData(data);},
+	async: false
+     });
+//});
+
+var minvalue = 0;
+var maxvalue = thelist.length-1;
+var defaultvalue = 10;
+var generalcount = defaultvalue;
+
+function decrease(a){ return Math.max( a-1,minvalue);}
+function increase(a){ return Math.min( a+1,maxvalue);}
+
+function disappear(value){
+        for (i=value;i<=maxvalue;i++){
+		var id = "#circle" + String(i);
+		$(id).hide();
+		}
+    	}
+
+function appear(value){
+        for (i=1;i<=value;i++){
+                var id = "#circle" + String(i);
+
+		$(id).show();
+                }
+        }
+
+;
+  $(function() {
+     var slider = $( "#slider-range-max" ).slider({
+      range: "max",
+      min: minvalue,
+      max: maxvalue,
+      value: defaultvalue,
+      slide: function( event, ui ) {
+        $( "#amount" ).val( ui.value );
+	$(".text").hide();
+	$("#text"+ui.value).show();
+	diff = ui.value-generalcount;
+	generalcount = ui.value;
+	if (diff<0){
+		disappear(ui.value+1);
+		}
+	else if (diff>0){
+	//HERE GOES THE CRITICAL FUNCTION
+			
+		appear(ui.value);
+		}
+	}
+	});
+	
+	$( "#amount" ).val( $( "#slider-range-max" ).slider( "value" ) );
+  
+
+
+
+	$(document).keydown(function(e) {
+	    switch(e.which) {
+		case 37: // left
+		//generalcount = decrease(generalcount);
+		slider.slider( "value", generalcount);
+		$( "#amount" ).val( generalcount );
+		break;
+
+		//case 38: // up
+		//break;
+
+		case 39: // right
+		//generalcount = increase(generalcount);
+		slider.slider( "value", generalcount);
+		$( "#amount" ).val( generalcount );
+		break;
+
+		//case 40: // down
+		//break;
+
+		default: return; // exit this handler for other keys
+	    }
+	    e.preventDefault(); // prevent the default action (scroll / move caret)
+	});
+});
+
+
+
+  </script>
+</head>
+<body>
+ 
+	<p>
+		<label for="amount">Blast hit:</label>
+		<input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+	</p>
+	
+	<div id="slider-range-max"></div>
+	
+	<script>
+
+		var text = '';
+		var maxscore = thelist[1]["score"];
+		var maxbitscore = thelist[1]["bitscore"];
+		var j = 1;
+		minEvalue = 0;
+		while (minEvalue==0)
+			{
+			minEvalue = thelist[j]["E-value"]
+			j++;
+			if (j==maxvalue)
+				{
+				alert("HEY");
+				break;
+				}
+			}
+		console.log(thelist[1])	
+		text += '<div class="permanent" id="query">Query: ' + thelist[1]['query'] + ' </div>';
+
+		for (i=1;i<=maxvalue;i++)
+			{
+			currentDict = thelist[i];
+			maxscore = Math.max(maxscore,currentDict["score"])
+			maxbitscore = Math.max(maxbitscore,currentDict["bitscore"])
+			text += '<div class="text" id="text'+i+'">';
+			text += '<div class="subject">Subject: ' + currentDict["subject"] + ' </div>' ;
+			text += '<div class="organism">Organism: organism </div>' ;
+			text += '<table class="fixed"><tr><td>';
+			text += '<div class="evalue">E-value: ' + currentDict["E-value"] + ' </div>' ;
+			text += '</td><td>';
+			text += drawevalue(currentDict["E-value"],minEvalue);
+		//	text += drawscore(currentDict["E-value"],minEvalue);
+		
+			text += '</tr><tr><td>';
+			text += '<div class="score">Score: ' + currentDict["score"] + ' </div>' ;
+			text += '</td><td>';
+			text += drawscore(currentDict["score"],maxscore);
+			text += '</td></tr><tr><td>';
+			text += '<div class="bitscore">Bitscore: ' + currentDict["bitscore"] + ' </div>' ;
+			text += '</td><td>';
+			text += drawscore(currentDict["bitscore"],maxbitscore);
+			text += '</tr><tr><td>';
+			text += '<div class="pident">Identity: ' + currentDict["pident"] + ' </div>' ;
+			text += '</td><td>';
+			text += drawscore(currentDict["pident"],100);
+			text += '</tr><tr><td>';
+			text += '<div class="qcov">Query Cov: ' + currentDict["qcov"].toFixed(2) + ' </div>' ;
+			//text += '<div class="qfull">Full: ' + currentDict["qstart"] + ' ' + currentDict["qend"] + ' ' + currentDict["qlen"] + ' </div>' ;
+			text += '</td><td>';
+			text += drawcoverage(currentDict["qstart"],currentDict["qend"],currentDict["qlen"]);
+			text += '</tr><tr><td>';
+                        text += '<div class="scov">Subject Cov: ' + currentDict["scov"].toFixed(2) + ' </div>' ;
+			//text += '<div class="sfull">Full: ' + currentDict["sstart"] + ' ' + currentDict["send"] + ' ' + currentDict["slen"] + ' </div>' ;
+                        text += '</td><td>';
+                        text += drawcoverage(currentDict["sstart"],currentDict["send"],currentDict["slen"]);
+			text += '</td></tr></table>';
+			text += '</div>';
+
+			}
+		//console.log(text)	
+		document.write(text);
+
+		for (i=1;i<=maxvalue;i++)
+			{	
+			document.write('<div class="circle" id="circle'+i+'">' + i + '</div>');
+			}
+
+		$(".circle").hide();
+		$(".text").hide();
+		$("#text"+defaultvalue).show();
+	</script> 
+	 
+</body>
+</html>

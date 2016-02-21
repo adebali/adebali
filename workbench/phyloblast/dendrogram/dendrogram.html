@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+.node circle {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.node {
+  font: 10px sans-serif;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1.5px;
+}
+
+</style>
+<body id="thebody">
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+
+var markWidth = 3;
+function addHit(taxid,position){
+theNode = d3.select("#tax" + taxid)
+		.append("rect")
+		.attr("id","hitBox"+taxid+"-"+position)
+		.attr("class","hitbox")
+		.attr("x",1+position*markWidth)
+		.attr("y",-2)
+		.attr("width",markWidth-0.5)
+		.attr("height",4)
+		.style("fill","red");
+
+	}
+function removeHit(taxid,position){
+theHit = d3.select("#hitBox"+taxid+"-"+position);
+theHit.remove();
+}
+
+
+var width = 360,
+    height = 600;
+
+function comparator(a, b) {
+  if (a.order || b.order){
+	  return d3.ascending(a.order, b.order);}
+  else{
+	  return d3.ascending(a.name, b.name);}
+}
+//var cluster = d3.layout.tree()
+var cluster = d3.layout.cluster()
+    .size([height, width - 260])
+    .sort(comparator);
+
+var diagonal = d3.svg.diagonal()
+    .projection(function(d) { return [d.y, d.x]; });
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height)
+  .append("g")
+    .attr("transform", "translate(40,0)");
+
+
+
+//d3.json("d3test/d3/examples/data/flare.json", function(error, root) {
+//d3.json("E80list.csv.noded.json", function(error, root) {
+d3.json("E80list.sorted.json", function(error, root) {
+  var nodes = cluster.nodes(root);
+  console.log(nodes);
+/*
+  nodes.forEach(function (d) {
+		if(!d.children){
+			theobject = {
+					name: "NA",
+					x:d.x,
+					y:d.y+5,
+					parent:d,
+					depth:d.depth+1
+				}
+			d.children = [theobject]
+	nodes.push(theobject);	
+		}
+	});
+*/
+
+
+
+  var links = cluster.links(nodes);
+  var link = svg.selectAll(".link")
+      .data(links)
+    .enter().append("path")
+      .attr("class", "link")
+      .attr("d", diagonal);
+
+  var node = svg.selectAll(".node")
+      .data(nodes)
+    .enter().append("g")
+      .attr("class", "node")
+      .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; })
+
+  node.append("circle")
+      .attr("r", 2.0);
+
+  node.append("title")
+      //.text(function(d) { return "translate(" + d.i + "," +  d.y + "," + d.x + ")"; });
+      .text(function(d) { return d.name; });
+
+  node.append("g")
+      .attr("id",function(d) { return d.children ? "" : "tax" + d.name.split('|')[1]; })
+      .attr("x",4)
+      .attr("y", -2)
+      .attr("width",100)
+      .attr("height",4)
+      //.attr("transform",function(d){ return "translate(" + d.y + "," + d.x + ")"; })
+ //     .attr("title",function(d){ return d.x + "---" + d.y; })
+     // .attr("y",function(d){ return d.y; })
+     // .attr("x",function(d){ return d.x; })
+   //   .style("fill","red")
+      //.append("rect")
+        //.attr("x",2)
+        //.attr("y",2)
+        //.attr("width",20)
+        //.attr("height",10)
+        //.attr("fill","green")
+      ;
+/*
+  node.append("text")
+      .attr("dx", function(d) { return d.children ? -8 : 8; })
+      .attr("dy", 3)
+      .style("text-anchor", function(d) { return d.children ? "end" : "start"; })
+      .style("font-size","8px")
+      .text(function(d) { return d.children ? "" : d.name; });
+*/
+
+
+
+addHit(9606,1);
+addHit(9606,5);
+addHit(9598,2);
+removeHit(9606,5);
+
+});
+
+//d3.select(self.frameElement).style("height", height + "px");
+
+</script>

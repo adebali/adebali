@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>PHYLOBLAST</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <style>
+	 table.fixed {table-layout:fixed; width:100px;}/*Setting the table width is important!*/
+         table.fixed td {overflow:hidden;}/*Hide text outside the cell.*/
+         table.fixed td:nth-of-type(1) {width:50%;}/*Setting the width of column 1.*/
+         table.fixed td:nth-of-type(2) {width:50%;}/*Setting the width of column 2.*/
+  </style>
+
+  <script>
+function getUrlVars() {
+		var vars = {};
+		var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,    
+		function(m,key,value) {
+		vars[key] = value;
+		});
+		return vars;
+		}
+
+var vars = getUrlVars();
+if (vars["f"]){
+	var theFile = vars["f"]
+	}
+
+
+function decrease(a){ return Math.max( a-1,minvalue);}
+function increase(a){ return Math.min( a+1,maxvalue);}
+
+maxvalue = 50;
+
+function disappear(value){
+	for (i=value;i<=maxvalue;i++){
+		var id = "#circle" + String(i);
+		$(id).hide();
+		}
+	}
+
+function appear(value){
+	for (i=1;i<=value;i++){
+		var id = "#circle" + String(i);
+
+		$(id).show();
+		}}	;
+
+var minvalue = 0;
+//var maxvalue = thelist.length-1;
+var defaultvalue = 10;
+var generalcount = defaultvalue;
+
+
+$(function() {
+	var slider = $( "#slider-range-max" ).slider({
+	      range: "max",
+	      //min: minvalue,
+	      min: minvalue,
+	      max: maxvalue,
+	      value: defaultvalue,
+	      slide: function( event, ui ) {
+		$( "#amount" ).val( ui.value );
+		$(".text").hide();
+		$(".hits").hide();
+		$(".hit"+ui.value).show();
+		diff = ui.value-generalcount;
+		generalcount = ui.value;
+		diff<0 ? disappear(ui.value+1) : appear(ui.value);
+		//HERE GOES THE CRITICAL FUNCTION
+		}
+		});
+		
+		$( "#amount" ).val( $( "#slider-range-max" ).slider( "value" ) );
+	  
+
+
+
+		$(document).keydown(function(e) {
+		    switch(e.which) {
+			case 37: // left
+			//generalcount = decrease(generalcount);
+			slider.slider( "value", generalcount);
+			$( "#amount" ).val( generalcount );
+			break;
+
+			//case 38: // up
+			//break;
+
+			case 39: // right
+			//generalcount = increase(generalcount);
+			slider.slider( "value", generalcount);
+			$( "#amount" ).val( generalcount );
+			break;
+
+			//case 40: // down
+			//break;
+
+			default: return; // exit this handler for other keys
+		    }
+		    e.preventDefault(); // prevent the default action (scroll / move caret)
+		});
+	});
+
+
+
+		$(".circle").hide();
+
+
+	</script>
+</head>
+<body>
+	<div id="slider-range-max"></div>
+	<div id="box">
+		<table border="1">
+                        <tr class="boxrow">
+                                <td>Query: </td><td id = "query"></td>
+                        </tr>
+                        <tr class="boxrow">
+                                <td>Subject: </td><td id = "subject"></td>
+                        </tr>
+			<tr class="boxrow">
+				<td id="EVALUE-A"></td><td><svg id="EVALUE-B" class="BAR1"></svg></td>
+			</tr>
+			<tr class="boxrow">
+				<td id="SCORE-A"></td><td><svg id="SCORE-B" class="BAR1"></svg></td>
+			</tr>
+			<tr class="boxrow">
+				<td id="BSCORE-A"></td><td><svg id="BSCORE-B" class="BAR1"></svg></td>
+			</tr>
+			<tr class="boxrow">
+				<td id="PIDENT-A"></td><td><svg id="PIDENT-B" class="BAR1"></svg></td>
+			</tr>
+			<tr class="boxrow">
+				<td id="QCOV-A"></td><td><svg id="QCOV-B" class="BAR2"></svg></td>
+			</tr>
+			<tr class="boxrow">
+				<td id="SCOV-A"></td><td><svg id="SCOV-B" class="BAR2"></svg></td>
+			</tr>
+		</table>
+	</div>	
+	<div id="DENEME"></div>	
+</body>
+<script>
+
+// Add Slider ############################
+
+d3.select("body")
+	.append("div")
+	.attr("id","slider-range-max");
+// ######################################
+
+
+
+
+
+// Permanent titles #############################
+
+d3.select("#EVALUE-A").text("E-value: ");
+//d3.select("#EVALUE-A");
+d3.select("#SCORE-A").text("Score: ");
+d3.select("#BSCORE-A").text("Bit-score: ");
+d3.select("#PIDENT-A").text("Identity: ");
+d3.select("#QCOV-A").text("Query coverage: ");
+d3.select("#SCOV-A").text("Subject coverage: ");
+// ##############################################
+
+
+// Parameters #################
+
+var directory = "blast_results";
+
+var count = 1;
+var minE = 1;
+var maxScore = maxBitScore = 0;
+
+var full = 200;
+var height = 20;
+// ############################
+
+
+function drawBG(variable,factor){
+	variable.selectAll('svg')
+                .data([1])
+                .enter()
+                .append('rect')
+                .attr("x",0)
+                .attr("y",0)
+                .attr("width",full)
+                .attr("height",height*factor)
+                .style("fill","grey");
+	}
+
+
+d3.csv(directory + "/file0.csv",function(data){
+	var thelist = [];
+
+	// Complete the data ################################
+	data.forEach(function(d){
+		d3.json('http://leonidas.bio.utk.edu/cgi-bin/api.py?d=ENS_E80&c=ids&id='+d.sseqid,function(p){
+			 d.taxid = p.taxid;
+			 d.gene = p.gene;
+			 console.log(p);
+		});
+		//console.log(d.gene);
+		if(thelist.indexOf(d.gene)<0)
+			{
+			d.evalue = +d.evalue;
+			//console.log(Math.min(minE,d.evalue));
+			
+			if (d.evalue != 0) {minE = Math.min(minE,d.evalue)}
+			maxScore = Math.max(maxScore,d.score)
+			maxBitScore = Math.max(maxBitScore,d.bitscore)
+
+			thelist.push(d.gene);
+			d.i = count;
+			count += 1;
+			}
+		else 
+			{
+			d = "undefined";
+			}
+		})
+
+	var dat = {};	
+	minE =(-1) * Math.log(minE);
+	dat.maxscore = maxScore;
+	dat.maxbitscore = maxBitScore;
+	// ##################################################
+
+	//console.log(data)
+		
+
+
+	// Draw bars #####################################
+
+	var subject = d3.selectAll("#subject");
+	subject.attr("width",full).attr("height",height);
+	subject.selectAll("text")
+		.data(data)
+		.enter()
+		.append("text")
+		.attr("class",function(d){ return ("hit" + d.i + " hits");})
+		.text( function(d) { return d.sseqid + " - " + d.taxid + " - " + d.i; });
+
+	var eval = d3.selectAll("#EVALUE-A");
+	var sval = d3.select("#SCORE-A");
+	var bval = d3.select("#BSCORE-A");
+	var pival = d3.select("#PIDENT-A");
+	var qcovval = d3.select("#QCOV-A");
+	var scovval = d3.select("#SCOV-A");
+	
+	eval.selectAll('text')
+		.data(data)
+		.enter()
+		.append('text')
+		.attr("class",function(d){ return ("hit" + d.i + " hits");})
+		.text(function(d){ return d.evalue; });
+
+	sval.selectAll('text')
+		.data(data)
+		.enter()
+		.append('text')
+		.attr("class",function(d){ return ("hit" + d.i + " hits");})
+		.text(function(d){ return d.score; });
+	
+	bval.selectAll('text')
+		.data(data)
+		.enter()
+		.append('text')
+		.attr("class",function(d){ return ("hit" + d.i + " hits");})
+		.text(function(d){ return d.bitscore; });
+	
+	pival.selectAll('text')
+		.data(data)
+		.enter()
+		.append('text')
+		.attr("class",function(d){ return ("hit" + d.i + " hits");})
+		.text(function(d){ return d.pident; });
+	
+	qcovval.selectAll('text')
+		.data(data)
+		.enter()
+		.append('text')
+		.attr("class",function(d){ return ("hit" + d.i + " hits");})
+		.text(function(d){ return ((d.qend-d.qstart)/d.qlen).toFixed(2); });
+	
+	scovval.selectAll('text')
+		.data(data)
+		.enter()
+		.append('text')
+		.attr("class",function(d){ return ("hit" + d.i + " hits");})
+		.text(function(d){ return ((d.send-d.sstart)/d.slen).toFixed(2); });
+
+	var ebar = d3.selectAll("#EVALUE-B");
+	ebar.attr("width",full).attr("height",height);
+	var sbar = d3.select("#SCORE-B");
+	sbar.attr("width",full).attr("height",height);
+	var bbar = d3.select("#BSCORE-B");
+	bbar.attr("width",full).attr("height",height);
+	var pibar = d3.select("#PIDENT-B");
+	pibar.attr("width",full).attr("height",height);
+	var qcov = d3.select("#QCOV-B");
+	qcov.attr("width",full).attr("height",height/2);
+	var scov = d3.select("#SCOV-B");
+	scov.attr("width",full).attr("height",height/2);
+	
+
+	drawBG(ebar,1);
+	drawBG(sbar,1);
+	drawBG(bbar,1);
+	drawBG(pibar,1);
+	drawBG(qcov,0.5);
+	drawBG(scov,0.5);
+
+	
+
+	ebar.selectAll('svg')
+		.data(data)
+		.enter()
+		.append('rect')
+		.attr("class",function(d){ return ("hit" + d.i + " hits");})
+		.attr("x",0)
+		.attr("y",0)
+		.attr("width",function(d){ 
+	//		console.log(minE); 
+	//			return (d.evalue == 0 ? full : Math.max(0,(((-1)*Math.log(d.evalue))/minE)*full)); })
+				return (1 ? full : Math.max(0,(((-1)*Math.log(d.evalue))/minE)*full)); })
+		.attr("height",height)
+		.style("fill",function(d){return (d.evalue == 0 ? "black" : "green");});
+
+	sbar.selectAll('svg')
+		.data(data)
+		.enter()
+		.append('rect')
+		.attr("class",function(d){ return ("hit" + d.i + " hits");})
+		.attr("x",0)
+		.attr("y",0)
+		.attr("width",function(d){return (d.score/dat.maxscore)*full;})
+		.attr("height",height)
+		.style("fill","red");
+
+	bbar.selectAll('svg')
+		.data(data)
+		.enter()
+		.append('rect')
+		.attr("class",function(d){ return ("hit" + d.i + " hits");})
+		.attr("x",0)
+		.attr("y",0)
+		.attr("width",function(d){return (d.bitscore/dat.maxbitscore)*full;})
+		.attr("height",height)
+		.style("fill","red");
+	
+	pibar.selectAll('svg')
+		.data(data)
+		.enter()
+		.append('rect')
+		.attr("class",function(d){ return ("hit" + d.i + " hits");})
+		.attr("x",0)
+		.attr("y",0)
+		.attr("width",function(d){return (d.pident/100)*full;})
+		.attr("height",height)
+		.style("fill","red");
+	
+	qcov.selectAll('svg')
+		.data(data)
+		.enter()
+		.append('rect')
+		.attr("class",function(d){ return ("hit" + d.i + " hits");})
+		.attr("x",function(d){return (d.qstart/d.qlen)*full;})
+		.attr("y",0)
+		.attr("width",function(d){return ((d.qend-d.qstart)/d.qlen)*full;})
+		.attr("height",height/2)
+		.style("fill","purple");
+	
+	scov.selectAll('svg')
+		.data(data)
+		.enter()
+		.append('rect')
+		.attr("class",function(d){ return ("hit" + d.i + " hits");})
+		.attr("x",function(d){return (d.sstart/d.slen)*full;})
+		.attr("y",0)
+		.attr("width",function(d){return ((d.send-d.sstart)/d.slen)*full;})
+		.attr("height",height/2)
+		.style("fill","purple");
+	// #################################################
+        $(".hits").hide();
+	$(".hit" + defaultvalue).show();
+
+});
+
+</script>
+
+
+</html>

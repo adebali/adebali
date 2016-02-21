@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+	<title>D3test</title>
+
+	<script type="text/javascript" src="d3/d3.js"></script>
+	
+	<style type="text/css">
+
+	body {
+	  font: 10px sans-serif;
+	}
+
+	svg {
+	  shape-rendering: crispEdges;
+	}
+
+	.chart div {
+		background-color: steelblue;
+		text-align: right;
+		padding: 3px;
+		margin: 1px;
+		color: white;
+	}
+
+    </style>
+	
+</head>
+<body>
+	<script type="text/javascript" charset="utf-8">
+		var data = [4, 8, 15, 16, 23, 42];
+		var chart = d3.select("body")
+			.append("div")
+				.attr("class", "chart");
+		var x = d3.scale.linear()
+				.domain([0, d3.max(data)])
+				.range(['0px', '420px']);
+		chart.selectAll("div")
+				.data(data)
+			.enter().append("div")
+				.style("width", x)
+				.text(function(d) { return d;});	
+	</script>
+</body>
+</html>
