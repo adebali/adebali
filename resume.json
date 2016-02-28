@@ -107,6 +107,11 @@
 	"url":"#"
 	},
 	{
+	"img":"images/home/npc1-press.jpg",
+	"alt":"Our NPC1 work in press!",
+	"url":"http://tntoday.utk.edu/2016/02/18/researchers-develop-predict-diseasecausing-mutations-human-genes"
+	},
+	{
 	"img":"images/home/resume.jpg",
 	"alt":"Resume",
 	"url":"javascript:switchPage(1);"
