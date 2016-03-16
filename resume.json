@@ -575,7 +575,7 @@
   ],
   "publications": [
     {
-      "name": "Aquerium: a web-based platform for phylogenetic profiling.",
+      "name": "Aquerium: a web-based platform for visualizing and comparing phylogenetic profiles.",
       "authorOA": "Adebali O.*",
       "authors2": " & Zhulin I.B.",
       "publisher": "(under review)",
@@ -586,11 +586,11 @@
       "authors1": "Upadhyay A.A., Fleetwood, A.D., ",
       "authorOA": "Adebali, O.",
       "authors2": ", Finn, R. & Zhulin, I.B.*",
-      "publisher": "PLOS Computational Biology (under revision)",
+      "publisher": "PLOS Computational Biology (in press)",
       "YEAR": 2016
     },
     {
-      "name": "Establishing precise evolutionary history of a gene improves predicting disease-causing missense mutations.",
+      "name": "Establishing the precise evolutionary history of a gene improves predicting disease-causing missense mutations.",
       "authorOA": "Adebali, O.",
       "authors2": ", Reznik A.O., Ory D.S. & Zhulin, I.B.*",
       "publisher": "Genetics in Medicine",
@@ -624,7 +624,8 @@
         "Perl",
         "C",
         "C++",
-        "Fortran"
+        "Fortran",
+        "NodeJS"
       ]
     },
     {
@@ -652,7 +653,7 @@
       "name": "Database Management",
       "keywords": [
         "MongoDB",
-        "mySQL"
+        "PostgreSQL"
       ]
     },
     {
@@ -983,6 +984,16 @@
         "collapsable tree",
         "d3",
         "domain architectures"
+      ]
+    },
+	{
+      "name": "TreeRep",
+      "img": "https://bitbucket.org/repo/xpr9ke/images/520014109-image.png",
+      "url": "https://bitbucket.org/adebali/treerep",
+      "text": "Reducing redundacy in sequence sets is an important process to be able to retrieve a representative subset. This tool takes a phylogenetic tree as an input and outputs the representative sequences by considering their evolutionary relationships.",
+      "keywords": [
+        "phylogenetics",
+        "representatives"
       ]
     }
   ]
