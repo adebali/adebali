@@ -60,8 +60,8 @@
 		"First, I started working with Dr. Brynn Voy on an exciting project investigating the low-dose radiation effect on the immune system in mice.",
 		"Secondly, I worked in Dr Shawn Campagna group in Chemistry department. Until I joined his lab I had never considered myself in a chemistry laboratory. I attempted to quantify lipids with LC-MS. Rotation had to end when I was very close to getting the product.",
 		"Thirdly, I worked in to be my home lab. I am challenged by identifying CheW role in chemotaxis.",
-		"In my final rotation, I was with Dr. Mike Langston in the department of electrical engineering and computer science. Here, I learned little about graph theory and clique analysis.",
-		"Rotations were great opportunity to select the lab that I was going to work for during Ph.D. When I look back, I feel glad to choose Igor's group as my home lab."
+		"In my final rotation, I worked with Dr. Mike Langston in the department of electrical engineering and computer science. Here, I learned about graph theory and clique analysis.",
+		"Rotations were great opportunity to select the lab that I was going to work for during Ph.D. When I look back, I feel glad to choose Igor's group as my home lab.."
 	],
 	"date":"August, 2011",
 	"img":"images/timeline/ut.png",
@@ -69,7 +69,7 @@
 	},
     {
 	"title":"Teaching",
-	"text":"I was teaching assistant of the General Genetics class at UT for 5 semesters. I lead the discussion sections. I worked with Dr. Albrecht von Arnim, Dr. Bruce McKee, Dr. Andreas Nebenführ, Dr. Su Chunlei and Dr. Ben Keck. I also developed discussion section curriculum when adapting to a new text book.",
+	"text":"I was a teaching assistant of the General Genetics class at UT for 5 semesters. I lead the discussion sections. I worked with Dr. Albrecht von Arnim, Dr. Bruce McKee, Dr. Andreas Nebenführ, Dr. Su Chunlei and Dr. Ben Keck. I also developed discussion section curriculum when adapting to a new text book.",
 	"date":"July, 2012",
 	"img":"images/timeline/teaching.png",
 	"code":"cd-location"
@@ -77,8 +77,8 @@
     {
 	"title":"Oak Ridge National Laboratory",
 	"text":[
-		"This is the time that my research skills start to improve exponentially, as I became a research assistant. Though, I enjoyed teaching so far, I enjoyed to focus on only research, with no teaching reqiurements.",
-		"Our lab got a new space in ORNL. Though we kept the lab in UT, ORNL became our primary research space." 
+		"This was the time that my research skills start to improve exponentially, as I became a research assistant. Though, I enjoyed teaching so far, I enjoyed to focus on only research, with no teaching reqiurements.  ",
+		"Our lab got a new space in ORNL. Though we kept the lab in UT, ORNL became our primary research space. " 
 		],
 	"date":"July, 2013",
 	"img":"images/timeline/ornl.png",
@@ -93,7 +93,7 @@
 	},
     {
 	"title":"Postdoctoral Fellowship",
-	"text":"A long student life ends, and a new chapter begins.",
+	"text":"The student life ends here, and a new chapter begins.",
 	"date":"December, 2015",
 	"img":"images/timeline/postdoc.png",
 	"code":"cd-location"
@@ -240,16 +240,34 @@
         "logoName": "fa fa-skype left"
       },
       {
-        "network": "google-plus",
-        "username": "ogunadebali",
-        "url": "https://plus.google.com/u/0/111772231545299256693",
-        "logoName": "fa fa-google-plus"
-      },
-      {
         "network": "twitter",
         "username": "compGenomics",
         "url": "https://twitter.com/compgenomics",
         "logoName": "fa fa-twitter"
+      },
+      {
+        "network": "orcid",
+        "username": "0000-0001-9213-4070",
+        "url": "http://orcid.org/0000-0001-9213-4070",
+        "logoName": "ai ai-orcid"
+      },
+      {
+        "network": "google-scholar",
+        "username": "adebali",
+        "url": "https://scholar.google.co.uk/scholar?q=author%3AAdebali&btnG=&hl=en&as_sdt=0%2C43",
+        "logoName": "ai ai-google-scholar-square",
+        "google-plus": {
+          "network": "google-plus",
+          "username": "ogunadebali",
+          "url": "https://plus.google.com/u/0/111772231545299256693",
+          "logoName": "fa fa-google-plus"
+        }
+      },
+      {
+        "network": "researchGate",
+        "username": "",
+        "url": "https://www.researchgate.net/profile/Oguen_Adebali",
+        "logoName": "ai ai-researchgate-square"
       }
     ]
   },
@@ -334,6 +352,44 @@
     }
   ],
   "conferences": [
+    {
+      "YEAR": "2016",
+      "authors": "Ogun Adebali and Igor B. Zhulin",
+      "title": "Establishing precise evolutionary history in predicting variant effects",
+      "summary": "Poster to be presented in Gordon Research Conference: Human Single Nucleotide Polymorphisms & Disease, South Hadley, Massachusetts"
+    },    
+    {
+      "YEAR": "2016",
+      "authors": "Ogun Adebali, Davi R. Ortega, and Igor B. Zhulin",
+      "title": "A web-based sensitive domain search center",
+      "summary": "Poster presented in UT-KBRIN Bioinformatics Summit, Cadiz, Kentucky",
+      "img": [
+        {
+          "src": "images/UTKBRIN.jpg",
+          "alt": "Poster presentation @ Cadiz, Kentucky",
+          "first": true
+        }
+      ]
+    },    
+    {
+      "YEAR": "2016",
+      "authors": "Ogun Adebali",
+      "title": "The Importance of Precise Evolutionary Information in Health and Disease",
+      "summary": "Talk at the Graduate School of Medicine - UT Medical Center, Knoxville, Tennessee",
+      "img": [
+        {
+          "src": "images/GSM.jpg",
+          "alt": "Talk at the Graduate School of Medicine @ UT Medical Center, Knoxville, Tennessee",
+          "first": true
+        }
+      ]
+    },    
+    {
+      "YEAR": "2016",
+      "authors": "Ogun Adebali",
+      "title": "Applications of Protein Informatics in Basic and Biomedical Research",
+      "summary": "Talk at the Max Planck Institute of Molecular Cell Biology and Genetics, Dresden, Germany"
+    },
     {
       "YEAR": "2014",
       "authors": "Ogun Adebali, Davi R. Ortega, and Igor B. Zhulin",
@@ -478,7 +534,7 @@
       },
       "studyType": "B.Sc.",
       "startDate": "2006-09-16",
-      "endDate": "2011-07-03",
+      "endDate": "2011-06-21",
       "gpa": "3.35",
       "courses": []
     }
@@ -504,7 +560,7 @@
     },
     {
       "title": "Graduation with Honors",
-      "date": "2011-07-03",
+      "date": "2011-06-21",
       "awarder": "Middle East Technical University"
     },
     {
@@ -586,7 +642,8 @@
       "authors1": "Upadhyay A.A., Fleetwood, A.D., ",
       "authorOA": "Adebali, O.",
       "authors2": ", Finn, R. & Zhulin, I.B.*",
-      "publisher": "PLOS Computational Biology (in press)",
+      "publisher": "PLOS Computational Biology",
+      "url":"http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004862",
       "YEAR": 2016
     },
     {
@@ -671,7 +728,7 @@
     },
     {
       "language": "German",
-      "fluency": "Elementary"
+      "fluency": "Beginner"
     },
     {
       "language": "Turkish",
@@ -872,6 +929,7 @@
       ]
     }
   ],
+  "workbench_intro" : "The tools presented here are just to give idea of what we can do about visualizing the biological data on web. They are neither stable nor guaranteed for a scientific analysis. However, I am open to develop them if I see enough interest. Please contact with me if you feel like they can be useful to you.",
   "effort": [
     {
       "name": "BlastCover",
@@ -986,7 +1044,7 @@
         "domain architectures"
       ]
     },
-	{
+  {
       "name": "TreeRep",
       "img": "https://bitbucket.org/repo/xpr9ke/images/520014109-image.png",
       "url": "https://bitbucket.org/adebali/treerep",
@@ -994,6 +1052,18 @@
       "keywords": [
         "phylogenetics",
         "representatives"
+      ]
+    },
+	{
+      "name": "Dared",
+      "img": "images/workbench/dared.png",
+      "url": "https://bitbucket.org/adebali/dared",
+      "text": "When searching 'similar' protein sequences wtih BLAST or PSI-BLAST, it would be useful to visualize the domain architectures of the hits to make sure that the hit is really similar to your query. In many cases only partial of the hit is similar to the query. Especially in PSI-BLAST deciding on whther to include the hit in the next iteration is critical. Displaying the domain organizations will help to decide if the hit is not a false positive. Dared (Domain ArchitectuRe EnhanceD) search is a chome extension that can be used when visualizing the blast results in the NCBI web site.",
+      "keywords": [
+        "domain architecture",
+        "Google Chrome extension",
+        "ncbi blast",
+        "psi-blast"
       ]
     }
   ]
