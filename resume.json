@@ -6,7 +6,7 @@
   "timeline":[
     {
 	"title":"Hello, world!",
-	"text":"@Izmir, Turkey.",
+	"text":"@Izmir, Turkey. ",
 	"date":"July, 1988",
 	"img":"images/timeline/izmir.png",
 	"code":"cd-location"
@@ -250,6 +250,12 @@
         "username": "0000-0001-9213-4070",
         "url": "http://orcid.org/0000-0001-9213-4070",
         "logoName": "ai ai-orcid"
+      }, 
+      {
+        "network": "pubmed",
+        "username": "adebali",
+        "url": "http://www.ncbi.nlm.nih.gov/pubmed/?term=Adebali",
+        "logoName": "ai ai-pubmed"
       },
       {
         "network": "google-scholar",
@@ -279,8 +285,8 @@
       },
       "position": "Postdoctoral Research Associate",
       "startDate": "2015-12-12",
-      "endDate": "now",
-      "summary": " Research in Computational Genomics Group, IT management",
+      "endDate": "2016-09-30",
+      "summary": " Research in Computational Genomics Group, IT management @ Igor Zhulin lab",
       "highlights": [
         "G-protein coupled receptors",
         "Missense mutation assessment",
@@ -296,7 +302,7 @@
       "position": "Graduate Research Assistant",
       "startDate": "2014-08-01",
       "endDate": "2015-12-11",
-      "summary": "Research in Computational Genomics Group",
+      "summary": "Research in Computational Genomics Group @ Igor Zhulin lab",
       "highlights": [
         "Protein domains",
         "Human disease prediction",
@@ -356,13 +362,13 @@
       "YEAR": "2016",
       "authors": "Ogun Adebali and Igor B. Zhulin",
       "title": "Establishing precise evolutionary history in predicting variant effects",
-      "summary": "Poster to be presented in Gordon Research Conference: Human Single Nucleotide Polymorphisms & Disease, South Hadley, Massachusetts"
+      "summary": "Talk at the Gordon Research Conference: Human Single Nucleotide Polymorphisms & Disease, South Hadley, Massachusetts"
     },    
     {
       "YEAR": "2016",
       "authors": "Ogun Adebali, Davi R. Ortega, and Igor B. Zhulin",
       "title": "A web-based sensitive domain search center",
-      "summary": "Poster presented in UT-KBRIN Bioinformatics Summit, Cadiz, Kentucky",
+      "summary": "Poster presented at the UT-KBRIN Bioinformatics Summit, Cadiz, Kentucky",
       "img": [
         {
           "src": "images/UTKBRIN.jpg",
@@ -422,7 +428,7 @@
       "YEAR": "2011",
       "authors": "Ogun Adebali, Yener Tuncel, Tolga Can and Yesim A. Son",
       "title": "Applications of Bioinformatics for Synthetic Biology",
-      "summary": "Roundtable organized in the 6th International Symposium on Health Informatics and Bioinformatics, Izmir, Turkey",
+      "summary": "Roundtable organized at the 6th International Symposium on Health Informatics and Bioinformatics, Izmir, Turkey",
       "img": [
         {
           "src": "images/HIBIT11/HIBIT-1.JPG",

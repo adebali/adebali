@@ -1,0 +1,24 @@
+Protein Domains
+
+Domains help us understand protein function and origin. Statistical models (matrices or HMMs) work well in representing domains. Domain identification in proteins is one of my interests as they can define proteins. Especially some complex proteins composed of multiple domains, are identified based on their domain archirectures. Specific domain combinations perform specific functions. Therefore, studies on domain architectures are helpful in revealing function and homology. Recently model-to-model comparisons emerged as a sensitive method to identify remote homology.
+
+Phylogenetics and Orthology
+
+Orthologous genes are products of a same common ancestor and derived by s speciation event. Paralogs on the other hand, are related through gene duplucation in a current or an ancestral organism. Orthologous protein tend to conserve the same function while paralogs are likle to diverge. Current orthology identifiaction methods result in one-to-many orthologous relationships as well as one-to-one. In the case of one-to-one orthology, the picture is clear. However, one-to-many orthologs bring some problems in grouping functionally equivalent members. Phylogenetics is a great method to distinguish orthologs from paralogs. It is also powerful in distinguishing functionally equivalent groups within co-orthologs. I am interested in developing and aplying the approach of functionally-equivalent orthologous identification.
+
+Phylogenetic Profiling
+
+Genes that work in the same biochemical pathway are found together in a genome. If functionally interacting genes are mutually exclusive, they are also lost together in genomes that do not need the particular biochemical pathway process. Therefore, if observed, coevolution patterns of genes/proteins indicate a likelihood of functional interaction. I am interested in building large-scale phylogenetic profiles of orthologous groups. Profile-profile comparison of orthologous groups will indicate the likelihood of gene interaction.
+
+Microbial signal transduction
+
+
+
+
+G Protein Coupled Receptors (GPCRs)
+
+As the largest protein familiy in human, GPCRs attract scientists' attention. Though they are complex and diver diverse, they are well studied because of their potential in being drug targets. Approximately half of the current over-counter medicines target one of our GPCRs. Despite being well studied, GPCRs still lack precisely defined characters in terms of functionally important and specific amino acids. My interest in GPCRs is to reveal these residues, so that they can be targetted in receptor-specific drug design studies.
+
+
+
+

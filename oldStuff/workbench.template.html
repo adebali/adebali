@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{basics.name}}</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <link href='//fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/lightbox.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <style>
+
+    		ul {
+			margin-top:0em;
+		}
+		body {
+			font-size: 62.5%;
+			font-family: Montserrat;
+			color: #333333;
+		}
+		.picture {
+			border-radius: 50%;
+			margin: 0 auto;
+		}
+		a {
+			color: #333333;
+			text-decoration: none;
+		}
+		a:visited {
+			color: #333333;
+			//color: #4e4e4e;
+		}
+		a:hover {
+			color: #4e4e4e;
+			text-decoration: underline;
+		}
+		
+		.header {
+			text-align:center;
+			font-size: 2em;
+			margin-top:1em;
+			margin-left:5%;
+			margin-right:5%;
+		}
+		h1 {
+			font-size:3em;
+			margin-bottom:0;
+		}
+		.profile {
+			font-family: Montserrat;
+			font-size: 1em;
+			margin:0;
+		}
+
+		.contact-header {
+			font-weight:bold;
+		}
+		.label {
+			margin-top: 0;
+			margin-bottom: 1em;
+		}
+		.fa {
+			font-size:2em;
+		}
+		.left {
+			font-size: 1em;
+		}
+		.main {
+			margin 0 auto;
+			margin-left: 10%;
+			margin-right: 10%;
+			margin-bottom: 50px;
+		}
+		h3a {
+			font-size:2em;
+			margin-bottom:3em;
+
+		}
+		h2 {
+			font-size: 3.5em;
+			margin-top:1.5em;
+		}
+		h3 {
+			font-size:2em;
+			margin-bottom:0;
+		}
+		h4 {
+			color: #4e4e4e;
+			font-size:1.5em;
+			margin-top:0;
+			margin-bottom:0;
+		}
+		h5 {
+			margin-top:0;
+			font-size:1.5em;
+		}	
+		.skills {
+			margin-bottom: 10px;
+		}
+		p {
+			font-family: 'Open Sans';
+			font-size: 2em;
+		}
+		li {
+			font-family: 'Open Sans';
+			font-size: 1.5em;
+		}
+		.keywords {
+			background-color: #333333;
+			color:#fff;
+			padding: 6px;
+			font-size: 1.2em;
+			margin-bottom: 5px;
+			margin-left: 5px;
+			display:inline-block;
+		}
+		blockquote {
+			margin: 2em 10px;
+  			padding: 1em 10px;
+			border-left: 10px solid #edf0f5;
+			font-family: 'Open Sans';
+			font-size: 1.5em;
+		}
+		blockquote .name {
+			font-weight:bold;
+			font-family: "Montserrat";
+		}
+		.responsive-show {
+			display:none;
+		}
+		@media (max-width: 1000px) {
+  			.header {
+    			font-size: 1.66em;
+  			}
+  			h2 {
+  				font-size: 3em;
+  			}
+		}
+		
+		img.gif {
+			width: 100px;
+			heigth: 100px;
+			}
+		
+		
+		@media (max-width: 500px) {
+			p {
+				font-size:1.2em;
+			}
+			li {
+				font-size:1.2em;
+			}
+			blockquote {
+				font-size:1.2em;
+			}
+			h2 {
+				font-size:2.3em;
+			}
+			.responsive-hidden {
+				display:none;
+				visibility: hidden;
+			}
+			.responsive-show {
+				display:inline;
+				visibility: visible;
+			}
+			
+		}
+    </style>
+	<script src= "//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+  </head>
+  <body>
+
+	<div class="main" style="margin-bottom:0;" align="center">
+	<h3a><a href="index.html">Resume</a></h3a>
+	<h3a> | </h3a>
+	<h3a><a href="blog.html">Blog</a></h3a>
+
+	</div>
+
+	<div class= "header">
+		<h3 style="margin-bottom:0" class= "label">Examples from my workbench
+			{{#basics.profiles}}
+			<a href= "{{url}}" target="_blank"><i class= "{{logoName}}" style="margin-left:20px;margin-right:20px;font-size:1em"></i></a>
+			<!--<a href= "{{url}}" target= "_blank" class= "profile"><i class= "{{logoName}}"></a>-->
+			{{/basics.profiles}}
+
+		
+		</h3>
+		<div id= "contact">
+			<br>
+			{{#emailBool}}
+			<div class= "contact-header">
+				 <a href= "mailto:{{basics.email}}" target= "_blank">{{basics.email}}</a> <span class= "responsive-show"></span>			
+			</div>
+			{{/emailBool}}
+		</div>		
+	</div>
+	
+	<div class= "main">
+		{{#effortBool}}
+		<div id= "about">
+			{{#effort}}			
+				<h2>{{name}}</h2>
+				<table>
+				<tr>
+					<td><img class="gif" src="{{img}}"></img></td>
+					<td><p>{{text}}</p></td>
+				</tr>
+				</table>
+				 {{#keywords}}
+				 <span class= "keywords">{{.}}</span>
+				 {{/keywords}}
+			{{/effort}}
+		</div>
+		{{/effortBool}}
+    <script src="/js/lightbox.js"></script>
+
+  </body>
+</html>

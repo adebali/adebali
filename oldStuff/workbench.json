@@ -1,0 +1,45 @@
+{
+  "basics": {
+    "name": "Ogun Adebali",
+    "degree": "PhD",
+    "label": "Computational Geneticist",
+    "picture": "images/ogun_circle.jpg",
+    "email": "ogun@utk.edu",
+    "phone": "+1 (865) 974-3441",
+    "website": "http://adebali.com",
+    "summary": "Ogun Adebali is a geneticist by training. After he moved from Ankara to Knoxville, he decided to switch his method of understanding molecular biology from 'wet lab' to computational research. During his Ph.D., he minored in computer science and gained computational skills. At Oak Ridge National Laboratory, he had an opportunity to utilize high-performance clusters. He still thinks as a biologist, but he solves problems via computers. He enjoys developing biologist-friendly tools as well as analyzing data. He thinks that Genomics will be in the center of our lives as well as in medicine and biotechnology in the near future. His areas of expertise are:",
+    "keywords":["Comparative Genomics","Bioinformatics","Phylogenetics","Molecular Evolution","Sequence Analysis","Protein Bioinformatics","Genetic Diseases"],
+    "location": {
+      "address": "F437, 1414 Cumberland Ave.",
+      "postalCode": "TN 37996",
+      "city": "Knoxville",
+      "countryCode": "US",
+      "region": "Tennessee"
+    },
+    "profiles": [
+      {
+        "network": "bitbucket",
+	"username": "ogunadebali",
+	"url": "https://bitbucket.org/adebali",
+	"logoName": "fa fa-bitbucket left"
+      }
+    ]
+  },
+  "effort": [
+    {
+      "name": "PhyloBlast",
+      "img": "/images/OA_poker.jpg",
+	  "address": "http://genomics.utk.edu",
+	  "text": "My TEXT 123",
+	  "keywords": ["keyword1","keyword2"]
+	 },
+	{
+      "name": "PhyloBlast",
+      "img": "/images/OA_poker.jpg",
+	  "address": "http://genomics.utk.edu",
+	  "text": "My TEXT 123",
+	  "keywords": ["keyword1","keyword2"]
+	 } 
+	]
+	
+}

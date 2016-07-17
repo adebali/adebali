@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ogun Adebali</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	
+    <link href='//fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/lightbox.css" rel="stylesheet">
+
+	<script>
+	
+	/*	$(function() {
+	  $('a[href*=#]:not([href=#])').click(function() {
+		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+		  var target = $(this.hash);
+		  target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+		  if (target.length) {
+			$('html,body').animate({
+			  scrollTop: target.offset().top
+			}, 1000);
+			return false;
+		  }
+		}
+	  });
+	});*/
+	
+	$(document).ready(function(){
+	$('a[href^="#"]').on('click',function (e) {
+	    e.preventDefault();
+
+	    var target = this.hash;
+	    var $target = $(target);
+
+	    $('html, body').stop().animate({
+	        'scrollTop': $target.offset().top
+	    }, 900, 'swing', function () {
+	        window.location.hash = target;
+	    });
+	});
+});
+	
+	function switchPage(activeNum){
+		console.log("switching to " + activeNum);
+		$(".pages").hide();
+		console.log("#page" + parseInt(activeNum)+1);
+		$("#page" + activeNum).slideDown("slow");
+		
+		$("#menu").remove();
+		addTopBanner(activeNum);
+		
+			$(document).ready(function(){
+				$('a[href^="#"]').on('click',function (e) {
+					e.preventDefault();
+
+					var target = this.hash;
+					var $target = $(target);
+
+					$('html, body').stop().animate({
+						'scrollTop': $target.offset().top
+					}, 900, 'swing', function () {
+						window.location.hash = target;
+					});
+				});
+			});
+		
+		}
+  
+  	function addTopBanner(activeNum){
+		$("#menu").remove();
+		
+		function activeNum2menuClass(activeNum,menuNum){
+			if(activeNum==menuNum){
+				result = "currentMenu"}
+			else{
+				result = "inactiveMenu"}
+			console.log(result);
+			return result;
+			}
+			
+				
+				$("#topbanner").append(
+				[
+				"<ul id='menu'>",
+					"<li id='resumeButton'>",
+						"<label><a class='" + activeNum2menuClass(activeNum,0) + " toplayer' href='#' onClick=\"switchPage(0)\">Resume</a></label>",
+					"</li>",
+					"<li><label><a class='" + activeNum2menuClass(activeNum,1) + " toplayer next' href='#' onClick=\"switchPage(1)\">Services</a></label></li>",
+					"<li><label><a class='" + activeNum2menuClass(activeNum,2) + " toplayer next' href='#' onClick=\"switchPage(2)\">Workbench</a></label></li>",
+					//"<li><label><a class='" + activeNum2menuClass(activeNum,3) + " toplayer next' href='#' onClick=\"switchPage(3)\">Blog</a></label></li>",
+				"</ul>"
+				].join('\n'));
+				
+				if (activeNum==0){
+					$("#resumeButton").append([
+					"<ul id='sub1'>",
+						"<li><a class='submenu' href='#about'><i class= 'fa fa-user left'></i> About</a></li>",
+						"<li><a class='submenu' href='#education'><br><i class= 'fa fa-graduation-cap left'></i> Education</a></li>",
+						"<li><a class='submenu' href='#work'><br><i class= 'fa fa-suitcase left'></i> Work</a></li>",
+						"<li><a class='submenu' href='#publications'><br><i class= 'fa fa-book left'></i> Publications</a></li>",
+						"<li><a class='submenu' href='#awards'><br><i class= 'fa fa-trophy left'></i> Awards&Honors</a></li>",
+						"<li><a class='submenu' href='#conferences'><br><i class='fa fa-exchange left'></i> Conferences</a></li>",
+						"<li><a class='submenu' href='#workshops'><br><i class='fa fa-pencil-square-o left'></i> Workhops</a></li>",
+						"<li><a class='submenu' href='#press'><br><i class= 'fa fa-newspaper-o left'></i> Press</a></li>",
+						"<li><a class='submenu' href='#skills'><br><i class= 'fa fa-tasks left'></i> Skills</a></li>",
+						"<li><a class='submenu' href='#languages'><br><i class= 'fa fa-language left'></i> Languages</a></li>",
+						"<li><a class='submenu' href='#interests'><br><i class= 'fa fa-star left'></i> Social Life</a></li>",
+					"</ul>"].join('\n'));
+				}
+			}
+		
+		
+  
+  </script>
+	
+    <style>
+	
+		#profile_img {
+		filter: gray; /* IE6-9 */
+		filter: grayscale(1); /* Microsoft Edge and Firefox 35+ */
+		-webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+		opacity:1;
+		}
+	
+		ul#menu li {
+		font-size:1em;
+		display: inline;
+		list-style-type:none;
+		 position:relative;
+	#	     padding:0px;
+    #width: 125px;
+    #height: 25px;
+		}
+		ul#sub1 {
+			position:absolute;
+			left:0;
+			width:97.7%;
+			padding:0;
+			background-color:rgba(230, 230, 230, 0.6);
+			color:#333333;
+			visibility: hidden;
+			
+			
+		}
+		ul#menu li:hover #sub1 {
+			visibility:visible;
+		}
+		.submenu{
+		font-family: Montserrat;
+			font-size:1em;
+			margin-left:0px;
+			margin-right:0px;
+			padding-right:0;
+			padding-left:0;
+		}
+		.toplayer{
+			font-family: Montserrat;
+			font-size:1.3em;
+			margin-left:0px;
+			margin-right:0px;
+			background-color: #333333;
+			color:#d3d3d3;
+			padding-right:30px;
+			padding-left:30px;
+		}
+		a.toplayer:hover {
+			color: #fff;
+			background-color:#474747;
+			text-decoration: none;
+
+		}
+		.currentMenu{
+			background-color:#474747;
+			#color: #fff;
+		}
+		.inactiveMenu{
+			#background-color:red;
+			color: #d3d3d3;
+		}
+		
+		ul {
+		margin-top:0em;
+		}
+		body {
+			font-size: 62.5%;
+			font-family: Montserrat;
+			color: #333333;
+		}
+		.picture {
+			border-radius: 50%;
+			margin: 0 auto;
+		}
+		a {
+			color: #333333;
+			text-decoration: none;
+		}
+		
+		a:hover {
+			color: #4e4e4e;
+			text-decoration: underline;
+		}
+		
+		.header {
+			text-align:center;
+			font-size: 2em;
+			margin-top:1em;
+			margin-left:5%;
+			margin-right:5%;
+		}
+		h1 {
+			font-size:3em;
+			margin-bottom:0;
+		}
+		.profile {
+			font-family: Montserrat;
+			font-size: 1em;
+			margin:0;
+		}
+
+		.contact-header {
+			font-weight:bold;
+		}
+		.label {
+			margin-top: 0;
+			margin-bottom: 1em;
+		}
+		.fa {
+			font-size:2em;
+		}
+		.left {
+			font-size: 1em;
+		}
+		.main {
+			margin 0 auto;
+			margin-left: 10%;
+			margin-right: 10%;
+			margin-bottom: 50px;
+		}
+		h3a {
+			font-size:2em;
+			margin-bottom:3em;
+
+		}
+		h2 {
+			font-size: 3.5em;
+			margin-top:1.5em;
+		}
+		h3 {
+			font-size:2em;
+			margin-bottom:0;
+		}
+		h4 {
+			color: #4e4e4e;
+			font-size:1.5em;
+			margin-top:0;
+			margin-bottom:0;
+		}
+		h5 {
+			margin-top:0;
+			font-size:1.5em;
+		}	
+		.skills {
+			margin-bottom: 10px;
+		}
+		p {
+			font-family: 'Open Sans';
+			font-size: 2em;
+		}
+		.tool {
+			margin-left:5%;
+			font-family: 'Montserrat';
+			font-size: 2em;
+		}
+		.pkeywords {
+			margin-left:5%;
+		}
+		li {
+			font-family: 'Open Sans';
+			font-size: 1.5em;
+		}
+		.keywords {
+			background-color: #333333;
+			color:#fff;
+			padding: 6px;
+			font-size: 1.2em;
+			margin-bottom: 5px;
+			display:inline-block;
+		}
+		blockquote {
+			margin: 2em 10px;
+  			padding: 1em 10px;
+			border-left: 10px solid #edf0f5;
+			font-family: 'Open Sans';
+			font-size: 1.5em;
+		}
+		blockquote .name {
+			font-weight:bold;
+			font-family: "Montserrat";
+		}
+		.responsive-show {
+			display:none;
+		}
+		@media (max-width: 1000px) {
+  			.header {
+    			font-size: 1.66em;
+  			}
+  			h2 {
+  				font-size: 3em;
+  			}
+		}
+		@media (max-width: 500px) {
+			p {
+				font-size:1.2em;
+			}
+			li {
+				font-size:1.2em;
+			}
+			blockquote {
+				font-size:1.2em;
+			}
+			h2 {
+				font-size:2.3em;
+			}
+			.responsive-hidden {
+				display:none;
+				visibility: hidden;
+			}
+			.responsive-show {
+				display:inline;
+				visibility: visible;
+			}
+
+		}
+    </style>
+	<script src= "//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+  </head>
+  <body>
+  
+	<div id="topbanner" class="toplayer" style="margin-left:0px;margin-right:0" align="center"></div>
+<div id="site" style="z-index: -1; margin-bottom:0;">
+	<div class="pages" id="page0">
+		<div class= "header">
+				<img id="#profile_img" src= "images&#x2F;ogun_circle.jpg" width= "175px" height= "175px" class= "picture">
+			<h1>OGUN ADEBALI, PhD</h1>
+			<h3 class= "label">COMPUTATIONAL GENETICIST</h3>
+			<div class= "contact-header">
+					F437, 1414 Cumberland Ave.<br>
+					Knoxville, Tennessee, US
+
+				</div>
+			<div id= "contact">
+				<br>
+				<div class= "contact-header">
+					EMAIL <span class= "responsive-hidden">&bull;</span> <span class= "responsive-show"><br></span><a href= "mailto:ogun@utk.edu" target= "_blank">ogun@utk.edu</a> <span class= "responsive-show"><br><br></span>
+				</div>
+				<div class= "contact-header">
+					PHONE <span class= "responsive-hidden">&bull;</span> <span class= "responsive-show"><br></span>+1 (865) 974-3441 <span class= "responsive-show"><br><br></span>
+				</div>
+				<div class= "contact-header">
+					WEBSITE <span class= "responsive-hidden">&bull;</span> <span class= "responsive-show"><br></span><a href= "http:&#x2F;&#x2F;adebali.com" target= "_blank">http:&#x2F;&#x2F;adebali.com</a> <span class= "responsive-show"><br><br></span>
+				</div>
+			</div>
+			<br>
+			<div id= "profiles">
+				<!--<div class= "contact-header">PROFILES</div><br>-->
+				<a href= "http:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;adebali" target="_blank"><i class= "fa fa-linkedin left" style="margin-left:20px;margin-right:20px;font-size:2em"></i></a>
+				<!--<a href= "http:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;adebali" target= "_blank" class= "profile"><i class= "fa fa-linkedin left"></a>-->
+				<a href= "https:&#x2F;&#x2F;bitbucket.org&#x2F;adebali" target="_blank"><i class= "fa fa-bitbucket left" style="margin-left:20px;margin-right:20px;font-size:2em"></i></a>
+				<!--<a href= "https:&#x2F;&#x2F;bitbucket.org&#x2F;adebali" target= "_blank" class= "profile"><i class= "fa fa-bitbucket left"></a>-->
+				<a href= "skype:ogun49?call;" target="_blank"><i class= "fa fa-skype left" style="margin-left:20px;margin-right:20px;font-size:2em"></i></a>
+				<!--<a href= "skype:ogun49?call;" target= "_blank" class= "profile"><i class= "fa fa-skype left"></a>-->
+				<a href= "https:&#x2F;&#x2F;plus.google.com&#x2F;u&#x2F;0&#x2F;111772231545299256693" target="_blank"><i class= "fa fa-google-plus" style="margin-left:20px;margin-right:20px;font-size:2em"></i></a>
+				<!--<a href= "https:&#x2F;&#x2F;plus.google.com&#x2F;u&#x2F;0&#x2F;111772231545299256693" target= "_blank" class= "profile"><i class= "fa fa-google-plus"></a>-->
+			</div>		
+		</div>
+		<div class= "main">
+			<div id= "about">
+				<h2><i class= "fa fa-user left"></i> ABOUT</h2>
+				<p>
+					Ogun Adebali is a geneticist by training. After he moved to Knoxville, he decided to switch his method of understanding molecular biology from to computational research. During his Ph.D., he minored in computer science and gained computational skills. At Oak Ridge National Laboratory, he had an opportunity to utilize high-performance clusters. He still conceives problems as a biologist, but he solves them via computers. He enjoys developing biologist-friendly tools as well as analyzing data. He thinks that Genomics is becoming a focus of medicine and biotechnology in the near future. His areas of expertise are:
+				</p>
+
+				 <span class= "keywords">Comparative Genomics</span>
+				 <span class= "keywords">Bioinformatics</span>
+				 <span class= "keywords">Phylogenetics</span>
+				 <span class= "keywords">Molecular Evolution</span>
+				 <span class= "keywords">Sequence Analysis</span>
+				 <span class= "keywords">Protein Bioinformatics</span>
+				 <span class= "keywords">Genetic Diseases</span>
+				 <span class= "keywords">Orthologs&#x2F;Paralogs</span>
+			</div>
+			
+			<div id= "education">
+				<h2><i class= "fa fa-graduation-cap left"></i> EDUCATION</h2>
+					<h3>
+					Ph.D. - 
+					<a href="http:&#x2F;&#x2F;utk.edu" target="_blank">University of Tennessee, Knoxville</a>
+					</h3>
+					
+					<h4>
+						August 2011 - December 2015
+						
+							<br>&nbsp;&nbsp<b>Major:</b> <a href="http:&#x2F;&#x2F;gst.tennessee.edu" target="_blank">Genome Science and Technology - Life Sciences</a>
+							<br>&nbsp;&nbspMinor: <a href="http:&#x2F;&#x2F;igmcs.utk.edu" target="_blank">Computer Science</a>
+							<br>&nbsp;&nbspGPA: 3.93
+					</h4>
+					
+					<h3>
+					B.Sc. - 
+					<a href="http:&#x2F;&#x2F;metu.edu.tr" target="_blank">Middle East Technical University, Ankara</a>
+					</h3>
+					
+					<h4>
+						September 2006 - July 2011
+						
+							<br>&nbsp;&nbsp<b>Major:</b> <a href="http:&#x2F;&#x2F;bio.metu.edu.tr&#x2F;" target="_blank">Molecular Biology and Genetics</a>
+							<br>&nbsp;&nbspGPA: 3.35
+					</h4>
+					
+
+			</div>
+			
+			<div id= "work">
+				<h2><i class= "fa fa-suitcase left"></i> WORK EXPERIENCE</h2>
+					<div class= "job">
+						
+						<h3>Postdoctoral Research Associate, 
+						<a href="http:&#x2F;&#x2F;genomics.utk.edu" target="_blank">University of Tennessee - Oak Ridge National Laboratory</a>
+						
+						</h3>
+						<h4>December 2015 - now</h4>
+						<p style="margin-top:0.5em;margin-bottom:0.5em;font-size:1.5em">Computer systems management, Research in Computational Genomics Group</p>
+						<ul style="margin-top:0">
+							<li>G-protein coupled receptors</li>
+							<li>Missense mutation assesment</li>
+							<li>Comparative genomics</li>
+							<li>Oral microbiome</li>
+						</ul>
+					</div>
+					<div class= "job">
+						
+						<h3>Graduate Research Assistant, 
+						<a href="http:&#x2F;&#x2F;genomics.utk.edu" target="_blank">University of Tennessee - Oak Ridge National Laboratory</a>
+						
+						</h3>
+						<h4>August 2014 - December 2015</h4>
+						<p style="margin-top:0.5em;margin-bottom:0.5em;font-size:1.5em">Research in Computational Genomics Group</p>
+						<ul style="margin-top:0">
+							<li>Protein domains</li>
+							<li>Human disease prediction</li>
+							<li>Comparative genomics</li>
+							<li>G protein-coupled receptors</li>
+						</ul>
+					</div>
+					<div class= "job">
+						
+						<h3>Graduate Teaching Assistant, 
+						<a href="http:&#x2F;&#x2F;utk.edu" target="_blank">University of Tennessee, Knoxville</a>
+						
+						</h3>
+						<h4>August 2012 - July 2013</h4>
+						<p style="margin-top:0.5em;margin-bottom:0.5em;font-size:1.5em">Teaching Assistantship of General Genetics class</p>
+						<ul style="margin-top:0">
+							<li>Fall 2012</li>
+							<li>Spring 2013</li>
+							<li>Fall 2013</li>
+							<li>Spring 2014</li>
+							<li>Summer 2014</li>
+						</ul>
+					</div>
+					<div class= "job">
+						
+						<h3>Graduate Assistant, 
+						<a href="http:&#x2F;&#x2F;utk.edu" target="_blank">University of Tennessee, Knoxville</a>
+						
+						</h3>
+						<h4>August 2011 - July 2012</h4>
+						<p style="margin-top:0.5em;margin-bottom:0.5em;font-size:1.5em">Rotation in four labs: Animal Research, Chemistry, Bioinformatics, Computer Science</p>
+						<ul style="margin-top:0">
+							<li>Radiation effect on immunology</li>
+							<li>Lipid quantification through LC-MS</li>
+							<li>The role of CheW in chemotaxis</li>
+							<li>Analysis of protein sequences with clique clustering</li>
+						</ul>
+					</div>
+					<div class= "job">
+						
+						<h3>Summer Intern, 
+						<a href="http:&#x2F;&#x2F;www.ru.nl&#x2F;english" target="_blank">Radboud University, Nijmegen - Netherlands</a>
+						
+						</h3>
+						<h4>July 2010 - August 2010</h4>
+						<p style="margin-top:0.5em;margin-bottom:0.5em;font-size:1.5em">Research in the Department of Human Genetics</p>
+						<ul style="margin-top:0">
+							<li>Genetics of cleft lip&#x2F;palate defects</li>
+						</ul>
+					</div>
+			</div>
+			
+			<div id= "publications">
+				<h2><i class= "fa fa-book left"></i> PUBLICATIONS</h2>
+					<div>
+					<h3a>
+						<strong>Adebali O.*</strong> &amp; Zhulin I.B. (2016)
+						<br>
+						Aquerium: a web-based platform for phylogenetic profiling.
+						<br><i>(Manuscript submitted)</i>
+					</h3a>
+					<p></p>
+					</div>
+				<!--	<p><br><a href= "" target= "_blank"></a></p> -->
+					<div>
+					<h3a>
+						Upadhyay A.A., Fleetwood, A.D., <strong>Adebali, O.</strong>, Finn, R., &amp; Zhulin, I.B.* (2016)
+						<br>
+						Cache domains are dominant extracellular sensors for signal transduction in prokaryotes.
+						<br><i>PLOS Computational Biology (in press)</i>
+					</h3a>
+					<p></p>
+					</div>
+				<!--	<p><br><a href= "" target= "_blank"></a></p> -->
+					<div>
+					<h3a>
+						<strong>Adebali, O.</strong>, Reznik A.O., Ory D.S., &amp; Zhulin, I.B.* (2016)
+						<br>
+						Establishing precise evolutionary history of a gene improves predicting disease causing missense mutations.
+						<br><i>Genetics in Medicine (in press)</i>
+					</h3a>
+					<p></p>
+					</div>
+				<!--	<p><br><a href= "" target= "_blank"></a></p> -->
+					<div>
+					<h3a>
+						<strong>Adebali O.*</strong>, Ortega D.R. &amp; Zhulin I.B.* (2015)
+						<br>
+						<a href="http:&#x2F;&#x2F;www.ncbi.nlm.nih.gov&#x2F;pubmed&#x2F;25527097" target="_blank">CDvist: a webserver for identification and visualization of conserved domains in protein sequences.</a>
+						<br><i>Bioinformatics</i>
+					</h3a>
+					<p></p>
+					</div>
+				<!--	<p><br><a href= "" target= "_blank"></a></p> -->
+				<p style="margin-top:0;font-size:1.5em"> *Corresponding author </p>
+					<div>
+					<h3><u>Dissertation</u></h3>
+					<br>
+					<h3a>
+					<strong>Adebali O.</strong> (2015)
+					<br><a href="http:&#x2F;&#x2F;trace.tennessee.edu&#x2F;utk_graddiss&#x2F;3540" target="_blank">Applications of evolutionary bioinformatics in basic and biomedical research.</a>
+					<br><i>University of Tennessee</i>
+					</h3a>
+					<p></p>
+					</div>
+			</div>
+
+			<div id= "awards">
+				<h2><i class= "fa fa-trophy left"></i> AWARDS & HONORS</h2>
+					<!--<h3><a href="#">Cokkinias Research Award</a> - Division of Biology, University of Tennessee</h3>-->
+					<!--<a href="#awards" class="JesterBox"><div id=""><img src="[object Object],[object Object]"></img></div></a>-->
+						<h3><a href="images&#x2F;OA_poker.jpg" data-lightbox="Cokkinias Research Award" data-title="My caption">Cokkinias Research Award</a></h3>
+					<!--<h3><a href="#">Cokkinias Research Award</a> - Division of Biology, University of Tennessee</h3>-->
+					<!--<a href="#awards" class="JesterBox"><div id=""><img src="[object Object],[object Object]"></img></div></a>-->
+						<a href="images&#x2F;OA_Hungarian.jpg" data-lightbox="Cokkinias Research Award" data-title="My caption2"></a>
+					<h4>04 May 2015</h4>
+					<h5></h5>
+					<h3>Travel Award - Graduate Student Senate, University of Tennessee</h3>
+					<h4>19 October 2014</h4>
+					<h5>Awarded for RECOMB Comparative Genomics meeting, Cold Spring Harbor, New York</h5>
+					<h3>Graduation with Honors - Middle East Technical University</h3>
+					<h4>03 July 2011</h4>
+					<h5></h5>
+					<!--<h3><a href="#">iGEM Silver Medal</a> - International Genetically Engineered Machines</h3>-->
+					<!--<a href="#awards" class="JesterBox"><div id=""><img src="[object Object]"></img></div></a>-->
+						<h3><a href="images&#x2F;igem.jpg" data-lightbox="iGEM Silver Medal" data-title="METU-BIN group members on April 23rd 2011">iGEM Silver Medal</a></h3>
+					<h4>  2011</h4>
+					<h5>Mining for BioBricks software</h5>
+					<h3>Undergraduate Scholarship - The Scientific and Technological Research Council of Turkey</h3>
+					<h4>01 September 2006</h4>
+					<h5>Renewed for five years.</h5>
+			</div>
+
+			<div id= "conferences">
+				<h2><i class="fa fa-exchange left"></i> CONFERENCES</h2>
+						<h3><a href="images&#x2F;Recomb14&#x2F;recomb-1.JPG" data-lightbox="CDvist: a comprehensive domain visualization tool." data-title="CDvist poster presentation, RECOMB&#39;14 meeting @ Cold Spring Harbour Laboratory">2014 - CDvist: a comprehensive domain visualization tool.</a></h3>
+						<a href="images&#x2F;Recomb14&#x2F;recomb-2.JPG" data-lightbox="CDvist: a comprehensive domain visualization tool." data-title="Dinner @ Cold Spring Harbour Laboratory"></a>
+						<a href="images&#x2F;Recomb14&#x2F;recomb-3.JPG" data-lightbox="CDvist: a comprehensive domain visualization tool." data-title="RECOMB&#39;14 meeting @ Cold Spring Harbour Laboratory"></a>
+						<a href="images&#x2F;Recomb14&#x2F;recomb-4.JPG" data-lightbox="CDvist: a comprehensive domain visualization tool." data-title="RECOMB&#39;14 participants @ Cold Spring Harbour Laboratory"></a>
+					<h3 style="margin-top:0">Ogun Adebali, Davi R. Ortega, and Igor B. Zhulin</h3>
+					<h4>  </h4>
+					<h5>Poster presented in RECOMB Comparative Genomics meeting, Cold Spring Harbour, New York</h5>
+						<h3><a href="images&#x2F;HIBIT11&#x2F;HIBIT-1.JPG" data-lightbox="Applications of Bioinformatics for Synthetic Biology" data-title="HIBIT&#39;11 roundtable introduction talk at Izmir Economy University">2011 - Applications of Bioinformatics for Synthetic Biology</a></h3>
+						<a href="images&#x2F;HIBIT11&#x2F;HIBIT-2.JPG" data-lightbox="Applications of Bioinformatics for Synthetic Biology" data-title="METU-BIN&#39;s HIBIT&#39;11 group at Izmir Economy University"></a>
+						<a href="images&#x2F;HIBIT11&#x2F;HIBIT-3.JPG" data-lightbox="Applications of Bioinformatics for Synthetic Biology" data-title="HIBIT&#39;11 roundtable introduction talk at Izmir Economy University"></a>
+						<a href="images&#x2F;HIBIT11&#x2F;HIBIT-4.JPG" data-lightbox="Applications of Bioinformatics for Synthetic Biology" data-title="HIBIT&#39;11 roundtable introduction talk at Izmir Economy University"></a>
+						<a href="images&#x2F;HIBIT11&#x2F;HIBIT-5.JPG" data-lightbox="Applications of Bioinformatics for Synthetic Biology" data-title="HIBIT&#39;11 roundtable introduction talk at Izmir Economy University"></a>
+						<a href="images&#x2F;HIBIT11&#x2F;HIBIT-6.JPG" data-lightbox="Applications of Bioinformatics for Synthetic Biology" data-title="HIBIT&#39;11 roundtable introduction talk at Izmir Economy University"></a>
+						<a href="images&#x2F;HIBIT11&#x2F;HIBIT-7.JPG" data-lightbox="Applications of Bioinformatics for Synthetic Biology" data-title="HIBIT&#39;11 roundtable introduction talk at Izmir Economy University"></a>
+						<a href="images&#x2F;HIBIT11&#x2F;HIBIT-8.JPG" data-lightbox="Applications of Bioinformatics for Synthetic Biology" data-title="HIBIT&#39;11 roundtable introduction talk at Izmir Economy University"></a>
+						<a href="images&#x2F;HIBIT11&#x2F;HIBIT-9.JPG" data-lightbox="Applications of Bioinformatics for Synthetic Biology" data-title="HIBIT&#39;11 participants at Izmir Economy University"></a>
+					<h3 style="margin-top:0">Ogun Adebali, Yener Tuncel, Tolga Can and Yesim A. Son</h3>
+					<h4>  </h4>
+					<h5>Roundtable organized in the 6th International Symposium on Health Informatics and Bioinformatics, Izmir, Turkey</h5>
+			</div>
+			
+			<div id= "workshops">
+				<h2><i class="fa fa-pencil-square-o left"></i> WORKSHOPS</h2>
+						<h3><a href="images&#x2F;olfactory.jpg" data-lightbox="NIMBioS Investigative Workshop: Olfactory Modeling" data-title="NIMBioS Worksop @Knoxville,TN">2015 - NIMBioS Investigative Workshop: Olfactory Modeling</a></h3>
+					<h5>(selected for participation)</h5>
+					<h3>2013 - NCCS Workshop: Processing and Analysis of Very Large Data Sets</h3>
+					<h5></h5>
+						<h3><a href="images&#x2F;OA_Nimbios.jpg" data-lightbox="NIMBioS&#x2F;SCALE-IT Workshop: Using Bioinformatics Data and Tools to Engage Students in Problem Solving: A Curriculum Development Workshop" data-title="NIMBioS Worksop @Knoxville,TN">2013 - NIMBioS&#x2F;SCALE-IT Workshop: Using Bioinformatics Data and Tools to Engage Students in Problem Solving: A Curriculum Development Workshop</a></h3>
+					<h5>(selected for participation)</h5>
+			</div>
+
+			<div id= "press">
+				<h2><i class= "fa fa-newspaper-o left"></i> PRESS</h2>
+					<h3>2011 - METU&#39;s geneticists got the second rank in US</h3><br>
+					<span class= "keywords"><a style="color:#fff" href="http:&#x2F;&#x2F;www.radikal.com.tr&#x2F;dunya&#x2F;odtunun-genetikcileri-abdde-dunya-ikincisi-oldu-1069946&#x2F;" target="_blank">Radikal</a></span>
+					<span class= "keywords"><a style="color:#fff" href="http:&#x2F;&#x2F;www.milliyet.com.tr&#x2F;odtu-lu-genetikcilerin-buyuk-basarisi&#x2F;gundem&#x2F;gundemdetay&#x2F;18.11.2011&#x2F;1464496&#x2F;default.htm" target="_blank">Milliyet</a></span>
+					<span class= "keywords"><a style="color:#fff" href="http:&#x2F;&#x2F;www.metu.edu.tr&#x2F;announcement&#x2F;metu-bin-igem-takimi-mining-biobrick-projesi-ile-odul-aldi" target="_blank">METU</a></span>
+			</div>
+			
+			
+			<div id= "skills">
+				<h2><i class= "fa fa-tasks left"></i> SKILLS</h2>
+					<h3 class= "skills">Programming&#x2F;Scripting</h3>
+					<span class= "keywords">Python</span>
+					<span class= "keywords">Perl</span>
+					<span class= "keywords">C</span>
+					<span class= "keywords">C++</span>
+					<span class= "keywords">Fortran</span>
+					<h3 class= "skills">Web Development</h3>
+					<span class= "keywords">HTML</span>
+					<span class= "keywords">CSS</span>
+					<span class= "keywords">Javascript</span>
+					<span class= "keywords">D3</span>
+					<span class= "keywords">Jquery</span>
+					<h3 class= "skills">Statistics</h3>
+					<span class= "keywords">R</span>
+					<span class= "keywords">Matlab</span>
+					<span class= "keywords">JMP</span>
+					<span class= "keywords">SAS</span>
+					<h3 class= "skills">Database Management</h3>
+					<span class= "keywords">MongoDB</span>
+					<span class= "keywords">mySQL</span>
+					<h3 class= "skills">Operating System Management</h3>
+					<span class= "keywords">Linux</span>
+			</div><br>
+
+			<div id= "languages">
+				<h2><i class= "fa fa-language left"></i> LANGUAGES</h2>
+					<h3>English</h3>
+					<h4>Fluency: Full Professional Proficiency</h4>
+					<h3>German</h3>
+					<h4>Fluency: Elementary</h4>
+					<h3>Turkish</h3>
+					<h4>Fluency: Native Speaker</h4>
+			</div>
+
+
+
+			<div id= "interests">
+				<h2><i class= "fa fa-star left"></i> SOCIAL LIFE</h2>
+						<h3><a href="images&#x2F;dance&#x2F;Hungarian.JPG" data-lightbox="Dance" data-title="My caption2">Dance</a></h3>
+						<a href="images&#x2F;dance&#x2F;Hungarian.JPG" data-lightbox="Dance" data-title="Hungarian couple"></a>
+
+						<h3 class= "skills">Musicals</a></h3>
+
+						<h3><a href="images&#x2F;OA_poker.jpg" data-lightbox="Poker" data-title="2015 Derby week winner @ Downtown Grill &amp; Brewery, in Knoxville">Poker</a></h3>
+
+			</div>
+		</div>
+	
+	</div>
+	
+	
+	<div style="display:none" class="pages main" id="page1">
+
+		<h2 style="margin-top:50px;text-align:center;" class="label">Stable Services</h2>
+
+	
+		<div id= "about">
+				<h2><a id="CDvist - Comprehensive Domain Visualation Tool" href="http:&#x2F;&#x2F;cdvist.utk.edu" target="_blank">CDvist - Comprehensive Domain Visualation Tool</a></h2>
+				<table>
+				<tr>
+					<td><a href="&#x2F;images&#x2F;services&#x2F;CDvist.png" data-lightbox="CDvist - Comprehensive Domain Visualation Tool" data-title="CDvist - Comprehensive Domain Visualation Tool"><img class="gif" src="&#x2F;images&#x2F;services&#x2F;CDvist.png" style="width:250px"></img></a></td>
+					<td>
+						<p class="tool">
+							Protein domain identification is a highly important step in understanding the molecular function of proteins. Various domain search tools have strengths and weakness based on their properties. Some of them are  specific and others are sensitive. CDvist combines these tools in a logical pipeline to address the sensitivity problem with a minimum cost of specificity. CDvist is the only web server that provides batch requests (up to 500) for computationally intensive HHM-HMM comparison. 
+						</p>
+						<label class= "pkeywords">
+							<span class= "keywords">Protein Domains</span>
+							<span class= "keywords">HMM</span>
+							<span class= "keywords">HMMER</span>
+							<span class= "keywords">HHsearch</span>
+							<span class= "keywords">RPSBLAST</span>
+							<span class= "keywords">Pfam</span>
+							<span class= "keywords">CDD</span>
+							<span class= "keywords">PDB</span>
+							<span class= "keywords">COG</span>
+							<span class= "keywords">SMART</span>
+							<span class= "keywords">PIRSF</span>
+							<span class= "keywords">Batch request</span>
+						</label>
+					
+					</td>
+				</tr>
+				</table>
+				
+				<h2><a id="Aquerium - Architecture Querying Podium" href="http:&#x2F;&#x2F;aquerium.utk.edu" target="_blank">Aquerium - Architecture Querying Podium</a></h2>
+				<table>
+				<tr>
+					<td><a href="&#x2F;images&#x2F;services&#x2F;Aquerium.png" data-lightbox="Aquerium - Architecture Querying Podium" data-title="Aquerium - Architecture Querying Podium"><img class="gif" src="&#x2F;images&#x2F;services&#x2F;Aquerium.png" style="width:250px"></img></a></td>
+					<td>
+						<p class="tool">
+							One computationl method to reveal or support novel protein-protein interactions is phylogenetic profiling. Cooccurences of proteins are indicators of functional interaction. Aquerium is a web-server to visualize co-presence&#x2F;absence of any biological marker in genomes. It also provides a database of pre-computed and genome-linked domains to query domain architectures of interest. 
+						</p>
+						<label class= "pkeywords">
+							<span class= "keywords">Phylogenetic profiling</span>
+							<span class= "keywords">Domain architecture</span>
+							<span class= "keywords">Advanced architecture query</span>
+							<span class= "keywords">Custom input</span>
+							<span class= "keywords">BLAST hits distribution</span>
+						</label>
+					
+					</td>
+				</tr>
+				</table>
+				
+				<h2><a id="SAVER (NPC1) - Single Amino Acid Variant Evaluator" href="http:&#x2F;&#x2F;genomics.utk.edu&#x2F;saver&#x2F;npc1.html" target="_blank">SAVER (NPC1) - Single Amino Acid Variant Evaluator</a></h2>
+				<table>
+				<tr>
+					<td><a href="&#x2F;images&#x2F;services&#x2F;SAVER-NPC1.png" data-lightbox="SAVER (NPC1) - Single Amino Acid Variant Evaluator" data-title="SAVER (NPC1) - Single Amino Acid Variant Evaluator"><img class="gif" src="&#x2F;images&#x2F;services&#x2F;SAVER-NPC1.png" style="width:250px"></img></a></td>
+					<td>
+						<p class="tool">
+							Orthologs and paralogs have different roles in disease. However, current tools do not take this fact into account and do not distinguish them when evaluating the effect of a substitution on health. We think that only orthologs should be considered to have identical function. SAVER is an algorithm that uses several sets (such as orthologs and orthologs after most recent duplication) to evaluate the effects of single amino acid substitutions. This web server shows the results of a test case: effects of missense NPC1 mutations on Niemann-Pick disease type-C. The source code of SAVER is also available. 
+						</p>
+						<label class= "pkeywords">
+							<span class= "keywords">Health - Disease</span>
+							<span class= "keywords">Mutation effect</span>
+							<span class= "keywords">NPC1</span>
+							<span class= "keywords">Niemann-Pick</span>
+						</label>
+					
+					</td>
+				</tr>
+				</table>
+				
+		</div>
+
+	
+	</div> 
+
+	<div class="main pages" style="display:none" id="page2">
+
+	<h2 style="margin-top:50px;text-align:center;" class="label">Examples from my workbench</h2>
+	<p>
+		The tools presented here are just to give idea of what we can do about visualizing the biological data on web. They are neither stable nor guaranteed for a scientific analysis. However, I am open to develop them if I see enough interest. Please contact with me if you feel like they can be useful to you.
+	<p>
+	
+		<div id= "effort">
+				<h2><a id="BlastCover" href="&#x2F;workbench&#x2F;blast_coverage&#x2F;" target="_blank">BlastCover</a></h2>
+				<table>
+				<tr>
+					<td><a href="&#x2F;images&#x2F;workbench&#x2F;BlastCover.png" data-lightbox="BlastCover" data-title="BlastCover"><img class="gif" src="&#x2F;images&#x2F;workbench&#x2F;BlastCover.png" style="width:250px"></img></a></td>
+					<td>
+						<p class="tool">
+							One important missing ring in BLAST visualization chain is the coverage display. Knowing how much and what portion of your query actually aligns with the subject (hit) is important. This is an attempt of visualizing coverage of the query and subject. It takes CSV (BLAST results) as an input by default.
+						</p>
+						<label class= "pkeywords">
+							<span class= "keywords">BLAST</span>
+							<span class= "keywords">CSV</span>
+							<span class= "keywords">Query&#x2F;Subject coverage</span>
+							<span class= "keywords">SVG</span>
+						</label>
+				
+					
+					</td>
+				</tr>
+				</table>
+				 
+				<h2><a id="OrthologyCrossfilter" href="&#x2F;workbench&#x2F;dc.js&#x2F;web&#x2F;Hs-Rn.html" target="_blank">OrthologyCrossfilter</a></h2>
+				<table>
+				<tr>
+					<td><a href="&#x2F;images&#x2F;workbench&#x2F;OrthologyCrossfilter.png" data-lightbox="OrthologyCrossfilter" data-title="OrthologyCrossfilter"><img class="gif" src="&#x2F;images&#x2F;workbench&#x2F;OrthologyCrossfilter.png" style="width:250px"></img></a></td>
+					<td>
+						<p class="tool">
+							In genomics, instant filtering the data may play a crucial role in making sense out of the patterns. This is a javascript crossfilter example on Human-Chimpanzee one-to-one orthologs and some markers of my interests. It is extremely simple to use: it takes CSV as an input. However, it hasn&#39;t been generalized to address any CSV yet. Let me know if you are interested in a general version of this tool.
+						</p>
+						<label class= "pkeywords">
+							<span class= "keywords">Orthology</span>
+							<span class= "keywords">Transmembrane regions</span>
+							<span class= "keywords">Indetity</span>
+							<span class= "keywords">Gene ontology</span>
+							<span class= "keywords">Crossfilter</span>
+							<span class= "keywords">Javascript</span>
+							<span class= "keywords">d3</span>
+							<span class= "keywords">CSV</span>
+							<span class= "keywords">Interactive</span>
+						</label>
+				
+					
+					</td>
+				</tr>
+				</table>
+				 
+				<h2><a id="CSVtoHTMLtable" href="&#x2F;workbench&#x2F;csvtotable&#x2F;csvtotable&#x2F;general.html" target="_blank">CSVtoHTMLtable</a></h2>
+				<table>
+				<tr>
+					<td><a href="&#x2F;images&#x2F;workbench&#x2F;CSVtoHTMLtable.png" data-lightbox="CSVtoHTMLtable" data-title="CSVtoHTMLtable"><img class="gif" src="&#x2F;images&#x2F;workbench&#x2F;CSVtoHTMLtable.png" style="width:250px"></img></a></td>
+					<td>
+						<p class="tool">
+							Web-based visualization is becoming more and more glaring. Therefore, although Excel or R are good for tables, they lack in creating custom graphics. HTML SVG helps here. This tool converts your table to HTML by adding another column for custom visualization. In principle any custom graph built based on the column values can be created. 
+						</p>
+						<label class= "pkeywords">
+							<span class= "keywords">CSV</span>
+							<span class= "keywords">HTML table</span>
+							<span class= "keywords">Custom graphic</span>
+						</label>
+				
+					
+					</td>
+				</tr>
+				</table>
+				 
+				<h2><a id="TreeArch" href="&#x2F;workbench&#x2F;treelign&#x2F;treeArch.html?newick=HKIII&#x2F;tree.nwk&amp;json=HKIII&#x2F;sequence.json&amp;h=24000" target="_blank">TreeArch</a></h2>
+				<table>
+				<tr>
+					<td><a href="&#x2F;images&#x2F;workbench&#x2F;TreeArch.png" data-lightbox="TreeArch" data-title="TreeArch"><img class="gif" src="&#x2F;images&#x2F;workbench&#x2F;TreeArch.png" style="width:250px"></img></a></td>
+					<td>
+						<p class="tool">
+							Phylogenetic trees can be enriched in various information. One of the additional information that I wanted to retrieve was domain architectures. We only need to have a json formatted sequence file along with the newick. Domain architectures are retrieved from the SeqDepot database. One deficiency of this approach is the fact that the protein sequences that are not present in SeqDepot cannot be represented with a domain architecture figure.
+						</p>
+						<label class= "pkeywords">
+							<span class= "keywords">Phylogenetics</span>
+							<span class= "keywords">Tree</span>
+							<span class= "keywords">Domain Architectures</span>
+							<span class= "keywords">SeqDepot</span>
+							<span class= "keywords">newick</span>
+						</label>
+				
+					
+					</td>
+				</tr>
+				</table>
+				 
+				<h2><a id="Treelign" href="&#x2F;workbench&#x2F;treelign&#x2F;treelign.html?f=231&amp;newick=NPC1-L1.sn.noGap.fa..phy_phyml_trec.noded.nwk.trueNPC1.distance.nwk.sorted&amp;json=NPC1-L1.sn.TrueNPC1.fa.afa.distance.afa.json&amp;first=gi|255652944&amp;r=25" target="_blank">Treelign</a></h2>
+				<table>
+				<tr>
+					<td><a href="&#x2F;images&#x2F;workbench&#x2F;Treelign.png" data-lightbox="Treelign" data-title="Treelign"><img class="gif" src="&#x2F;images&#x2F;workbench&#x2F;Treelign.png" style="width:250px"></img></a></td>
+					<td>
+						<p class="tool">
+							Displaying the alignment and phylogenetic tree together is undoubtedly very handy. All we need is newick and JSON formatted sequence file. Fasta2Json script can be found in my scripts collection in BitBucket.
+						</p>
+						<label class= "pkeywords">
+							<span class= "keywords">Phylogenetics</span>
+							<span class= "keywords">Tree</span>
+							<span class= "keywords">Multiple Sequence Alignment</span>
+							<span class= "keywords">JSON</span>
+							<span class= "keywords">newick</span>
+						</label>
+				
+					
+					</td>
+				</tr>
+				</table>
+				 
+				<h2><a id="PhyloBlast" href="&#x2F;workbench&#x2F;phyloblast&#x2F;HSphyloBlast.html" target="_blank">PhyloBlast</a></h2>
+				<table>
+				<tr>
+					<td><a href="&#x2F;images&#x2F;workbench&#x2F;PhyloBlast.png" data-lightbox="PhyloBlast" data-title="PhyloBlast"><img class="gif" src="&#x2F;images&#x2F;workbench&#x2F;PhyloBlast.png" style="width:250px"></img></a></td>
+					<td>
+						<p class="tool">
+							Order of the BLAST results and their phyletic distribution can be useful. This tool enables one by one visualising blast results on a phylogenetic tree and displays scores, e-values and coverage information as well as the domain architecture. Please pay attention where a big gap in the e-value visual is introduced. Can that cutoff be used to determine the homolog sequences? 
+						</p>
+						<label class= "pkeywords">
+							<span class= "keywords">BLAST</span>
+							<span class= "keywords">Phylogenetics</span>
+							<span class= "keywords">Tree</span>
+							<span class= "keywords">Hit order</span>
+							<span class= "keywords">Interactive</span>
+						</label>
+				
+					
+					</td>
+				</tr>
+				</table>
+				 
+				<h2><a id="BlastSnap" href="&#x2F;workbench&#x2F;phyloblast&#x2F;blast_snapshot.html" target="_blank">BlastSnap</a></h2>
+				<table>
+				<tr>
+					<td><a href="&#x2F;images&#x2F;workbench&#x2F;BlastSnap.png" data-lightbox="BlastSnap" data-title="BlastSnap"><img class="gif" src="&#x2F;images&#x2F;workbench&#x2F;BlastSnap.png" style="width:250px"></img></a></td>
+					<td>
+						<p class="tool">
+							This tool shows the blast hits aligned with a phyletic tree. X-axis is the hit number starts with the first hit and ends up with the last hit. I believe, this tool may potentially show horizontal gene transfers, contamination as well as a line of evidence for vertical evolution.
+						</p>
+						<label class= "pkeywords">
+							<span class= "keywords">BLAST</span>
+							<span class= "keywords">Hit order</span>
+							<span class= "keywords">Snapshot</span>
+						</label>
+				
+					
+					</td>
+				</tr>
+				</table>
+				 
+				<h2><a id="TaxaSunburst" href="&#x2F;workbench&#x2F;sunburst&#x2F;" target="_blank">TaxaSunburst</a></h2>
+				<table>
+				<tr>
+					<td><a href="&#x2F;images&#x2F;workbench&#x2F;TaxaSunburst.png" data-lightbox="TaxaSunburst" data-title="TaxaSunburst"><img class="gif" src="&#x2F;images&#x2F;workbench&#x2F;TaxaSunburst.png" style="width:250px"></img></a></td>
+					<td>
+						<p class="tool">
+							This tool is the basic building block of the Aquerium visualizaiton. Sunburst is a great way to show the taxnomic distriubtion of genomic entitites. Zoomable sunburst was customized based on a d3 example and enabled outer non-hierarchihcal layers.
+						</p>
+						<label class= "pkeywords">
+							<span class= "keywords">sunburst</span>
+							<span class= "keywords">taxonomy</span>
+							<span class= "keywords">d3</span>
+						</label>
+				
+					
+					</td>
+				</tr>
+				</table>
+				 
+				<h2><a id="TaxaCollapsable" href="&#x2F;workbench&#x2F;collapsable&#x2F;" target="_blank">TaxaCollapsable</a></h2>
+				<table>
+				<tr>
+					<td><a href="&#x2F;images&#x2F;workbench&#x2F;TaxaCollapsable.png" data-lightbox="TaxaCollapsable" data-title="TaxaCollapsable"><img class="gif" src="&#x2F;images&#x2F;workbench&#x2F;TaxaCollapsable.png" style="width:250px"></img></a></td>
+					<td>
+						<p class="tool">
+							Taxonomic hierarchy is coupled by additional information on the domain architectures. This can be useful to identify taxomic lineage specific domain architecture.
+						</p>
+						<label class= "pkeywords">
+							<span class= "keywords">taxonomy</span>
+							<span class= "keywords">collapssable tree</span>
+							<span class= "keywords">d3</span>
+							<span class= "keywords">domain architectures</span>
+						</label>
+				
+					
+					</td>
+				</tr>
+				</table>
+				 
+		</div>
+
+	</div> 
+	
+	<div style="display:none" class="main pages" id="page3">
+		This is page#4
+	</div>
+	
+
+	<div style="margin-bottom:0">
+			<h4 class="toplayer" style="margin-left:0px;margin-right:0px" align="center">
+			Latest update: 12&#x2F;31&#x2F;2015
+			</h4>
+	</div>	
+	
+</div>
+
+
+    <script src="/js/lightbox.js"></script>
+	<script>
+		addTopBanner(0);
+		
+		function getUrlVars() {
+                var vars = {};
+                var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,
+                function(m,key,value) {
+                vars[key] = value;
+                });
+                return vars;
+                }
+
+		var vars = getUrlVars();
+		if (vars["p"]){
+				var page = vars["p"]}
+		else{
+				var page = 0;
+		}
+
+		if (page){
+			switchPage(page);
+			}
+			
+		
+		
+	</script>
+	
+  </body>
+</html>

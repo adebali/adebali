@@ -1,0 +1,33 @@
+{
+  "name": "jsonresume-theme-classy",
+  "version": "1.0.8",
+  "description": "An uber-classy JSONResume theme.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jared Cubilla",
+  "license": "MIT",
+  "dependencies": {
+    "lightbox2": "^2.8.2",
+    "lodash": "^2.4.1",
+    "mustache": "^0.8.2",
+    "resume-schema": "0.0.15",
+    "tarball-extract": "0.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JaredCubilla/jsonresume-theme-classy.git"
+  },
+  "keywords": [
+    "json",
+    "jsonresume",
+    "theme",
+    "classy",
+    "jsonresume-theme"
+  ],
+  "bugs": {
+    "url": "https://github.com/JaredCubilla/jsonresume-theme-classy/issues"
+  },
+  "homepage": "https://github.com/JaredCubilla/jsonresume-theme-classy"
+}
