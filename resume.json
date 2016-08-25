@@ -1029,8 +1029,8 @@
     },
 	{
       "name": "TaxaSunburst",
-      "img": "http://aquerium.utk.edu/style/images/enamel.png",
-      "url": "http://aquerium.utk.edu/gray.html?f=wwwSUN_lSlQk/wwwSUN_lSlQk.csv.noded.json",
+      "img": "http://aquerium.adebali.com/static/style/images/enamel.png",
+      "url": "http://aquerium.adebali.com/static/gray.html?id=wwwSUN_7-16_TCdSl",
       "text": "This tool is the basic building block of the Aquerium visualization. Sunburst is a great way to show the taxonomic distribution of genomic entities. Zoomable sunburst was customized based on a d3 example and enabled outer non-hierarchical layers.",
       "keywords": [
         "sunburst",
@@ -1040,8 +1040,8 @@
     },
 	{
       "name": "TaxaCollapsable",
-      "img": "http://aquerium.utk.edu/style/images/enamel_arc.png",
-      "url": "http://aquerium.utk.edu/collapse.html?f=wwwSUN_lSlQk/wwwSUN_lSlQk.csv.noded.json&nID=498&custom=0",
+      "img": "http://aquerium.adebali.com/static/style/images/enamel_arc.png",
+      "url": "http://aquerium.adebali.com/static/collapse.html?id=wwwSUN_7-16_TCdSl&nID=273&custom=0&m=Enamelin;Amelin",
       "text": "Taxonomic hierarchy is coupled by additional information on the domain architectures. This can be useful to identify taxomic lineage specific domain architecture.",
       "keywords": [
         "taxonomy",
