@@ -97,8 +97,14 @@
 	"date":"December, 2015",
 	"img":"images/timeline/postdoc.png",
 	"code":"cd-location"
+	},
+	 {
+	"title":"Postdoctoral Fellowship",
+	"text":"UNC adventure starts with a new field. Now it is time to analyze DNA and understand how it gets damaged and repaired.",
+	"date":"September, 2016",
+	"img":"images/timeline/unc.png",
+	"code":"cd-location"
 	}
-	
   ],
   "slides":[
 	{
