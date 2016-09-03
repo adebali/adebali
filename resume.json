@@ -281,9 +281,15 @@
     {
       "company": {
         "name": "University of Tennessee - Oak Ridge National Laboratory",
-        "url": "http://genomics.utk.edu"
+        "url": "http://ornl.gov"
       },
       "position": "Postdoctoral Research Associate",
+      "labs": [
+        {
+          "advisor": "Dr Igor B. Jouline",
+          "url": "http://genomics.utk.edu"
+        }
+      ],
       "startDate": "2015-12-12",
       "endDate": "2016-09-30",
       "summary": " Research in Computational Genomics Group, IT management @ Igor Zhulin lab",
@@ -297,9 +303,15 @@
     {
       "company": {
         "name": "University of Tennessee - Oak Ridge National Laboratory",
-        "url": "http://genomics.utk.edu"
+        "url": "http://ornl.gov"
       },
       "position": "Graduate Research Assistant",
+      "labs": [
+        {
+          "advisor": "Dr Igor B. Jouline",
+          "url": "http://genomics.utk.edu"
+        }
+      ],
       "startDate": "2014-08-01",
       "endDate": "2015-12-11",
       "summary": "Research in Computational Genomics Group @ Igor Zhulin lab",
@@ -317,7 +329,7 @@
       },
       "position": "Graduate Teaching Assistant",
       "startDate": "2012-08-01",
-      "endDate": "2013-07-31",
+      "endDate": "2014-07-31",
       "summary": "Teaching Assistantship of General Genetics class",
       "highlights": [
         "Fall 2012",
@@ -333,6 +345,24 @@
         "url": "http://utk.edu"
       },
       "position": "Graduate Assistant",
+      "labs": [
+        {
+          "advisor": "Dr Brynn Voy",
+          "url": "http://genomics.utk.edu"
+        },
+        {
+          "advisor": "Dr Shawn Campagna",
+          "url": "http://genomics.utk.edu"
+        },
+        {
+          "advisor": "Dr Mike Langston",
+          "url": "http://genomics.utk.edu"
+        },
+        {
+          "advisor": "Dr Igor B. Jouline",
+          "url": "http://genomics.utk.edu"
+        }
+      ],
       "startDate": "2011-08-01",
       "endDate": "2012-07-31",
       "summary": "Rotation in four labs: Animal Research, Chemistry, Bioinformatics, Computer Science",
@@ -348,6 +378,16 @@
         "name": "Radboud University, Nijmegen - Netherlands",
         "url": "http://www.ru.nl/english"
       },
+      "labs": [
+        {
+          "advisor": "Dr Brynn Voy",
+          "url": "http://genomics.utk.edu"
+        },
+        {
+          "advisor": "Dr Brynn Voy",
+          "url": "http://genomics.utk.edu"
+        }
+      ],
       "position": "Summer Intern",
       "startDate": "2010-07-10",
       "endDate": "2010-08-20",

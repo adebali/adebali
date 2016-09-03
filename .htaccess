@@ -1,0 +1,1 @@
+RedirectMatch 301 /adebali.com(.*) https://dl.dropbox.com/u/1234567/adebali.com/$1

@@ -152,6 +152,9 @@
 						{{/company.url}}
 						{{^company.url}}{{company.name}}{{/company.url}}
 						</h3>
+						{{#lab}}
+						<h4>{{.}} lab</h4>
+						{{/lab}}
 						<h4>{{startDateMonth}}{{startDateYear}} - {{endDateMonth}}{{endDateYear}}</h4>
 						<p style="margin-top:0.5em;margin-bottom:0.5em;font-size:1.5em">{{summary}}</p>
 						{{#workHighlights}}
