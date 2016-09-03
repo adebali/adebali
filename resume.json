@@ -190,9 +190,8 @@
     "degree": "PhD",
     "label": "Computational Geneticist",
     "picture": "images/ogun_circle.jpg",
-    "email": "ogun@utk.edu",
-    "phone": "+1 (865) 974-3441",
-    "mobilePhone": "+1 (865) 296-1385",
+    "email": "oadebali@gmail.com",
+    "phone": "+1 (919) 9966-7489",
     "website": "http://adebali.com",
     "summary": "Ogun Adebali is a geneticist by training. After he moved to Knoxville, he decided to switch his method of understanding molecular biology and dived into computational research. During his Ph.D., he minored in computer science and gained programming skills. At Oak Ridge National Laboratory, he had an opportunity to utilize high-performance clusters. He still conceives problems as a biologist, but he solves them via computers. He enjoys developing biologist-friendly tools as well as analyzing data. He thinks that genomics is becoming a focus of interest in medicine and biotechnology. His areas of expertise are:",
     "keywords": [
@@ -206,25 +205,11 @@
       "Orthologs/Paralogs"
     ],
     "location": {
-      "address": "F437, 1414 Cumberland Ave.",
-      "postalCode": "TN 37996",
-      "city": "Knoxville",
+      "address": ["3070 Genetic Medicine Bldg", "120 Mason Farm Rd"],
+      "zipCode": "27599-7260",
+      "city": "Chapel Hill",
       "countryCode": "US",
-      "region": "Tennessee"
-    },
-    "location2": {
-      "address": "1 Bethel Valley Road",
-      "postalCode": "TN 37830",
-      "city": "Oak Ridge",
-      "countryCode": "US",
-      "region": "Tennessee"
-    },
-    "homeAddress": {
-      "address": "301 Woodlawn Pk. Apt E6.",
-      "postalCode": "TN 37920",
-      "city": "Knoxville",
-      "countryCode": "US",
-      "region": "Tennessee"
+      "region": "North Carolina"
     },
     "profiles": [
       {
