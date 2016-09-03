@@ -272,6 +272,17 @@
 										}
 									}
 								}
+								if (w.labs) {
+									if (w.labs[0]) {
+										if (w.labs[0] != '') {
+											w.labsBool = true
+										}
+
+										if ((w.labs.length) > 1) {
+											w.multiLab = true
+										}
+									}
+								}
 							});
 						}
 					}

@@ -278,6 +278,27 @@
     ]
   },
   "work": [
+       {
+      "company": {
+        "name": "University of North Carolina, Chapel Hill",
+        "url": "http://unc.edu"
+      },
+      "position": "Postdoctoral Research Associate",
+      "labs": [
+        {
+          "advisor": "Aziz Sancar",
+          "url": "https://www.med.unc.edu/biochem/asancar-lab/members"
+        }
+      ],
+      "startDate": "2016-09-1",
+      "endDate": "now",
+      "summary": " Research in DNA damage and repair",
+      "highlights": [
+        "XRseq",
+        "DamageSeq",
+        "NGS analysis"
+      ]
+    },
     {
       "company": {
         "name": "University of Tennessee - Oak Ridge National Laboratory",
@@ -286,13 +307,13 @@
       "position": "Postdoctoral Research Associate",
       "labs": [
         {
-          "advisor": "Dr Igor B. Jouline",
+          "advisor": "Igor B. Jouline",
           "url": "http://genomics.utk.edu"
         }
       ],
       "startDate": "2015-12-12",
-      "endDate": "2016-09-30",
-      "summary": " Research in Computational Genomics Group, IT management @ Igor Zhulin lab",
+      "endDate": "2016-08-31",
+      "summary": " Research in Computational Genomics Group, IT management",
       "highlights": [
         "G-protein coupled receptors",
         "Missense mutation assessment",
@@ -308,13 +329,13 @@
       "position": "Graduate Research Assistant",
       "labs": [
         {
-          "advisor": "Dr Igor B. Jouline",
+          "advisor": "Igor B. Jouline",
           "url": "http://genomics.utk.edu"
         }
       ],
       "startDate": "2014-08-01",
       "endDate": "2015-12-11",
-      "summary": "Research in Computational Genomics Group @ Igor Zhulin lab",
+      "summary": "Research in Computational Genomics Group",
       "highlights": [
         "Protein domains",
         "Human disease prediction",
@@ -347,19 +368,19 @@
       "position": "Graduate Assistant",
       "labs": [
         {
-          "advisor": "Dr Brynn Voy",
-          "url": "http://genomics.utk.edu"
+          "advisor": "Brynn Voy",
+          "url": "https://ag.tennessee.edu/AnimalScience/Pages/BrynnVoy.aspx"
         },
         {
-          "advisor": "Dr Shawn Campagna",
-          "url": "http://genomics.utk.edu"
+          "advisor": "Shawn Campagna",
+          "url": "https://www.chem.utk.edu/faculty/campagna"
         },
         {
-          "advisor": "Dr Mike Langston",
-          "url": "http://genomics.utk.edu"
+          "advisor": "Michael Langston",
+          "url": "http://web.eecs.utk.edu/~langston/"
         },
         {
-          "advisor": "Dr Igor B. Jouline",
+          "advisor": "Igor B. Jouline",
           "url": "http://genomics.utk.edu"
         }
       ],
@@ -380,12 +401,12 @@
       },
       "labs": [
         {
-          "advisor": "Dr Brynn Voy",
-          "url": "http://genomics.utk.edu"
+          "advisor": "Tony Roscioli",
+          "url": "https://med.unsw.edu.au/people/mr-tony-roscioli"
         },
         {
-          "advisor": "Dr Brynn Voy",
-          "url": "http://genomics.utk.edu"
+          "advisor": "Jo Huiqing Zhou",
+          "url": "http://molbio.science.ru.nl/about/molecular-developmental-biology/huiqing-jo-zhou/"
         }
       ],
       "position": "Summer Intern",
