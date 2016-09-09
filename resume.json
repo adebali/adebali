@@ -225,6 +225,12 @@
         "logoName": "fa fa-bitbucket left"
       },
       {
+        "network": "github",
+        "username": "adebali",
+        "url": "https://github.org/adebali",
+        "logoName": "fa fa-github left"
+      },
+      {
         "network": "skype",
         "username": "ogunadebali",
         "url": "skype:ogun.adebali?call;",
