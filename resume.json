@@ -1,7 +1,7 @@
 { 
   "home":{
   
-  "about":"I am a computational biologist currently working as a postdoc in a joint lab between University of Tennessee and Oak Ridge National Laboratory. I enjoy working on genomics, analyzing sequences and building scientific tools. The ultimate aim of my research is to understand the complex cellular pathways, disease-causing mutations by using the evolutionary information. I believe that a huge amount of information resides in the sequence data, which needs to be converted to knowledge. This is where I step into the game."
+  "about":"I am a computational biologist currently working as a postdoctoral research associate in Aziz Sancar lab at the University of North Carolina at Chapel Hill. I enjoy working on genomics, analyzing sequences and building scientific tools. The ultimate aim of my research is to understand the complex cellular pathways, disease-causing mutations by using DNA and protein sequence information. I believe that a huge amount of information resides in the sequence data, which needs to be converted to knowledge. This is where I step into the game."
   },
   "timeline":[
     {
@@ -990,6 +990,19 @@
         "Mutation effect",
         "NPC1",
         "Niemann-Pick"
+      ]
+    },
+    {
+      "name": "MiST - Microbial Signal Transduction Database (Coming soon)",
+      "img": "images/services/mist.png",
+      "url": "#",
+      "text": "Stay tuned.",
+      "keywords": [
+        "Genomes",
+        "Prokaryotes",
+        "Signal Transduction",
+        "Database",
+        "API"
       ]
     }
   ],
