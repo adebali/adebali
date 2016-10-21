@@ -695,10 +695,10 @@
   ],
   "publications": [
     {
-      "name": "Aquerium: a web-based platform for visualizing and comparing phylogenetic profiles.",
+      "name": "Aquerium: a web application for comparative exploration of domain-based protein occurrences on the taxonomically clustered genome tree.",
       "authorOA": "Adebali O.*",
       "authors2": " & Zhulin I.B.",
-      "publisher": "(under review)",
+      "publisher": "PROTEINS: Structure, Function, and Bioinformatics (in press)",
       "YEAR": 2016
     },
     {
