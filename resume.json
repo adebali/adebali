@@ -149,6 +149,24 @@
 	],
   "research":[
 	{ 
+		"name": "Missense Mutation Effects on Heath and Disease",
+		"img": "images/research/missense.jpg",
+		"text": "In this genomics age, it became more important to increase the prediction accuracy on missense mutation effects. Benefiting from the evolutionary history of genes, it is possible to accurately estimate the effect of mutations on individuals' health for genetic diseases. We have shown that case-by-case approach substantially improves the overall performance of the estimation. I am interested in working manually on unlike Mendelian diseases before setting up a better automated tool.",
+		"keywords": []
+	},
+	{ 
+		"name": "G Protein Coupled Receptors (GPCRs)",
+		"img": "images/research/GPCR.jpg",
+		"text": "As the largest protein family in human, GPCRs attract scientists' attention. Though they are complex and diver diverse, they are well studied because of their potential in being drug targets. Approximately half of the current over counter medicines target one of our GPCRs. Despite being well studied, GPCRs still lack precisely defined characters in terms of functionally important and specific amino acids. My interest in GPCRs is to reveal these residues so that they can be targetted in receptor-specific drug design studies.",
+		"keywords": []
+	},
+  { 
+		"name": "Genomics of DNA Damage and Repair",
+		"img": "images/research/repair.png",
+		"text": "Human DNA is damaged by environmental factors such as chemicals and radiation. Most of these damages are repaired by several molecular mechanisms. However, the details of the mechanisms are yet to be explored. I use genomics to understand how damages occur and repaired to understand the dynamics of the molecular processes.",
+		"keywords": []
+	},
+	{ 
 		"name": "Protein Domains",
 		"img": "images/research/domains.png",
 		"text": "Domains help us understand protein function and origin. Statistical models (matrices or HMMs) work well in representing domains. Domain identification in proteins is one of my interests as they can define proteins. Especially some complex proteins composed of multiple domains are identified based on their domain architectures. Specific domain combinations perform specific functions. Therefore, studies on domain architectures are helpful in revealing function and homology. Recently, model-to-model comparisons emerged as a sensitive method to identify remote homology.",
@@ -170,18 +188,6 @@
 		"name": "Prokaryotic Signal Transduction",
 		"img": "images/research/proksigtra.jpg",
 		"text": "Genomics is a great field to study signal transduction in bacteria. As bacteria and archaea are simpler than eukaryotes, it is important to understand their signal transduction mechanisms to shed light to eukaryotes. Moreover, in targeting elements of signal transduction pathways in pathogens help in designing drugs to treat infections.",
-		"keywords": []
-	},
-	{ 
-		"name": "G Protein Coupled Receptors (GPCRs)",
-		"img": "images/research/GPCR.jpg",
-		"text": "As the largest protein family in human, GPCRs attract scientists' attention. Though they are complex and diver diverse, they are well studied because of their potential in being drug targets. Approximately half of the current over counter medicines target one of our GPCRs. Despite being well studied, GPCRs still lack precisely defined characters in terms of functionally important and specific amino acids. My interest in GPCRs is to reveal these residues so that they can be targetted in receptor-specific drug design studies.",
-		"keywords": []
-	},
-	{ 
-		"name": "Missense Mutation Effects on Heath and Disease",
-		"img": "images/research/missense.jpg",
-		"text": "In this genomics age, it became more important to increase the prediction accuracy on missense mutation effects. Benefiting from the evolutionary history of genes, it is possible to accurately estimate the effect of mutations on individuals' health for genetic diseases. We have shown that case-by-case approach substantially improves the overall performance of the estimation. I am interested in working manually on unlike Mendelian diseases before setting up a better automated tool.",
 		"keywords": []
 	}
   ],
