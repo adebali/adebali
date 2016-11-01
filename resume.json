@@ -913,7 +913,7 @@
       "department": "Mathematics and Computer Science Division",
       "phone": "+1 865 574 6105",
       "e-mail": "ijouline@utk.edu",
-	  "relation": "Ph.D. Supervisor"
+	    "relation": "Ph.D. Supervisor"
     },
     {
       "name": "Aziz Sancar",
@@ -921,7 +921,7 @@
       "department": "Biochemistry and Biophysics",
       "phone": "+1 919 962 0115",
       "e-mail": "aziz_sancar@med.unc.edu",
-	"relation": "Postdoctoral Advisor"
+	    "relation": "Postdoctoral Advisor"
     },
     {
       "name": "Albrecht von Arnim",
@@ -929,102 +929,14 @@
       "department": "Biochemistry and Molecular Biology",
       "phone": "+1 865 974 6206",
       "e-mail": "vonarnim@utk.edu",
-	  "relation": "Dissertation Committee Member, Program Coordinator"
+	   "relation": "Dissertation Committee Member, Program Coordinator"
     },
     {
       "name": "Elias Fernandez",
       "institution": "University of Tennessee",
       "department": "Biochemistry and Molecular Biology",
       "phone": "+1 865 974 4090",
-	  "e-mail": "elias.fernandez@utk.edu",
-      "relation": "Dissertation Committee Member"
-    }
-  ], 
-  "service": [
-    {
-      "name": "CDvist - Comprehensive Domain Visualization Tool",
-      "img": "images/services/CDvist.png",
-      "url": "http://cdvist.utk.edu",
-      "text": "Protein domain identification is a highly important step in understanding the molecular function of proteins. Various domain search tools have strengths and weakness based on their properties. Some of them are  specific and others are sensitive. CDvist combines these tools in a logical pipeline to address the sensitivity problem with a minimum cost of specificity. CDvist is the only web server that provides batch requests (up to 500) for computationally intensive HHM-HMM comparison.",
-      "keywords": [
-        "Protein Domains",
-        "HMM",
-        "HMMER",
-        "HHsearch",
-        "RPSBLAST",
-        "Pfam",
-        "CDD",
-        "PDB",
-        "COG",
-        "SMART",
-        "PIRSF",
-        "Batch request"
-      ]
-    },
-    {
-      "name": "Aquerium - Architecture Querying Podium",
-      "img": "images/services/Aquerium.png",
-      "url": "http://aquerium.utk.edu",
-      "text": "One of computational methods to reveal or support protein-protein interactions is phylogenetic profiling. Cooccurences of proteins are indicators of functional interaction. Aquerium is a web-server to visualize co-presence/absence of any biological marker in genomes. It also provides a database of pre-computed and genome-linked domains to query domain architectures of interest.",
-      "keywords": [
-        "Phylogenetic profiling",
-        "Domain architecture",
-        "Advanced architecture query",
-        "Custom input",
-        "BLAST hits distribution"
-      ]
-    },
-    {
-      "name": "SAVER (NPC1) - Single Amino Acid Variant Evaluator",
-      "img": "images/services/SAVER-NPC1.png",
-      "url": "http://genomics.utk.edu/saver/npc1.html",
-      "text": "Orthologs and paralogs have different roles in disease. However, current tools do not take this fact into account and do not distinguish them when evaluating the effect of a substitution on health. We think that only orthologs should be considered to have identical function. SAVER is an algorithm that uses several sets (such as orthologs and orthologs after most recent duplication) to evaluate the effects of single amino acid substitutions. This web server shows the results of a test case: effects of missense NPC1 mutations on Niemann-Pick disease type-C. The source code of SAVER is also available.",
-      "keywords": [
-        "Health - Disease",
-        "Mutation effect",
-        "NPC1",
-        "Niemann-Pick"
-      ]
-    },
-    {
-      "name": "MiST - Microbial Signal Transduction Database (Coming soon)",
-      "img": "images/services/mist.png",
-      "url": "#",
-      "text": "Stay tuned.",
-      "keywords": [
-        "Genomes",
-        "Prokaryotes",
-        "Signal Transduction",
-        "Database",
-        "API"
-      ]
-    }
-  ],
-  "workbench_intro" : "The tools presented here are just to give idea of what we can do about visualizing the biological data on web. They are neither stable nor guaranteed for a scientific analysis. However, I am open to develop them if I see enough interest. Please contact with me if you feel like they can be useful to you.",
-  "effort": [
-    {
-      "name": "BlastCover",
-      "img": "images/workbench/BlastCover.png",
-      "url": "/workbench/blast_coverage/",
-      "text": "One important missing ring in BLAST visualization chain is the coverage display. Knowing how much and what portion of your query actually aligns with the subject (hit) is important. This is an attempt of visualizing coverage of the query and subject. It takes CSV (BLAST results) as an input by default.",
-      "keywords": [
-        "BLAST",
-        "CSV",
-        "Query/Subject coverage",
-    {
-      "name": "Albrecht von Arnim",
-      "institution": "University of Tennessee",
-      "department": "Biochemistry and Molecular Biology",
-      "phone": "+1 865 974 6206",
-      "e-mail": "vonarnim@utk.edu",
-	  "relation": "Dissertation Committee Member, Program Coordinator"
-    },
-    {
-      "name": "Elias Fernandez",
-      "institution": "University of Tennessee",
-      "department": "Biochemistry and Molecular Biology",
-      "phone": "+1 865 974 4090",
-	  "e-mail": "elias.fernandez@utk.edu",
+	    "e-mail": "elias.fernandez@utk.edu",
       "relation": "Dissertation Committee Member"
     }
   ], 
