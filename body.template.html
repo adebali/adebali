@@ -55,11 +55,10 @@
 			<h1>{{basics.capitalName}}, {{basics.degree}}</h1>
 			<h3 class= "label">{{basics.capitalLabel}}</h3>
 			<div class= "contact-header">
-					{{basics.location.address}}<br>
-					{{basics.location.city}}, {{basics.location.region}}, {{basics.location.countryCode}}<br>&<br>
-					{{basics.location2.address}}<br>
-					{{basics.location2.city}}, {{basics.location2.region}}, {{basics.location2.countryCode}}
-
+					{{#basics.location.address}}
+						{{.}}<br>
+					{{/basics.location.address}}
+					{{basics.location.city}}, {{basics.location.region}} {{basics.location.zipCode}}, {{basics.location.countryCode}}
 				</div>
 			<div id= "contact">
 				<br>
@@ -152,7 +151,13 @@
 						{{/company.url}}
 						{{^company.url}}{{company.name}}{{/company.url}}
 						</h3>
-						<h4>{{startDateMonth}}{{startDateYear}} - {{endDateMonth}}{{endDateYear}}</h4>
+					
+						<h4>{{startDateMonth}}{{startDateYear}} - {{endDateMonth}}{{endDateYear}} |
+							{{#labs}}
+							<a href="{{url}}" target="_blank">{{advisor}} Lab</a>
+							{{#multiLab}}-&nbsp{{/multiLab}}
+							{{/labs}}
+						</h4>
 						<p style="margin-top:0.5em;margin-bottom:0.5em;font-size:1.5em">{{summary}}</p>
 						{{#workHighlights}}
 						<ul style="margin-top:0">

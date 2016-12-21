@@ -1,7 +1,7 @@
 { 
   "home":{
   
-  "about":"I am a computational biologist currently working as a postdoc in a joint lab between University of Tennessee and Oak Ridge National Laboratory. I enjoy working on genomics, analyzing sequences and building scientific tools. The ultimate aim of my research is to understand the complex cellular pathways, disease-causing mutations by using the evolutionary information. I believe that a huge amount of information resides in the sequence data, which needs to be converted to knowledge. This is where I step into the game."
+  "about":"I am a computational biologist currently working as a postdoctoral research associate in Aziz Sancar lab at the University of North Carolina at Chapel Hill. I enjoy working on genomics, analyzing sequences and building scientific tools. The ultimate aim of my research is to understand the complex cellular pathways, disease-causing mutations by using DNA and protein sequence information. I believe that a huge amount of information resides in the sequence data, which needs to be converted to knowledge. This is where I step into the game."
   },
   "timeline":[
     {
@@ -16,18 +16,18 @@
 	"code":"cd-location",
 	"date":"September, 1999",
 	"title":"Middle School Years",
-	"text":"Unlike public schools, Izmir Turkish Private School provided me the first experience in a scientific laboratory. These years also have a special importance in shaping my future. I remember preparing a term homework about human genome project. My biology teacher liked the work and asked me to present this to hundreds of people. It was the first time that I got interested about genetics."
+	"text":"Unlike public schools, Izmir Turkish Private School provided me the first experience in a scientific laboratory. These years also have a special importance in shaping my future. I remember preparing a term homework about human genome project. My biology teacher liked the work and asked me to present this to hundreds of people. It was the first time that I got interested in genetics."
 	},
     {
 	"img":"images/timeline/ial.png",
 	"code":"cd-location",
 	"date":"September, 2002",
 	"title":"High school years",
-	"text":"The historic Izmir Ataturk High School was a great place to be a student. What I gained here besides education was the friendships which have been sustainable so far."
+	"text":"The historic Izmir Ataturk High School was a great place to be a student. What I gained there besides education was the friendships which have been sustainable so far."
 	},
     {
 	"title":"College years",
-	"text":["The Middle East Technical University was the desired place to live at for many high school students. METU expanded my view about life thanks to its tradition about making people feel responsible. This fact was  due to the students and some faculty. Environment in METU was exceptional in terms of understanding the life and people.","I spent a short time with Dr. Cagdas Son and learned about G protein coupled receptors. It was the first time that I was exposed to this protein family, which is likely to be inspiration of my current interest in them.","In my senior year, I worked with Dr. Yesim Aydin Son. She included me in the iGEM software team. I mostly contributed in this group in idea exchange as well as presenting synthetic biology-bioinformatics collaboration in the scientific community."],
+	"text":["The Middle East Technical University is always a desired environment to live for many high school students. METU expanded my view about life thanks to its tradition of making people feel responsible. This fact was due to the students and some faculty. Environment in METU was exceptional in terms of understanding the life and people.","I spent a short time with Dr. Cagdas Son and learned about G protein coupled receptors. It was the first time that I was exposed to this protein family, which is was an inspiration of my current interest in them.","In my senior year, I worked with Dr. Yesim Aydin Son. We worked together in the iGEM software team. I mostly contributed in this group in idea exchange as well as presenting synthetic biology-bioinformatics interface in a scientific community."],
 	"date":"September, 2006",
 	"img":"images/timeline/metu.png",
 	"code":"cd-location"
@@ -35,13 +35,13 @@
     {
 	"title":"Industrial internship",
 	"img":"images/timeline/experiment.png",
-	"text":"I worked at a local diagnostics company: GENMAR. I acted as an intern technician and I learned about practical applications of the biotechnology products. Because the aim was to help scientists, it was not exciting at all. Why would I watch science instead of getting involved?",
+	"text":"I worked at a local diagnostics company. I acted as an intern technician and I learned about practical applications of the biotechnology products. Because the aim was to help scientists, it was not exciting at all. Why would I watch science instead of getting involved?",
 	"date":"July, 2009",
 	"code":"cd-location"
 	},
     {
 	"title":"Scientific internship",
-	"text":"I earned a scholarship from Radboud University in Netherlands to spend some time for my internship there. I went there with my two friends (who are also pursuing academic careers). I worked with Tony Rosciolli and Jo Huiqing Zhou on cleft lip palate. It was the first serious scientific work that I performed.",
+	"text":"I earned a scholarship from Radboud University in Netherlands to spend a summer for my internship there. I went there with two friends (who are also pursuing academic careers). I worked with Tony Rosciolli and Jo Huiqing Zhou on cleft lip palate. It was the first serious scientific work that I performed.",
 	"date":"July, 2010",
 	"img":"images/timeline/radboud.png",
 	"code":"cd-location"
@@ -57,11 +57,11 @@
 	"title":"VOLS years",
 	"text":[
 		"I joined Genome Science and Technology program jointly hosted by the University of Tennessee and Oak Ridge National Laboratory. UT was my main location in my first year, where I had four rotations in different laboratories. It was probably one of the most diverse rotation choices.",
-		"First, I started working with Dr. Brynn Voy on an exciting project investigating the low-dose radiation effect on the immune system in mice.",
-		"Secondly, I worked in Dr Shawn Campagna group in Chemistry department. Until I joined his lab I had never considered myself in a chemistry laboratory. I attempted to quantify lipids with LC-MS. Rotation had to end when I was very close to getting the product.",
-		"Thirdly, I worked in to be my home lab. I am challenged by identifying CheW role in chemotaxis.",
-		"In my final rotation, I worked with Dr. Mike Langston in the department of electrical engineering and computer science. Here, I learned about graph theory and clique analysis.",
-		"Rotations were great opportunity to select the lab that I was going to work for during Ph.D. When I look back, I feel glad to choose Igor's group as my home lab.."
+		"First, I worked with Dr. Brynn Voy on an exciting project investigating the low-dose radiation effect on the immune system in mice.",
+		"Secondly, I worked with Dr Shawn Campagna's group in Chemistry department. Until I joined his lab, I had never imagined myself in a chemistry laboratory. I attempted to quantify lipids with LC-MS. Rotation had to end when I was very close to getting the product.",
+		"Thirdly, I worked in to be my home lab. I was challenged by identifying CheW role in chemotaxis.",
+		"In my final rotation, I worked with Dr. Mike Langston in the department of electrical engineering and computer science. There, I learned about graph theory and clique analysis.",
+		"Rotations were great opportunities to select the lab that I was going to work for during Ph.D. When I look back, I feel glad to choose Igor's group as my home lab."
 	],
 	"date":"August, 2011",
 	"img":"images/timeline/ut.png",
@@ -69,7 +69,7 @@
 	},
     {
 	"title":"Teaching",
-	"text":"I was a teaching assistant of the General Genetics class at UT for 5 semesters. I lead the discussion sections. I worked with Dr. Albrecht von Arnim, Dr. Bruce McKee, Dr. Andreas Nebenführ, Dr. Su Chunlei and Dr. Ben Keck. I also developed discussion section curriculum when adapting to a new text book.",
+	"text":"I was a teaching assistant of the General Genetics class at UT for 5 semesters. I lead the discussion sections. I worked with Dr. Albrecht von Arnim, Dr. Bruce McKee, Dr. Andreas Nebenführ, Dr. Su Chunlei and Dr. Ben Keck. I also developed discussion section curriculum when the class was adapting to a new text book.",
 	"date":"July, 2012",
 	"img":"images/timeline/teaching.png",
 	"code":"cd-location"
@@ -77,7 +77,7 @@
     {
 	"title":"Oak Ridge National Laboratory",
 	"text":[
-		"This was the time that my research skills start to improve exponentially, as I became a research assistant. Though, I enjoyed teaching so far, I enjoyed to focus on only research, with no teaching reqiurements.  ",
+		"This was the time that my research skills start to improve exponentially, as I became a research assistant. Though, I enjoyed teaching so far, I enjoyed more focusing on only research, with no teaching reqiurements.  ",
 		"Our lab got a new space in ORNL. Though we kept the lab in UT, ORNL became our primary research space. " 
 		],
 	"date":"July, 2013",
@@ -97,8 +97,14 @@
 	"date":"December, 2015",
 	"img":"images/timeline/postdoc.png",
 	"code":"cd-location"
+	},
+	 {
+	"title":"Postdoctoral Fellowship",
+	"text":"UNC adventure starts with a new field. Now it is time to analyze DNA and understand how it gets damaged and repaired.",
+	"date":"September, 2016",
+	"img":"images/timeline/unc.png",
+	"code":"cd-location"
 	}
-	
   ],
   "slides":[
 	{
@@ -143,6 +149,24 @@
 	],
   "research":[
 	{ 
+		"name": "Missense Mutation Effects on Heath and Disease",
+		"img": "images/research/missense.jpg",
+		"text": "In this genomics age, it became more important to increase the prediction accuracy on missense mutation effects. Benefiting from the evolutionary history of genes, it is possible to accurately estimate the effect of mutations on individuals' health for genetic diseases. We have shown that case-by-case approach substantially improves the overall performance of the estimation. I am interested in working manually on unlike Mendelian diseases before setting up a better automated tool.",
+		"keywords": []
+	},
+	{ 
+		"name": "G Protein Coupled Receptors (GPCRs)",
+		"img": "images/research/GPCR.jpg",
+		"text": "As the largest protein family in human, GPCRs attract scientists' attention. Though they are complex and diver diverse, they are well studied because of their potential in being drug targets. Approximately half of the current over counter medicines target one of our GPCRs. Despite being well studied, GPCRs still lack precisely defined characters in terms of functionally important and specific amino acids. My interest in GPCRs is to reveal these residues so that they can be targetted in receptor-specific drug design studies.",
+		"keywords": []
+	},
+  { 
+		"name": "Genomics of DNA Damage and Repair",
+		"img": "images/research/repair.png",
+		"text": "Human DNA is damaged by environmental factors such as chemicals and radiation. Most of these damages are repaired by several molecular mechanisms. However, the details of the mechanisms are yet to be explored. I use genomics to understand how damages occur and repaired to understand the dynamics of the molecular processes.",
+		"keywords": []
+	},
+	{ 
 		"name": "Protein Domains",
 		"img": "images/research/domains.png",
 		"text": "Domains help us understand protein function and origin. Statistical models (matrices or HMMs) work well in representing domains. Domain identification in proteins is one of my interests as they can define proteins. Especially some complex proteins composed of multiple domains are identified based on their domain architectures. Specific domain combinations perform specific functions. Therefore, studies on domain architectures are helpful in revealing function and homology. Recently, model-to-model comparisons emerged as a sensitive method to identify remote homology.",
@@ -165,18 +189,6 @@
 		"img": "images/research/proksigtra.jpg",
 		"text": "Genomics is a great field to study signal transduction in bacteria. As bacteria and archaea are simpler than eukaryotes, it is important to understand their signal transduction mechanisms to shed light to eukaryotes. Moreover, in targeting elements of signal transduction pathways in pathogens help in designing drugs to treat infections.",
 		"keywords": []
-	},
-	{ 
-		"name": "G Protein Coupled Receptors (GPCRs)",
-		"img": "images/research/GPCR.jpg",
-		"text": "As the largest protein family in human, GPCRs attract scientists' attention. Though they are complex and diver diverse, they are well studied because of their potential in being drug targets. Approximately half of the current over counter medicines target one of our GPCRs. Despite being well studied, GPCRs still lack precisely defined characters in terms of functionally important and specific amino acids. My interest in GPCRs is to reveal these residues so that they can be targetted in receptor-specific drug design studies.",
-		"keywords": []
-	},
-	{ 
-		"name": "Missense Mutation Effects on Heath and Disease",
-		"img": "images/research/missense.jpg",
-		"text": "In this genomics age, it became more important to increase the prediction accuracy on missense mutation effects. Benefiting from the evolutionary history of genes, it is possible to accurately estimate the effect of mutations on individuals' health for genetic diseases. We have shown that case-by-case approach substantially improves the overall performance of the estimation. I am interested in working manually on unlike Mendelian diseases before setting up a better automated tool.",
-		"keywords": []
 	}
   ],
   "basics": {
@@ -184,9 +196,8 @@
     "degree": "PhD",
     "label": "Computational Geneticist",
     "picture": "images/ogun_circle.jpg",
-    "email": "ogun@utk.edu",
-    "phone": "+1 (865) 974-3441",
-    "mobilePhone": "+1 (865) 296-1385",
+    "email": "adebali@unc.edu",
+    "phone": "+1 (919) 966-7489",
     "website": "http://adebali.com",
     "summary": "Ogun Adebali is a geneticist by training. After he moved to Knoxville, he decided to switch his method of understanding molecular biology and dived into computational research. During his Ph.D., he minored in computer science and gained programming skills. At Oak Ridge National Laboratory, he had an opportunity to utilize high-performance clusters. He still conceives problems as a biologist, but he solves them via computers. He enjoys developing biologist-friendly tools as well as analyzing data. He thinks that genomics is becoming a focus of interest in medicine and biotechnology. His areas of expertise are:",
     "keywords": [
@@ -200,25 +211,11 @@
       "Orthologs/Paralogs"
     ],
     "location": {
-      "address": "F437, 1414 Cumberland Ave.",
-      "postalCode": "TN 37996",
-      "city": "Knoxville",
+      "address": ["3070 Genetic Medicine Bldg", "120 Mason Farm Rd"],
+      "zipCode": "27599-7260",
+      "city": "Chapel Hill",
       "countryCode": "US",
-      "region": "Tennessee"
-    },
-    "location2": {
-      "address": "1 Bethel Valley Road",
-      "postalCode": "TN 37830",
-      "city": "Oak Ridge",
-      "countryCode": "US",
-      "region": "Tennessee"
-    },
-    "homeAddress": {
-      "address": "301 Woodlawn Pk. Apt E6.",
-      "postalCode": "TN 37920",
-      "city": "Knoxville",
-      "countryCode": "US",
-      "region": "Tennessee"
+      "region": "North Carolina"
     },
     "profiles": [
       {
@@ -232,6 +229,12 @@
         "username": "ogunadebali",
         "url": "https://bitbucket.org/adebali",
         "logoName": "fa fa-bitbucket left"
+      },
+      {
+        "network": "github",
+        "username": "adebali",
+        "url": "https://github.com/adebali",
+        "logoName": "fa fa-github left"
       },
       {
         "network": "skype",
@@ -278,15 +281,42 @@
     ]
   },
   "work": [
+       {
+      "company": {
+        "name": "University of North Carolina, Chapel Hill",
+        "url": "http://unc.edu"
+      },
+      "position": "Postdoctoral Research Associate",
+      "labs": [
+        {
+          "advisor": "Aziz Sancar",
+          "url": "https://www.med.unc.edu/biochem/asancar-lab/members"
+        }
+      ],
+      "startDate": "2016-09-1",
+      "endDate": "now",
+      "summary": " Research in DNA damage and repair",
+      "highlights": [
+        "XRseq",
+        "DamageSeq",
+        "NGS analysis"
+      ]
+    },
     {
       "company": {
         "name": "University of Tennessee - Oak Ridge National Laboratory",
-        "url": "http://genomics.utk.edu"
+        "url": "http://ornl.gov"
       },
       "position": "Postdoctoral Research Associate",
+      "labs": [
+        {
+          "advisor": "Igor B. Jouline",
+          "url": "http://genomics.utk.edu"
+        }
+      ],
       "startDate": "2015-12-12",
-      "endDate": "2016-09-30",
-      "summary": " Research in Computational Genomics Group, IT management @ Igor Zhulin lab",
+      "endDate": "2016-08-31",
+      "summary": " Research in Computational Genomics Group, IT management",
       "highlights": [
         "G-protein coupled receptors",
         "Missense mutation assessment",
@@ -297,12 +327,18 @@
     {
       "company": {
         "name": "University of Tennessee - Oak Ridge National Laboratory",
-        "url": "http://genomics.utk.edu"
+        "url": "http://ornl.gov"
       },
       "position": "Graduate Research Assistant",
+      "labs": [
+        {
+          "advisor": "Igor B. Jouline",
+          "url": "http://genomics.utk.edu"
+        }
+      ],
       "startDate": "2014-08-01",
       "endDate": "2015-12-11",
-      "summary": "Research in Computational Genomics Group @ Igor Zhulin lab",
+      "summary": "Research in Computational Genomics Group",
       "highlights": [
         "Protein domains",
         "Human disease prediction",
@@ -317,7 +353,7 @@
       },
       "position": "Graduate Teaching Assistant",
       "startDate": "2012-08-01",
-      "endDate": "2013-07-31",
+      "endDate": "2014-07-31",
       "summary": "Teaching Assistantship of General Genetics class",
       "highlights": [
         "Fall 2012",
@@ -333,6 +369,24 @@
         "url": "http://utk.edu"
       },
       "position": "Graduate Assistant",
+      "labs": [
+        {
+          "advisor": "Brynn Voy",
+          "url": "https://ag.tennessee.edu/AnimalScience/Pages/BrynnVoy.aspx"
+        },
+        {
+          "advisor": "Shawn Campagna",
+          "url": "https://www.chem.utk.edu/faculty/campagna"
+        },
+        {
+          "advisor": "Michael Langston",
+          "url": "http://web.eecs.utk.edu/~langston/"
+        },
+        {
+          "advisor": "Igor B. Jouline",
+          "url": "http://genomics.utk.edu"
+        }
+      ],
       "startDate": "2011-08-01",
       "endDate": "2012-07-31",
       "summary": "Rotation in four labs: Animal Research, Chemistry, Bioinformatics, Computer Science",
@@ -348,6 +402,16 @@
         "name": "Radboud University, Nijmegen - Netherlands",
         "url": "http://www.ru.nl/english"
       },
+      "labs": [
+        {
+          "advisor": "Tony Roscioli",
+          "url": "https://med.unsw.edu.au/people/mr-tony-roscioli"
+        },
+        {
+          "advisor": "Jo Huiqing Zhou",
+          "url": "http://molbio.science.ru.nl/about/molecular-developmental-biology/huiqing-jo-zhou/"
+        }
+      ],
       "position": "Summer Intern",
       "startDate": "2010-07-10",
       "endDate": "2010-08-20",
@@ -637,10 +701,11 @@
   ],
   "publications": [
     {
-      "name": "Aquerium: a web-based platform for visualizing and comparing phylogenetic profiles.",
+      "name": "Aquerium: a web application for comparative exploration of domain-based protein occurrences on the taxonomically clustered genome tree.",
       "authorOA": "Adebali O.*",
       "authors2": " & Zhulin I.B.",
-      "publisher": "(under review)",
+      "publisher": "PROTEINS: Structure, Function, and Bioinformatics",
+      "url": "http://onlinelibrary.wiley.com/doi/10.1002/prot.25199/full",
       "YEAR": 2016
     },
     {
@@ -855,7 +920,15 @@
       "department": "Mathematics and Computer Science Division",
       "phone": "+1 865 574 6105",
       "e-mail": "ijouline@utk.edu",
-	  "relation": "Ph.D. Supervisor"
+	    "relation": "Ph.D. Supervisor"
+    },
+    {
+      "name": "Aziz Sancar",
+      "institution": "University of North Carolina at Chapel Hill",
+      "department": "Biochemistry and Biophysics",
+      "phone": "+1 919 962 0115",
+      "e-mail": "aziz_sancar@med.unc.edu",
+	    "relation": "Postdoctoral Advisor"
     },
     {
       "name": "Albrecht von Arnim",
@@ -863,29 +936,15 @@
       "department": "Biochemistry and Molecular Biology",
       "phone": "+1 865 974 6206",
       "e-mail": "vonarnim@utk.edu",
-	  "relation": "Dissertation Committee Member, Program Coordinator"
+	   "relation": "Dissertation Committee Member, Program Coordinator"
     },
     {
       "name": "Elias Fernandez",
       "institution": "University of Tennessee",
       "department": "Biochemistry and Molecular Biology",
       "phone": "+1 865 974 4090",
-	  "e-mail": "elias.fernandez@utk.edu",
-      "relation": "Dissertation Committee Member",
-	  "sub":{
-		  "name": "Jerome Baudry",
-		  "institution": "Oak Ridge National Laboratory",
-		  "department": "Center for Molecular Biophysics",
-		  "phone": "+1 865 576 0930",
-		  "e-mail": "jbaudry@utk.edu",
-		  "relation": "Dissertation Committee Member"
-		}	 
-    }
-  ],
-  "references2": [
-    {
-      "name_": "I.B.Z",
-      "reference_": "It is my pleasure to recommend Ogun ..."
+	    "e-mail": "elias.fernandez@utk.edu",
+      "relation": "Dissertation Committee Member"
     }
   ], 
   "service": [
@@ -932,6 +991,19 @@
         "Mutation effect",
         "NPC1",
         "Niemann-Pick"
+      ]
+    },
+    {
+      "name": "MiST - Microbial Signal Transduction Database (Coming soon)",
+      "img": "images/services/mist.png",
+      "url": "#",
+      "text": "Stay tuned.",
+      "keywords": [
+        "Genomes",
+        "Prokaryotes",
+        "Signal Transduction",
+        "Database",
+        "API"
       ]
     }
   ],
