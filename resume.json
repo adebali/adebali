@@ -163,7 +163,7 @@
   { 
 		"name": "Genomics of DNA Damage and Repair",
 		"img": "images/research/repair.png",
-		"text": "Human DNA is damaged by environmental factors such as chemicals and radiation. Most of these damages are repaired by several molecular mechanisms. However, the details of the mechanisms are yet to be explored. I use genomics to understand how damages occur and repaired to understand the dynamics of the molecular processes.",
+		"text": "Human DNA is damaged by environmental factors such as chemicals and radiation. Most of these damages are repaired by several molecular mechanisms. However, the details of the mechanisms are yet to be explored. I use genomics to understand how damages occur and get repaired to understand the dynamics of the molecular processes.",
 		"keywords": []
 	},
 	{ 
@@ -701,12 +701,20 @@
   ],
   "publications": [
     {
+      "name": "Genome-wide Transcription-coupled Repair in E. coli is Mediated by the Mfd Protein.",
+      "authorOA": "Adebali O.",
+      "authors2": ", Chiou Y., Hu J., Sancar A.* & Selby C.P.*",
+      "publisher": "Proceedings of the National Academy of Sciences (in press)",
+      "url": "#",
+      "YEAR": 2017
+    },
+    {
       "name": "Aquerium: a web application for comparative exploration of domain-based protein occurrences on the taxonomically clustered genome tree.",
       "authorOA": "Adebali O.*",
       "authors2": " & Zhulin I.B.",
       "publisher": "PROTEINS: Structure, Function, and Bioinformatics",
-      "url": "http://onlinelibrary.wiley.com/doi/10.1002/prot.25199/full",
-      "YEAR": 2016
+      "url": "http://onlinelibrary.wiley.com/doi/10.1002/prot.25199/abstract",
+      "YEAR": 2017
     },
     {
       "name": "Cache domains are dominant extracellular sensors for signal transduction in prokaryotes.",
@@ -915,14 +923,6 @@
   ],
   "references": [
     {
-      "name": "Igor B. Jouline",
-      "institution": "Oak Ridge National Laboratory",
-      "department": "Mathematics and Computer Science Division",
-      "phone": "+1 865 574 6105",
-      "e-mail": "ijouline@utk.edu",
-	    "relation": "Ph.D. Supervisor"
-    },
-    {
       "name": "Aziz Sancar",
       "institution": "University of North Carolina at Chapel Hill",
       "department": "Biochemistry and Biophysics",
@@ -931,20 +931,20 @@
 	    "relation": "Postdoctoral Advisor"
     },
     {
+      "name": "Igor B. Jouline",
+      "institution": "Oak Ridge National Laboratory",
+      "department": "Mathematics and Computer Science Division",
+      "phone": "+1 865 574 6105",
+      "e-mail": "ijouline@utk.edu",
+	    "relation": "Ph.D. Supervisor"
+    },
+    {
       "name": "Albrecht von Arnim",
       "institution": "University of Tennessee",
       "department": "Biochemistry and Molecular Biology",
       "phone": "+1 865 974 6206",
       "e-mail": "vonarnim@utk.edu",
 	   "relation": "Dissertation Committee Member, Program Coordinator"
-    },
-    {
-      "name": "Elias Fernandez",
-      "institution": "University of Tennessee",
-      "department": "Biochemistry and Molecular Biology",
-      "phone": "+1 865 974 4090",
-	    "e-mail": "elias.fernandez@utk.edu",
-      "relation": "Dissertation Committee Member"
     }
   ], 
   "service": [
