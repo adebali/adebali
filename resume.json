@@ -16,18 +16,18 @@
 	"code":"cd-location",
 	"date":"September, 1999",
 	"title":"Middle School Years",
-	"text":"Unlike public schools, Izmir Turkish Private School provided me the first experience in a scientific laboratory. These years also have a special importance in shaping my future. I remember preparing a term homework about human genome project. My biology teacher liked the work and asked me to present this to hundreds of people. It was the first time that I got interested about genetics."
+	"text":"Unlike public schools, Izmir Turkish Private School provided me the first experience in a scientific laboratory. These years also have a special importance in shaping my future. I remember preparing a term homework about human genome project. My biology teacher liked the work and asked me to present this to hundreds of people. It was the first time that I got interested in genetics."
 	},
     {
 	"img":"images/timeline/ial.png",
 	"code":"cd-location",
 	"date":"September, 2002",
 	"title":"High school years",
-	"text":"The historic Izmir Ataturk High School was a great place to be a student. What I gained here besides education was the friendships which have been sustainable so far."
+	"text":"The historic Izmir Ataturk High School was a great place to be a student. What I gained there besides education was the friendships which have been sustainable so far."
 	},
     {
 	"title":"College years",
-	"text":["The Middle East Technical University was the desired place to live at for many high school students. METU expanded my view about life thanks to its tradition about making people feel responsible. This fact was  due to the students and some faculty. Environment in METU was exceptional in terms of understanding the life and people.","I spent a short time with Dr. Cagdas Son and learned about G protein coupled receptors. It was the first time that I was exposed to this protein family, which is likely to be inspiration of my current interest in them.","In my senior year, I worked with Dr. Yesim Aydin Son. She included me in the iGEM software team. I mostly contributed in this group in idea exchange as well as presenting synthetic biology-bioinformatics collaboration in the scientific community."],
+	"text":["The Middle East Technical University is always a desired environment to live for many high school students. METU expanded my view about life thanks to its tradition of making people feel responsible. This fact was due to the students and some faculty. Environment in METU was exceptional in terms of understanding the life and people.","I spent a short time with Dr. Cagdas Son and learned about G protein coupled receptors. It was the first time that I was exposed to this protein family, which is was an inspiration of my current interest in them.","In my senior year, I worked with Dr. Yesim Aydin Son. We worked together in the iGEM software team. I mostly contributed in this group in idea exchange as well as presenting synthetic biology-bioinformatics interface in a scientific community."],
 	"date":"September, 2006",
 	"img":"images/timeline/metu.png",
 	"code":"cd-location"
@@ -35,13 +35,13 @@
     {
 	"title":"Industrial internship",
 	"img":"images/timeline/experiment.png",
-	"text":"I worked at a local diagnostics company: GENMAR. I acted as an intern technician and I learned about practical applications of the biotechnology products. Because the aim was to help scientists, it was not exciting at all. Why would I watch science instead of getting involved?",
+	"text":"I worked at a local diagnostics company. I acted as an intern technician and I learned about practical applications of the biotechnology products. Because the aim was to help scientists, it was not exciting at all. Why would I watch science instead of getting involved?",
 	"date":"July, 2009",
 	"code":"cd-location"
 	},
     {
 	"title":"Scientific internship",
-	"text":"I earned a scholarship from Radboud University in Netherlands to spend some time for my internship there. I went there with my two friends (who are also pursuing academic careers). I worked with Tony Rosciolli and Jo Huiqing Zhou on cleft lip palate. It was the first serious scientific work that I performed.",
+	"text":"I earned a scholarship from Radboud University in Netherlands to spend a summer for my internship there. I went there with two friends (who are also pursuing academic careers). I worked with Tony Rosciolli and Jo Huiqing Zhou on cleft lip palate. It was the first serious scientific work that I performed.",
 	"date":"July, 2010",
 	"img":"images/timeline/radboud.png",
 	"code":"cd-location"
@@ -57,11 +57,11 @@
 	"title":"VOLS years",
 	"text":[
 		"I joined Genome Science and Technology program jointly hosted by the University of Tennessee and Oak Ridge National Laboratory. UT was my main location in my first year, where I had four rotations in different laboratories. It was probably one of the most diverse rotation choices.",
-		"First, I started working with Dr. Brynn Voy on an exciting project investigating the low-dose radiation effect on the immune system in mice.",
-		"Secondly, I worked in Dr Shawn Campagna group in Chemistry department. Until I joined his lab I had never considered myself in a chemistry laboratory. I attempted to quantify lipids with LC-MS. Rotation had to end when I was very close to getting the product.",
-		"Thirdly, I worked in to be my home lab. I am challenged by identifying CheW role in chemotaxis.",
-		"In my final rotation, I worked with Dr. Mike Langston in the department of electrical engineering and computer science. Here, I learned about graph theory and clique analysis.",
-		"Rotations were great opportunity to select the lab that I was going to work for during Ph.D. When I look back, I feel glad to choose Igor's group as my home lab.."
+		"First, I worked with Dr. Brynn Voy on an exciting project investigating the low-dose radiation effect on the immune system in mice.",
+		"Secondly, I worked with Dr Shawn Campagna's group in Chemistry department. Until I joined his lab, I had never imagined myself in a chemistry laboratory. I attempted to quantify lipids with LC-MS. Rotation had to end when I was very close to getting the product.",
+		"Thirdly, I worked in to be my home lab. I was challenged by identifying CheW role in chemotaxis.",
+		"In my final rotation, I worked with Dr. Mike Langston in the department of electrical engineering and computer science. There, I learned about graph theory and clique analysis.",
+		"Rotations were great opportunities to select the lab that I was going to work for during Ph.D. When I look back, I feel glad to choose Igor's group as my home lab."
 	],
 	"date":"August, 2011",
 	"img":"images/timeline/ut.png",
@@ -69,7 +69,7 @@
 	},
     {
 	"title":"Teaching",
-	"text":"I was a teaching assistant of the General Genetics class at UT for 5 semesters. I lead the discussion sections. I worked with Dr. Albrecht von Arnim, Dr. Bruce McKee, Dr. Andreas Nebenführ, Dr. Su Chunlei and Dr. Ben Keck. I also developed discussion section curriculum when adapting to a new text book.",
+	"text":"I was a teaching assistant of the General Genetics class at UT for 5 semesters. I lead the discussion sections. I worked with Dr. Albrecht von Arnim, Dr. Bruce McKee, Dr. Andreas Nebenführ, Dr. Su Chunlei and Dr. Ben Keck. I also developed discussion section curriculum when the class was adapting to a new text book.",
 	"date":"July, 2012",
 	"img":"images/timeline/teaching.png",
 	"code":"cd-location"
@@ -77,7 +77,7 @@
     {
 	"title":"Oak Ridge National Laboratory",
 	"text":[
-		"This was the time that my research skills start to improve exponentially, as I became a research assistant. Though, I enjoyed teaching so far, I enjoyed to focus on only research, with no teaching reqiurements.  ",
+		"This was the time that my research skills start to improve exponentially, as I became a research assistant. Though, I enjoyed teaching so far, I enjoyed more focusing on only research, with no teaching reqiurements.  ",
 		"Our lab got a new space in ORNL. Though we kept the lab in UT, ORNL became our primary research space. " 
 		],
 	"date":"July, 2013",
