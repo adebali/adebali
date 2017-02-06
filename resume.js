@@ -112,11 +112,11 @@ var resumeData = {
 	"alt":"Welcome!",
 	"url":"#"
 	},
-	{
-	"img":"images/home/mfd-press.jpg",
-	"alt":"UNC Researchers Generate a Repair Map...",
-	"url":"javascript:window.open('http://tntoday.utk.edu/2016/02/18/researchers-develop-predict-diseasecausing-mutations-human-genes','_blank');"
-	},
+	// {
+	// "img":"images/home/mfd-press.jpg",
+	// "alt":"UNC Researchers Generate a Repair Map...",
+	// "url":"javascript:window.open('http://uncnews.unc.edu/latest-news/news-releases/','_blank');"
+	// },
 	{
 	"img":"images/home/npc1-press.jpg",
 	"alt":"Our NPC1 work in press!",
