@@ -1,7 +1,7 @@
 { 
   "home":{
   
-  "about":"I am a computational biologist currently working as a postdoctoral research associate in Aziz Sancar lab at the University of North Carolina at Chapel Hill. I enjoy working on genomics, analyzing sequences and building scientific tools. The ultimate aim of my research is to understand the complex cellular pathways, disease-causing mutations by using DNA and protein sequence information. I believe that a huge amount of information resides in the sequence data, which needs to be converted to knowledge. This is where I step into the game."
+  "about":"I am a computational biologist currently working as a Postdoctoral Research Associate in Aziz Sancar lab at the University of North Carolina at Chapel Hill. I enjoy working on genomics, analyzing sequences and building scientific tools. The ultimate aim of my research is to understand the complex cellular pathways, disease-causing mutations by using DNA and protein sequence information. I believe that a huge amount of information resides in the sequence data, which needs to be converted to knowledge. This is where I step into the game."
   },
   "timeline":[
     {
@@ -77,8 +77,8 @@
     {
 	"title":"Oak Ridge National Laboratory",
 	"text":[
-		"This was the time that my research skills start to improve exponentially, as I became a research assistant. Though, I enjoyed teaching so far, I enjoyed more focusing on only research, with no teaching reqiurements.  ",
-		"Our lab got a new space in ORNL. Though we kept the lab in UT, ORNL became our primary research space. " 
+		"This was the time that my research skills start to improve exponentially, as I became a research assistant. Though I enjoyed teaching, I enjoyed more focusing on only research, with no teaching reqiurements.  ",
+		"Our lab got a new space in ORNL which became our primary research habitat. " 
 		],
 	"date":"July, 2013",
 	"img":"images/timeline/ornl.png",
@@ -111,6 +111,11 @@
 	"img":"images/home/s11color.jpg",
 	"alt":"Welcome!",
 	"url":"#"
+	},
+	{
+	"img":"images/home/mfd-press.jpg",
+	"alt":"UNC Researchers Generate a Repair Map...",
+	"url":"javascript:window.open('http://tntoday.utk.edu/2016/02/18/researchers-develop-predict-diseasecausing-mutations-human-genes','_blank');"
 	},
 	{
 	"img":"images/home/npc1-press.jpg",
@@ -654,6 +659,16 @@
     }
   ],
   "press": [
+			{
+      "YEAR": "2017",
+      "name": "Our E.coli XR-seq work is higlighted!",
+      "links": [
+        {
+          "name": "UNC News",
+          "url": "http://uncnews.unc.edu/latest-news/news-releases/"
+        }
+      ]
+    },
     {
       "YEAR": "2016",
       "name": "Researchers Develop Way to Better Predict Disease-Causing Mutations in Human Genes",
@@ -704,8 +719,8 @@
       "name": "Genome-wide Transcription-coupled Repair in Escherichia coli is Mediated by the Mfd Translocase.",
       "authorOA": "Adebali O.",
       "authors2": ", Chiou Y., Hu J., Sancar A.* & Selby C.P.*",
-      "publisher": "Proceedings of the National Academy of Sciences (in press)",
-      "url": "#",
+      "publisher": "Proceedings of the National Academy of Sciences",
+      "url": "http://www.pnas.org/content/early/2017/02/02/1700230114.full.pdf",
       "YEAR": 2017
     },
     {
