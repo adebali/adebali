@@ -663,12 +663,12 @@
       "YEAR": "2017",
       "name": "Our E.coli XR-seq work is higlighted!",
       "links": [
-        {
-          "name": "UNC News",
-          "url": "http://uncnews.unc.edu/latest-news/news-releases/"
-        }
-      ]
-    },
+    //     {
+    //       "name": "UNC News",
+    //       "url": "http://uncnews.unc.edu/latest-news/news-releases/"
+    //     }
+    //   ]
+    // },
     {
       "YEAR": "2016",
       "name": "Researchers Develop Way to Better Predict Disease-Causing Mutations in Human Genes",
