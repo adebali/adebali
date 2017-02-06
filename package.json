@@ -1,0 +1,34 @@
+{
+  "name": "adebali.github.io",
+  "version": "1.0.0",
+  "description": "Ogun Adebali Personal Website",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "dependencies": {
+    "strip-json-comments": "^2.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adebali/adebali.github.io.git"
+  },
+  "keywords": [
+    "Ogun",
+    "Adebali",
+    "Genomics",
+    "Computational",
+    "Biology",
+    "Bioinformatics"
+  ],
+  "author": "Ogun Adebali",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adebali/adebali.github.io/issues"
+  },
+  "homepage": "https://github.com/adebali/adebali.github.io#readme"
+}
