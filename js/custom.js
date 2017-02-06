@@ -124,7 +124,7 @@
 			
 
 //	$(document).ready(function(){
-	  $.getJSON('resume.json', function(data) {
+	  $.getJSON(JSON.stringify('resume.json'), function(data) {
 		$.get('body.template.html', function(template) {
 			var resumeObject = data; 
 			
