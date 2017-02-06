@@ -659,10 +659,10 @@ var resumeData = {
     }
   ],
   "press": [
-			{
-      "YEAR": "2017",
-      "name": "Our E.coli XR-seq work is higlighted!",
-      "links": [
+		// 	{
+    //   "YEAR": "2017",
+    //   "name": "Our E.coli XR-seq work is higlighted!",
+    //   "links": [
     //     {
     //       "name": "UNC News",
     //       "url": "http://uncnews.unc.edu/latest-news/news-releases/"
