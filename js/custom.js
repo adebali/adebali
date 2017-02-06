@@ -124,9 +124,9 @@
 			
 
 //	$(document).ready(function(){
-	  $.getJSON(JSON.stringify('resume.json'), function(data) {
+	//   $.getJSON('resume.json', function(data) {
 		$.get('body.template.html', function(template) {
-			var resumeObject = data; 
+			var resumeObject = resumeData; 
 			
 				var d = new Date();
 				var curyear = d.getFullYear();
@@ -769,7 +769,7 @@
 		
 		}).error(function(d, textStatus, error) { console.log("Error while reading template " + error); });
 	
-	}).error(function(d, textStatus, error) { console.log(error); });
+	// }).error(function(d, textStatus, error) { console.log(error); });
 
 		
 	
