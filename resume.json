@@ -115,7 +115,7 @@
 	{
 	"img":"images/home/mfd-press.jpg",
 	"alt":"UNC Researchers Generate a Repair Map...",
-	"url":"javascript:window.open('http://tntoday.utk.edu/2016/02/18/researchers-develop-predict-diseasecausing-mutations-human-genes','_blank');"
+	"url":"javascript:window.open('http://news.unchealthcare.org/news/2017/february/how-life-survives-unc-researchers-confirm-basic-mechanism-of-dna-repair','_blank');"
 	},
 	{
 	"img":"images/home/npc1-press.jpg",
@@ -661,14 +661,14 @@
   "press": [
 			{
       "YEAR": "2017",
-      "name": "Our E.coli XR-seq work is higlighted!",
+      "name": "How Life Survives: UNC researchers confirm basic mechanism of DNA repair",
       "links": [
-    //     {
-    //       "name": "UNC News",
-    //       "url": "http://uncnews.unc.edu/latest-news/news-releases/"
-    //     }
-    //   ]
-    // },
+        {
+          "name": "UNC News",
+          "url": "http://news.unchealthcare.org/news/2017/february/how-life-survives-unc-researchers-confirm-basic-mechanism-of-dna-repair"
+        }
+      ]
+    },
     {
       "YEAR": "2016",
       "name": "Researchers Develop Way to Better Predict Disease-Causing Mutations in Human Genes",
