@@ -669,6 +669,10 @@ let resumeData = {
 							'url': 'http://news.unchealthcare.org/news/2017/february/how-life-survives-unc-researchers-confirm-basic-mechanism-of-dna-repair'
 						},
 						{
+							'name': 'Genetic Engineering News',
+							'url': 'http://www.genengnews.com/gen-news-highlights/new-dna-repair-finding-could-lead-to-novel-antibacterial-drugs/81253844'
+						},
+						{
 							'name': 'Natural Science News',
 							'url': 'http://naturalsciencenews.com/2017/02/07/researchers-use-xr-seq-to-identify-the-proteins-and-mechanisms-behind-bacterial-dna-repair/'
 						},
