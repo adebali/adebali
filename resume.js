@@ -100,7 +100,7 @@ let resumeData = {
 				'img': 'images/timeline/postdoc.png',
 				'code': 'cd-location'
 			},
-	 		{
+			{
 				'title': 'Postdoctoral Fellowship',
 				'text': 'UNC adventure starts with a new field. Now it is time to analyze DNA and understand how it gets damaged and repaired.',
 				'date': 'September, 2016',
@@ -667,6 +667,14 @@ let resumeData = {
 						{
 							'name': 'UNC News',
 							'url': 'http://news.unchealthcare.org/news/2017/february/how-life-survives-unc-researchers-confirm-basic-mechanism-of-dna-repair'
+						},
+						{
+							'name': 'Natural Science News',
+							'url': 'http://naturalsciencenews.com/2017/02/07/researchers-use-xr-seq-to-identify-the-proteins-and-mechanisms-behind-bacterial-dna-repair/'
+						},
+												{
+							'name': 'Phys.org',
+							'url': 'https://phys.org/news/2017-02-life-survives-basic-mechanism-dna.html'
 						}
 					]
 			},
