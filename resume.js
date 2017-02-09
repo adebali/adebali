@@ -727,6 +727,47 @@ let resumeData = {
 					]
 			}
 		],
+	'services': [
+		{
+			'name': 'Maintainer',
+			'links': [
+				{
+					'name': 'SeqDepot',
+					'url': 'http://seqdepot.net'
+				},
+				{
+					'name': 'Aquerium',
+					'url': 'http://aquerium.utk.edu'
+				},
+				{
+					'name': 'CDvist',
+					'url': 'http://cdvist.utk.edu'
+				}
+			]
+		},
+		{
+			'name': 'Reviewer',
+			'links': [
+				{
+					'name': 'Journal of Bacteriology',
+					'url': 'http://jb.asm.org/'
+				},
+				{
+					'name': 'PLoS One',
+					'url': 'http://journals.plos.org/plosone/'
+				}
+			]
+		},
+		{
+			'name': 'Curator',
+			'links': [
+				{
+					'name': 'OMIC Tools',
+					'url': 'https://omictools.com/'
+				}
+			]
+		}
+	],
 	'publications': [
 			{
 				'name': 'Genome-wide Transcription-coupled Repair in Escherichia coli is Mediated by the Mfd Translocase.',

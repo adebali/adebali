@@ -701,6 +701,12 @@
 						}
 					}
 
+					if (resumeObject.service) {
+						if (resumeObject.service[0].name) {
+							resumeObject.serviceBool = true;
+						}
+					}
+
 					if (resumeObject.interests) {
 						if (resumeObject.interests[0].name) {
 							resumeObject.interestsBool = true;

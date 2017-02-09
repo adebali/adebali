@@ -271,6 +271,18 @@
 			</div>
 			{{/workshopsBool}}
 
+			{{#serviceBool}}
+			<div id= "services">
+				<h2><i class= "fa fa-newspaper-o left"></i> SERVICES</h2>
+				{{#service}}
+					<h3>{{name}}</h3><br>
+					{{#links}}
+					<span class= "keywords"><a style="color:#fff" href="{{url}}" target="_blank">{{name}}</a></span>
+					{{/links}}
+				{{/service}}
+			</div>
+			{{/serviceBool}}
+
 			{{#pressBool}}
 			<div id= "press">
 				<h2><i class= "fa fa-newspaper-o left"></i> PRESS</h2>
