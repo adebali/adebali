@@ -701,9 +701,9 @@
 						}
 					}
 
-					if (resumeObject.service) {
-						if (resumeObject.service[0].name) {
-							resumeObject.serviceBool = true;
+					if (resumeObject.duties) {
+						if (resumeObject.duties[0].name) {
+							resumeObject.dutiesBool = true;
 						}
 					}
 

@@ -271,17 +271,17 @@
 			</div>
 			{{/workshopsBool}}
 
-			{{#serviceBool}}
-			<div id= "services">
-				<h2><i class= "fa fa-newspaper-o left"></i> SERVICES</h2>
-				{{#service}}
+			{{#dutiesBool}}
+			<div id= "duties">
+				<h2><i class= "fa fa-newspaper-o left"></i> OTHER DUTIES</h2>
+				{{#duty}}
 					<h3>{{name}}</h3><br>
 					{{#links}}
 					<span class= "keywords"><a style="color:#fff" href="{{url}}" target="_blank">{{name}}</a></span>
 					{{/links}}
-				{{/service}}
+				{{/duty}}
 			</div>
-			{{/serviceBool}}
+			{{/dutiesBool}}
 
 			{{#pressBool}}
 			<div id= "press">

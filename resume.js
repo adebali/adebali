@@ -727,7 +727,7 @@ let resumeData = {
 					]
 			}
 		],
-	'services': [
+	'duties': [
 		{
 			'name': 'Maintainer',
 			'links': [
