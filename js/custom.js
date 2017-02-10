@@ -112,6 +112,7 @@
 							"<li><a class='submenu' href='#awards'><br><i class= 'fa fa-trophy left'></i> Awards&Honors</a></li>",
 							"<li><a class='submenu' href='#conferences'><br><i class='fa fa-exchange left'></i> Conferences</a></li>",
 							"<li><a class='submenu' href='#workshops'><br><i class='fa fa-pencil-square-o left'></i> Workhops</a></li>",
+							"<li><a class='submenu' href='#press'><br><i class= 'fa fa-address-card left'></i> Duties</a></li>",
 							"<li><a class='submenu' href='#press'><br><i class= 'fa fa-newspaper-o left'></i> Press</a></li>",
 							"<li><a class='submenu' href='#skills'><br><i class= 'fa fa-tasks left'></i> Skills</a></li>",
 							"<li><a class='submenu' href='#languages'><br><i class= 'fa fa-language left'></i> Languages</a></li>",
