@@ -679,6 +679,10 @@ let resumeData = {
 												{
 							'name': 'Phys.org',
 							'url': 'https://phys.org/news/2017-02-life-survives-basic-mechanism-dna.html'
+						},
+												{
+							'name': 'Bilim Dili (Turkish)',
+							'url': 'http://bilimdili.com/doga-cevre/canli/turk-bilim-adami-adebalidan-dna-onariminin-temelleri/'
 						}
 					]
 			},
@@ -713,15 +717,15 @@ let resumeData = {
 				'name': 'METU geneticists are ranked second in US',
 				'links': [
 						{
-							'name': 'Radikal',
+							'name': 'Radikal (Turkish)',
 							'url': 'http://www.radikal.com.tr/dunya/odtunun-genetikcileri-abdde-dunya-ikincisi-oldu-1069946/'
 						},
 						{
-							'name': 'Milliyet',
+							'name': 'Milliyet (Turkish)',
 							'url': 'http://www.milliyet.com.tr/odtu-lu-genetikcilerin-buyuk-basarisi/gundem/gundemdetay/18.11.2011/1464496/default.htm'
 						},
 						{
-							'name': 'METU',
+							'name': 'METU (Turkish)',
 							'url': 'http://www.metu.edu.tr/announcement/metu-bin-igem-takimi-mining-biobrick-projesi-ile-odul-aldi'
 						}
 					]
