@@ -774,7 +774,15 @@ let resumeData = {
 	],
 	'publications': [
 			{
-				'name': 'Genome-wide Transcription-coupled Repair in Escherichia coli is Mediated by the Mfd Translocase.',
+				'name': 'Class III histidine kinases: a recently accessorized kinase domain in putative modulators of type IV pili based motility.',
+				'authorOA': 'Adebali O.',
+				'authors2': ', Petukh M., Reznik A., Tishkov A., Upadhyay A., Zhulin I.B.*',
+				'publisher': 'Journal of Bacteriology (in press)',
+				'url': '#',
+				'YEAR': 2017
+			},
+			{
+				'name': 'Genome-wide transcription-coupled repair in Escherichia coli is mdiated by the Mfd translocase.',
 				'authorOA': 'Adebali O.',
 				'authors2': ', Chiou Y., Hu J., Sancar A.* & Selby C.P.*',
 				'publisher': 'Proceedings of the National Academy of Sciences',
