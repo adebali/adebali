@@ -429,6 +429,12 @@ let resumeData = {
 		],
 	'conferences': [
 			{
+				'YEAR': '2017',
+				'authors': 'Ogun Adebali',
+				'title': 'Genomics of DNA Damage, Repair and Mutagenesis',
+				'summary': 'Talk t the 10th International Symposium on Health Informatics and Bioinformatics, Northern Cyprus'
+			},
+			{
 				'YEAR': '2016',
 				'authors': 'Ogun Adebali and Igor B. Zhulin',
 				'title': 'Establishing precise evolutionary history in predicting variant effects',
