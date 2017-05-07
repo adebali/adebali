@@ -781,7 +781,7 @@ let resumeData = {
 	'publications': [
 			{
 				'name': 'Dynamic maps of UV damage formation and repair.',
-				'authorsEq': 'Hu J., ',
+				'authorEq': 'Hu J., ',
 				'authorOA': 'Adebali O.',
 				'mark': '#',
 				'authors2': ', Adar S., Sancar A.*',
@@ -790,7 +790,7 @@ let resumeData = {
 				'YEAR': 2017
 			},
 			{
-				'name': 'General method for genome-wide mapping of nucleotide excision repair at single nucleotide resolution',
+				'name': 'General method for genome-wide mapping of nucleotide excision repair at single nucleotide resolution.',
 				'authors1': 'Li W., Hu J., ',
 				'authorOA': 'Adebali O.',
 				'authors2': ', Adar S., Yang Y., Chiou Y., Sancar A.*',
