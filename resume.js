@@ -787,7 +787,8 @@ let resumeData = {
 				'publisher': 'Journal of Biological Chemistry (in preparation)',
 				'url': '#',
 				'YEAR': 2017
-			},			{
+			},			
+			{
 				'name': 'Dynamic maps of UV damage formation and repair.',
 				'authorEq': 'Hu J.',
 				'authorOA': ', Adebali O.',
