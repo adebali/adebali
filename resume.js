@@ -807,7 +807,7 @@ let resumeData = {
 				'YEAR': 2017
 			},
 			{
-				'name': 'Genome-wide transcription-coupled repair in Escherichia coli is mdiated by the Mfd translocase.',
+				'name': 'Genome-wide transcription-coupled repair in Escherichia coli is mediated by the Mfd translocase.',
 				'authorOA': 'Adebali O.',
 				'authors2': ', Chiou Y., Hu J., Sancar A.* & Selby C.P.*',
 				'publisher': 'Proceedings of the National Academy of Sciences',
