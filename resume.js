@@ -784,7 +784,7 @@ let resumeData = {
 				'authors1': 'Hu J., Selby C.P., Adar S.',
 				'authorOA': ', Adebali O.',
 				'authors2': ', Sancar A.*',
-				'publisher': 'Journal of Biological Chemistry (in press)',
+				'publisher': 'Journal of Biological Chemistry (in preparation)',
 				'url': '#',
 				'YEAR': 2017
 			},			{
