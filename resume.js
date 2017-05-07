@@ -781,8 +781,8 @@ let resumeData = {
 	'publications': [
 			{
 				'name': 'Dynamic maps of UV damage formation and repair.',
-				'authorEq': 'Hu J., ',
-				'authorOA': 'Adebali O.',
+				'authorEq': 'Hu J.',
+				'authorOA': ', Adebali O.',
 				'mark': '#',
 				'authors2': ', Adar S., Sancar A.*',
 				'publisher': 'Proceedings of the National Academy of Sciences (in press)',
