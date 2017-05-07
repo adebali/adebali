@@ -780,6 +780,24 @@ let resumeData = {
 	],
 	'publications': [
 			{
+				'name': 'Dynamic maps of UV damage formation and repair.',
+				'authors1': 'Hu J.,',
+				'authorOA': 'Adebali O.<sup>#</sup>',
+				'authors2': ', Adar S., Sancar A.*',
+				'publisher': 'Proceedings of the National Academy of Sciences (in press)',
+				'url': '#',
+				'YEAR': 2017
+			},
+			{
+				'name': 'General method for genome-wide mapping of nucleotide excision repair at single nucleotide resolution',
+				'authors1': 'Li W., Hu J.',
+				'authorOA': 'Adebali O.',
+				'authors2': ', Adar S., Yang Y., Chiou Y., Sancar A.*',
+				'publisher': 'Proceedings of the National Academy of Sciences (in press)',
+				'url': '#',
+				'YEAR': 2017
+			},
+			{
 				'name': 'Class III histidine kinases: a recently accessorized kinase domain in putative modulators of type IV pili based motility.',
 				'authorOA': 'Adebali O.',
 				'authors2': ', Petukh M., Reznik A., Tishkov A., Upadhyay A., Zhulin I.B.*',
