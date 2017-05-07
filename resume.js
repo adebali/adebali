@@ -780,6 +780,14 @@ let resumeData = {
 	],
 	'publications': [
 			{
+				'name': 'Molecular mechanism of DNA excision repair and excision repair maps of the human and E. coli genomes.',
+				'authors1': 'Hu J., Selby C.P., Adar S.',
+				'authorOA': ', Adebali O.',
+				'authors2': ', Sancar A.*',
+				'publisher': 'Journal of Biological Chemistry (in press)',
+				'url': '#',
+				'YEAR': 2017
+			},			{
 				'name': 'Dynamic maps of UV damage formation and repair.',
 				'authorEq': 'Hu J.',
 				'authorOA': ', Adebali O.',
