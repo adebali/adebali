@@ -811,8 +811,8 @@ let resumeData = {
 				'name': 'Class III histidine kinases: a recently accessorized kinase domain in putative modulators of type IV pili based motility.',
 				'authorOA': 'Adebali O.',
 				'authors2': ', Petukh M., Reznik A., Tishkov A., Upadhyay A., Zhulin I.B.*',
-				'publisher': 'Journal of Bacteriology (in press)',
-				'url': '#',
+				'publisher': 'Journal of Bacteriology',
+				'url': 'http://jb.asm.org/content/early/2017/05/02/JB.00218-17.full.pdf+html',
 				'YEAR': 2017
 			},
 			{
