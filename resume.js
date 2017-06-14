@@ -668,6 +668,20 @@ let resumeData = {
 	'press': [
 			{
 				'YEAR': '2017',
+				'name': 'Where Cigarette Smoking’s Damage is Done ... Down to Your DNA',
+				'links': [
+						{
+							'name': 'UNC News',
+							'url': 'http://news.unchealthcare.org/news/2017/june/where-cigarette-smoking2019s-damage-is-done-down-to-your-dna'
+						},
+						{
+							'name': 'Science Daily',
+							'url': 'https://www.sciencedaily.com/releases/2017/06/170612170919.htm'
+						}
+					]
+			},
+			{
+				'YEAR': '2017',
 				'name': 'How Life Survives: UNC researchers confirm basic mechanism of DNA repair',
 				'links': [
 						{
@@ -794,8 +808,8 @@ let resumeData = {
 				'authorOA': ', Adebali O.',
 				'mark': '#',
 				'authors2': ', Adar S., Sancar A.*',
-				'publisher': 'Proceedings of the National Academy of Sciences (in press)',
-				'url': '#',
+				'publisher': 'Proceedings of the National Academy of Sciences',
+				'url': 'http://www.pnas.org/content/early/2017/06/06/1706522114.full.pdf?with-ds=yes',
 				'YEAR': 2017
 			},
 			{
@@ -803,8 +817,8 @@ let resumeData = {
 				'authors1': 'Li W., Hu J., ',
 				'authorOA': 'Adebali O.',
 				'authors2': ', Adar S., Yang Y., Chiou Y., Sancar A.*',
-				'publisher': 'Proceedings of the National Academy of Sciences (in press)',
-				'url': '#',
+				'publisher': 'Proceedings of the National Academy of Sciences',
+				'url': 'http://www.pnas.org/content/early/2017/06/06/1706021114.full.pdf?with-ds=yes',
 				'YEAR': 2017
 			},
 			{
