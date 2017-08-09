@@ -432,7 +432,7 @@ let resumeData = {
 				'YEAR': '2017',
 				'authors': 'Ogun Adebali',
 				'title': 'Genomics of DNA Damage, Repair and Mutagenesis',
-				'summary': 'Talk t the 10th International Symposium on Health Informatics and Bioinformatics, Northern Cyprus'
+				'summary': 'Talk at the 10th International Symposium on Health Informatics and Bioinformatics, Northern Cyprus'
 			},
 			{
 				'YEAR': '2016',
@@ -798,7 +798,7 @@ let resumeData = {
 				'authors1': 'Hu J., Selby C.P., Adar S.',
 				'authorOA': ', Adebali O.',
 				'authors2': ', Sancar A.*',
-				'publisher': 'Journal of Biological Chemistry (in preparation)',
+				'publisher': 'Journal of Biological Chemistry (in press)',
 				'url': '#',
 				'YEAR': 2017
 			},			
