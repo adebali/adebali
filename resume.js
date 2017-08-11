@@ -798,8 +798,8 @@ let resumeData = {
 				'authors1': 'Hu J., Selby C.P., Adar S.',
 				'authorOA': ', Adebali O.',
 				'authors2': ', Sancar A.*',
-				'publisher': 'Journal of Biological Chemistry (in press)',
-				'url': '#',
+				'publisher': 'Journal of Biological Chemistry',
+				'url': 'http://www.jbc.org/content/early/2017/08/10/jbc.R117.807453.abstract',
 				'YEAR': 2017
 			},			
 			{
