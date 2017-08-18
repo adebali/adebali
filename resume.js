@@ -813,7 +813,7 @@ let resumeData = {
 				'YEAR': 2017
 			},
 			{
-				'name': 'General method for genome-wide mapping of nucleotide excision repair at single nucleotide resolution.',
+				'name': 'Human genome-wide repair map of DNA damage caused by the cigarette smoke carcinogen benzo[a]pyrene',
 				'authors1': 'Li W., Hu J., ',
 				'authorOA': 'Adebali O.',
 				'authors2': ', Adar S., Yang Y., Chiou Y., Sancar A.*',
