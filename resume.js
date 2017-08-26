@@ -813,7 +813,7 @@ let resumeData = {
 				'YEAR': 2017
 			},
 			{
-				'name': 'Human genome-wide repair map of DNA damage caused by the cigarette smoke carcinogen benzo[a]pyrene',
+				'name': 'Human genome-wide repair map of DNA damage caused by the cigarette smoke carcinogen benzo[a]pyrene.',
 				'authors1': 'Li W., Hu J., ',
 				'authorOA': 'Adebali O.',
 				'authors2': ', Adar S., Yang Y., Chiou Y., Sancar A.*',
@@ -826,7 +826,7 @@ let resumeData = {
 				'authorOA': 'Adebali O.',
 				'authors2': ', Petukh M., Reznik A., Tishkov A., Upadhyay A., Zhulin I.B.*',
 				'publisher': 'Journal of Bacteriology',
-				'url': 'http://jb.asm.org/content/early/2017/05/02/JB.00218-17.full.pdf+html',
+				'url': 'http://jb.asm.org/content/199/18/e00218-17.full.pdf+html',
 				'YEAR': 2017
 			},
 			{
