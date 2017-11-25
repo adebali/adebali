@@ -797,7 +797,7 @@ let resumeData = {
 				'name': 'Mfd translocase is necessary and sufficient for transcription-coupled repair in Escherichia coli.',
 				'authorOA': 'Adebali O.',
 				'authors2': ', Sancar A.* & Selby C.P.*',
-				'publisher': 'Journal of Biological Chemistry (in press)',
+				'publisher': 'Journal of Biological Chemistry',
 				'url': 'http://dx.doi.org/10.1074/jbc.C117.818807',
 				'YEAR': 2017
 			},
