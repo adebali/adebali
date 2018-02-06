@@ -773,8 +773,16 @@ let resumeData = {
 			'name': 'Reviewer',
 			'links': [
 				{
+					'name': 'Bioinformatics',
+					'url': 'https://academic.oup.com/bioinformatics'
+				},
+				{
 					'name': 'Journal of Bacteriology',
 					'url': 'http://jb.asm.org/'
+				},
+				{
+					'name': 'PeerJ',
+					'url': 'https://peerj.com/'
 				},
 				{
 					'name': 'PLoS One',
