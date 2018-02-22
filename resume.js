@@ -761,11 +761,11 @@ let resumeData = {
 				},
 				{
 					'name': 'Aquerium',
-					'url': 'http://aquerium.utk.edu'
+					'url': 'http://aquerium.zhulinlab.org'
 				},
 				{
 					'name': 'CDvist',
-					'url': 'http://cdvist.utk.edu'
+					'url': 'http://cdvist.zhulinlab.org'
 				}
 			]
 		},
@@ -1096,7 +1096,7 @@ let resumeData = {
 			{
 				'name': 'CDvist - Comprehensive Domain Visualization Tool',
 				'img': 'images/services/CDvist.png',
-				'url': 'http://cdvist.utk.edu',
+				'url': 'http://cdvist.zhulinlab.org',
 				'text': 'Protein domain identification is a highly important step in understanding the molecular function of proteins. Various domain search tools have strengths and weakness based on their properties. Some of them are  specific and others are sensitive. CDvist combines these tools in a logical pipeline to address the sensitivity problem with a minimum cost of specificity. CDvist is the only web server that provides batch requests (up to 500) for computationally intensive HHM-HMM comparison.',
 				'keywords': [
 						'Protein Domains',
@@ -1116,7 +1116,7 @@ let resumeData = {
 			{
 				'name': 'Aquerium - Architecture Querying Podium',
 				'img': 'images/services/Aquerium.png',
-				'url': 'http://aquerium.utk.edu',
+				'url': 'http://aquerium.zhulinlab.org',
 				'text': 'One of computational methods to reveal or support protein-protein interactions is phylogenetic profiling. Cooccurences of proteins are indicators of functional interaction. Aquerium is a web-server to visualize co-presence/absence of any biological marker in genomes. It also provides a database of pre-computed and genome-linked domains to query domain architectures of interest.',
 				'keywords': [
 						'Phylogenetic profiling',
@@ -1129,7 +1129,7 @@ let resumeData = {
 			{
 				'name': 'SAVER (NPC1) - Single Amino Acid Variant Evaluator',
 				'img': 'images/services/SAVER-NPC1.png',
-				'url': 'http://genomics.utk.edu/saver/npc1.html',
+				'url': 'http://saver.zhulinlab.org',
 				'text': 'Orthologs and paralogs have different roles in disease. However, current tools do not take this fact into account and do not distinguish them when evaluating the effect of a substitution on health. We think that only orthologs should be considered to have identical function. SAVER is an algorithm that uses several sets (such as orthologs and orthologs after most recent duplication) to evaluate the effects of single amino acid substitutions. This web server shows the results of a test case: effects of missense NPC1 mutations on Niemann-Pick disease type-C. The source code of SAVER is also available.',
 				'keywords': [
 						'Health - Disease',
