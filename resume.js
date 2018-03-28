@@ -429,10 +429,22 @@ let resumeData = {
 		],
 	'conferences': [
 			{
+				'YEAR': '2018',
+				'authors': 'Ogun Adebali',
+				'title': 'High-resolution Maps of Genome-wide Human Damage and Repair (upcoming)',
+				'summary': 'Talk and poster at the ASMBM 2018 Meeting, San Diego, California'
+			},
+			{
+				'YEAR': '2018',
+				'authors': 'Ogun Adebali',
+				'title': 'Giving up my pipette to compute genomics',
+				'summary': 'Invited talk at the GST Retreat, Knoxville, Tennessee'
+			},
+			{
 				'YEAR': '2017',
 				'authors': 'Ogun Adebali',
 				'title': 'Genomics of DNA Damage, Repair and Mutagenesis',
-				'summary': 'Talk at the 10th International Symposium on Health Informatics and Bioinformatics, Northern Cyprus'
+				'summary': 'Invited talk at the 10th International Symposium on Health Informatics and Bioinformatics, Northern Cyprus'
 			},
 			{
 				'YEAR': '2016',
