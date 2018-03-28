@@ -803,7 +803,7 @@ let resumeData = {
 	'publications': [
 			{
 				'name': 'Single-nucleotide resolution dynamic repair maps of UV damage in Saccharomyces cerevisiae genome.',
-				'authors1': 'Li W.'
+				'authors1': 'Li W.',
 				'authorOA': 'Adebali O.',
 				'authors2': 'Yang Y., Selby C.P. & Sancar A.*',
 				'publisher': 'Proceedings of the National Academy of Sciences',
