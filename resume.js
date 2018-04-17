@@ -115,6 +115,11 @@ let resumeData = {
 				'url': '#'
 			},
 			{
+				'img': 'images/home/plant.jpg',
+				'alt': 'How does plant DNA avoid the ravages of UV radiation?',
+				'url': "javascript:window.open('https://www.sciencedaily.com/releases/2018/04/180417085926.htm','_blank');"
+			},
+			{
 				'img': 'images/home/mfd-press.jpg',
 				'alt': 'UNC Researchers Generate a Repair Map...',
 				'url': "javascript:window.open('http://news.unchealthcare.org/news/2017/february/how-life-survives-unc-researchers-confirm-basic-mechanism-of-dna-repair','_blank');"
