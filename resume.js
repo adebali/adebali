@@ -813,15 +813,7 @@ let resumeData = {
 		}
 	],
 	'publications': [
-			{
-				'name': 'Genome-wide Excision Repair in Arabidopsis is coupled to transcription and reflects circadian gene expression patterns.',
-				'authors1': 'Oztas O.,',
-				'authors2': ', Selby C.P., Sancar A.*'
-				'authorOA': ' & Adebali O.*',
-				'publisher': 'Nature Communications',
-				'url': 'http://dx.doi.org/10.1038/s41467-018-03922-5',
-				'YEAR': 2018
-			},
+
 			{
 				'name': 'Single-nucleotide resolution dynamic repair maps of UV damage in Saccharomyces cerevisiae genome.',
 				'authors1': 'Li W.,',
