@@ -684,6 +684,16 @@ let resumeData = {
 		],
 	'press': [
 			{
+				'YEAR': '2018',
+				'name': 'How does plant DNA avoid the ravages of UV radiation?',
+				'links': [
+						{
+							'name': 'Science Daily',
+							'url': 'https://www.sciencedaily.com/releases/2017/06/170612170919.htm'
+						}
+					]
+			},
+			{
 				'YEAR': '2017',
 				'name': 'Where Cigarette Smoking’s Damage is Done ... Down to Your DNA',
 				'links': [
