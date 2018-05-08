@@ -685,6 +685,16 @@ let resumeData = {
 	'press': [
 			{
 				'YEAR': '2018',
+				'name': 'Could Reading our Circadian Clocks According to DNA Repair Optimize Chemotherapy?',
+				'links': [
+						{
+							'name': 'UNC',
+							'url': 'http://news.unchealthcare.org/news/2018/may/could-reading-our-circadian-clocks-according-to-dna-repair-optimize-chemotherapy'
+						}
+					]
+			},
+			{
+				'YEAR': '2018',
 				'name': 'How does plant DNA avoid the ravages of UV radiation?',
 				'links': [
 						{
@@ -828,6 +838,15 @@ let resumeData = {
 		}
 	],
 	'publications': [
+			{
+				'name': 'Cisplatin-DNA adduct repair of transcribed genes is controlled by two circadian programs in mouse tissues',
+				'authors1': 'Yang Y.',	
+				'authors2': ', Wu G., Selby C.P., Chiou Y., Rashid N., Hu J., Hogenesch J.B. & Sancar A.*',
+				'authorOA': ', Adebali O.',	
+				'publisher': 'Proceedings of the National Academy of Sciences',
+				'url': 'https://doi.org/10.1073/pnas.1804493115',	
+				'YEAR': 2018	
+			},			
 			{
 				'name': 'Genome-wide Excision Repair in Arabidopsis is coupled to transcription and reflects circadian gene expression patterns.',	
 				'authors1': 'Oztas O., Selby C.P., Sancar A.*',	
