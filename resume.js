@@ -135,11 +135,11 @@ let resumeData = {
 				'alt': 'Resume',
 				'url': 'javascript:switchPage(1);'
 			},
-			{
-				'img': 'images/home/s5-02.png',
-				'alt': 'My Story',
-				'url': 'javascript:switchPage(2);'
-			},
+			// {
+			// 	'img': 'images/home/s5-02.png',
+			// 	'alt': 'My Story',
+			// 	'url': 'javascript:switchPage(2);'
+			// },
 			{
 				'img': 'images/home/research.png',
 				'alt': 'Research',
