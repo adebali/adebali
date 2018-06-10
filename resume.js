@@ -3,8 +3,8 @@
 let resumeData = {
 	'home': {
 
-			'about': 'I am a computational biologist currently working as a Postdoctoral Research Associate in Aziz Sancar lab at the University of North Carolina at Chapel Hill. I enjoy working on genomics, analyzing sequences and building scientific tools. The ultimate aim of my research is to understand the complex cellular pathways, disease-causing mutations by using DNA and protein sequence information. I believe that a huge amount of information resides in the sequence data, which needs to be converted to knowledge. This is where I step into the game.',
-			'message': 'I will start a lab in June 2018 at Sabanci University. I am looking for graduate students.'
+			'about': 'I am a fresh faculty member at Sabanci University, Turkey. I enjoy working on genomics, analyzing sequences and building scientific tools. The ultimate aim of my research is to understand the complex cellular pathways, disease-causing mutations by using DNA and protein sequence information. I believe that a huge amount of information resides in the sequence data, which needs to be converted to knowledge. This is where I step into the game.',
+			'message': 'PS: I am actively looking for graduate students.'
 		},
 	'timeline': [
 			{
