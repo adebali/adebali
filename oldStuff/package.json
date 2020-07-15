@@ -10,7 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "lightbox2": "^2.8.2",
-    "lodash": "^2.4.1",
+    "lodash": "^4.17.19",
     "mustache": "^0.8.2",
     "resume-schema": "0.0.15",
     "tarball-extract": "0.0.3"
